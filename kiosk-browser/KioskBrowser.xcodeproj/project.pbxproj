@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43091B1719A64233008C85E3 /* KioskWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 43091B1619A64233008C85E3 /* KioskWindow.m */; };
+		43219C9119A61A9C00EFBC82 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43219C9019A61A9C00EFBC82 /* Cocoa.framework */; };
+		43219C9B19A61A9C00EFBC82 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43219C9919A61A9C00EFBC82 /* InfoPlist.strings */; };
+		43219C9D19A61A9C00EFBC82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43219C9C19A61A9C00EFBC82 /* main.m */; };
+		43219CA119A61A9C00EFBC82 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 43219C9F19A61A9C00EFBC82 /* Credits.rtf */; };
+		43219CA419A61A9C00EFBC82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43219CA319A61A9C00EFBC82 /* AppDelegate.m */; };
+		43219CA719A61A9C00EFBC82 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43219CA519A61A9C00EFBC82 /* MainMenu.xib */; };
+		43219CA919A61A9C00EFBC82 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43219CA819A61A9C00EFBC82 /* Images.xcassets */; };
+		43219CB019A61A9D00EFBC82 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43219CAF19A61A9D00EFBC82 /* XCTest.framework */; };
+		43219CB119A61A9D00EFBC82 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43219C9019A61A9C00EFBC82 /* Cocoa.framework */; };
+		43219CB919A61A9D00EFBC82 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43219CB719A61A9D00EFBC82 /* InfoPlist.strings */; };
+		43219CBB19A61A9D00EFBC82 /* KioskBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43219CBA19A61A9D00EFBC82 /* KioskBrowserTests.m */; };
+		4366CAB419A73E3E002731B7 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4366CAB319A73E3E002731B7 /* Carbon.framework */; };
+		4366CAB619A73E4B002731B7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4366CAB519A73E4B002731B7 /* WebKit.framework */; };
+		4366CAB919A751A7002731B7 /* AdminView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4366CAB819A751A7002731B7 /* AdminView.m */; };
+		43BA907619ACD6AB00C4A9CF /* Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 43BA907519ACD6AB00C4A9CF /* Button.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		43219CB219A61A9D00EFBC82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43219C8519A61A9C00EFBC82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43219C8C19A61A9C00EFBC82;
+			remoteInfo = KioskBrowser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		43091B1519A64233008C85E3 /* KioskWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KioskWindow.h; sourceTree = "<group>"; };
+		43091B1619A64233008C85E3 /* KioskWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KioskWindow.m; sourceTree = "<group>"; };
+		43219C8D19A61A9C00EFBC82 /* KioskBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KioskBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43219C9019A61A9C00EFBC82 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		43219C9319A61A9C00EFBC82 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		43219C9419A61A9C00EFBC82 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		43219C9519A61A9C00EFBC82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		43219C9819A61A9C00EFBC82 /* KioskBrowser-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KioskBrowser-Info.plist"; sourceTree = "<group>"; };
+		43219C9A19A61A9C00EFBC82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		43219C9C19A61A9C00EFBC82 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		43219C9E19A61A9C00EFBC82 /* KioskBrowser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KioskBrowser-Prefix.pch"; sourceTree = "<group>"; };
+		43219CA019A61A9C00EFBC82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		43219CA219A61A9C00EFBC82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		43219CA319A61A9C00EFBC82 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		43219CA619A61A9C00EFBC82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		43219CA819A61A9C00EFBC82 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		43219CAE19A61A9D00EFBC82 /* KioskBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KioskBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		43219CAF19A61A9D00EFBC82 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		43219CB619A61A9D00EFBC82 /* KioskBrowserTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KioskBrowserTests-Info.plist"; sourceTree = "<group>"; };
+		43219CB819A61A9D00EFBC82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		43219CBA19A61A9D00EFBC82 /* KioskBrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KioskBrowserTests.m; sourceTree = "<group>"; };
+		4366CAB319A73E3E002731B7 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		4366CAB519A73E4B002731B7 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		4366CAB719A751A7002731B7 /* AdminView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminView.h; sourceTree = "<group>"; };
+		4366CAB819A751A7002731B7 /* AdminView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminView.m; sourceTree = "<group>"; };
+		43BA907519ACD6AB00C4A9CF /* Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Button.png; path = KioskBrowser/Button.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43219C8A19A61A9C00EFBC82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4366CAB619A73E4B002731B7 /* WebKit.framework in Frameworks */,
+				4366CAB419A73E3E002731B7 /* Carbon.framework in Frameworks */,
+				43219C9119A61A9C00EFBC82 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43219CAB19A61A9D00EFBC82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43219CB119A61A9D00EFBC82 /* Cocoa.framework in Frameworks */,
+				43219CB019A61A9D00EFBC82 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43219C8419A61A9C00EFBC82 = {
+			isa = PBXGroup;
+			children = (
+				43BA907519ACD6AB00C4A9CF /* Button.png */,
+				43219C9619A61A9C00EFBC82 /* KioskBrowser */,
+				43219CB419A61A9D00EFBC82 /* KioskBrowserTests */,
+				43219C8F19A61A9C00EFBC82 /* Frameworks */,
+				43219C8E19A61A9C00EFBC82 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		43219C8E19A61A9C00EFBC82 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43219C8D19A61A9C00EFBC82 /* KioskBrowser.app */,
+				43219CAE19A61A9D00EFBC82 /* KioskBrowserTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43219C8F19A61A9C00EFBC82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4366CAB519A73E4B002731B7 /* WebKit.framework */,
+				4366CAB319A73E3E002731B7 /* Carbon.framework */,
+				43219C9019A61A9C00EFBC82 /* Cocoa.framework */,
+				43219CAF19A61A9D00EFBC82 /* XCTest.framework */,
+				43219C9219A61A9C00EFBC82 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43219C9219A61A9C00EFBC82 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43219C9319A61A9C00EFBC82 /* AppKit.framework */,
+				43219C9419A61A9C00EFBC82 /* CoreData.framework */,
+				43219C9519A61A9C00EFBC82 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		43219C9619A61A9C00EFBC82 /* KioskBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				43219CA219A61A9C00EFBC82 /* AppDelegate.h */,
+				43219CA319A61A9C00EFBC82 /* AppDelegate.m */,
+				43219CA519A61A9C00EFBC82 /* MainMenu.xib */,
+				43219CA819A61A9C00EFBC82 /* Images.xcassets */,
+				43219C9719A61A9C00EFBC82 /* Supporting Files */,
+				43091B1519A64233008C85E3 /* KioskWindow.h */,
+				43091B1619A64233008C85E3 /* KioskWindow.m */,
+				4366CAB719A751A7002731B7 /* AdminView.h */,
+				4366CAB819A751A7002731B7 /* AdminView.m */,
+			);
+			path = KioskBrowser;
+			sourceTree = "<group>";
+		};
+		43219C9719A61A9C00EFBC82 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				43219C9819A61A9C00EFBC82 /* KioskBrowser-Info.plist */,
+				43219C9919A61A9C00EFBC82 /* InfoPlist.strings */,
+				43219C9C19A61A9C00EFBC82 /* main.m */,
+				43219C9E19A61A9C00EFBC82 /* KioskBrowser-Prefix.pch */,
+				43219C9F19A61A9C00EFBC82 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		43219CB419A61A9D00EFBC82 /* KioskBrowserTests */ = {
+			isa = PBXGroup;
+			children = (
+				43219CBA19A61A9D00EFBC82 /* KioskBrowserTests.m */,
+				43219CB519A61A9D00EFBC82 /* Supporting Files */,
+			);
+			path = KioskBrowserTests;
+			sourceTree = "<group>";
+		};
+		43219CB519A61A9D00EFBC82 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				43219CB619A61A9D00EFBC82 /* KioskBrowserTests-Info.plist */,
+				43219CB719A61A9D00EFBC82 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		43219C8C19A61A9C00EFBC82 /* KioskBrowser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43219CBE19A61A9D00EFBC82 /* Build configuration list for PBXNativeTarget "KioskBrowser" */;
+			buildPhases = (
+				43219C8919A61A9C00EFBC82 /* Sources */,
+				43219C8A19A61A9C00EFBC82 /* Frameworks */,
+				43219C8B19A61A9C00EFBC82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KioskBrowser;
+			productName = KioskBrowser;
+			productReference = 43219C8D19A61A9C00EFBC82 /* KioskBrowser.app */;
+			productType = "com.apple.product-type.application";
+		};
+		43219CAD19A61A9D00EFBC82 /* KioskBrowserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43219CC119A61A9D00EFBC82 /* Build configuration list for PBXNativeTarget "KioskBrowserTests" */;
+			buildPhases = (
+				43219CAA19A61A9D00EFBC82 /* Sources */,
+				43219CAB19A61A9D00EFBC82 /* Frameworks */,
+				43219CAC19A61A9D00EFBC82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				43219CB319A61A9D00EFBC82 /* PBXTargetDependency */,
+			);
+			name = KioskBrowserTests;
+			productName = KioskBrowserTests;
+			productReference = 43219CAE19A61A9D00EFBC82 /* KioskBrowserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		43219C8519A61A9C00EFBC82 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Rhythm Digital Ltd";
+				TargetAttributes = {
+					43219CAD19A61A9D00EFBC82 = {
+						TestTargetID = 43219C8C19A61A9C00EFBC82;
+					};
+				};
+			};
+			buildConfigurationList = 43219C8819A61A9C00EFBC82 /* Build configuration list for PBXProject "KioskBrowser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 43219C8419A61A9C00EFBC82;
+			productRefGroup = 43219C8E19A61A9C00EFBC82 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				43219C8C19A61A9C00EFBC82 /* KioskBrowser */,
+				43219CAD19A61A9D00EFBC82 /* KioskBrowserTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		43219C8B19A61A9C00EFBC82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BA907619ACD6AB00C4A9CF /* Button.png in Resources */,
+				43219C9B19A61A9C00EFBC82 /* InfoPlist.strings in Resources */,
+				43219CA919A61A9C00EFBC82 /* Images.xcassets in Resources */,
+				43219CA119A61A9C00EFBC82 /* Credits.rtf in Resources */,
+				43219CA719A61A9C00EFBC82 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43219CAC19A61A9D00EFBC82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43219CB919A61A9D00EFBC82 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43219C8919A61A9C00EFBC82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43219CA419A61A9C00EFBC82 /* AppDelegate.m in Sources */,
+				43091B1719A64233008C85E3 /* KioskWindow.m in Sources */,
+				4366CAB919A751A7002731B7 /* AdminView.m in Sources */,
+				43219C9D19A61A9C00EFBC82 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43219CAA19A61A9D00EFBC82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43219CBB19A61A9D00EFBC82 /* KioskBrowserTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		43219CB319A61A9D00EFBC82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43219C8C19A61A9C00EFBC82 /* KioskBrowser */;
+			targetProxy = 43219CB219A61A9D00EFBC82 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		43219C9919A61A9C00EFBC82 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43219C9A19A61A9C00EFBC82 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		43219C9F19A61A9C00EFBC82 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43219CA019A61A9C00EFBC82 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		43219CA519A61A9C00EFBC82 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43219CA619A61A9C00EFBC82 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		43219CB719A61A9D00EFBC82 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43219CB819A61A9D00EFBC82 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		43219CBC19A61A9D00EFBC82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.8;
+			};
+			name = Debug;
+		};
+		43219CBD19A61A9D00EFBC82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx10.8;
+			};
+			name = Release;
+		};
+		43219CBF19A61A9D00EFBC82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/WebKit.framework/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KioskBrowser/KioskBrowser-Prefix.pch";
+				INFOPLIST_FILE = "KioskBrowser/KioskBrowser-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		43219CC019A61A9D00EFBC82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/WebKit.framework/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KioskBrowser/KioskBrowser-Prefix.pch";
+				INFOPLIST_FILE = "KioskBrowser/KioskBrowser-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		43219CC219A61A9D00EFBC82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KioskBrowser.app/Contents/MacOS/KioskBrowser";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KioskBrowser/KioskBrowser-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "KioskBrowserTests/KioskBrowserTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		43219CC319A61A9D00EFBC82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KioskBrowser.app/Contents/MacOS/KioskBrowser";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KioskBrowser/KioskBrowser-Prefix.pch";
+				INFOPLIST_FILE = "KioskBrowserTests/KioskBrowserTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		43219C8819A61A9C00EFBC82 /* Build configuration list for PBXProject "KioskBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43219CBC19A61A9D00EFBC82 /* Debug */,
+				43219CBD19A61A9D00EFBC82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43219CBE19A61A9D00EFBC82 /* Build configuration list for PBXNativeTarget "KioskBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43219CBF19A61A9D00EFBC82 /* Debug */,
+				43219CC019A61A9D00EFBC82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43219CC119A61A9D00EFBC82 /* Build configuration list for PBXNativeTarget "KioskBrowserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43219CC219A61A9D00EFBC82 /* Debug */,
+				43219CC319A61A9D00EFBC82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 43219C8519A61A9C00EFBC82 /* Project object */;
+}

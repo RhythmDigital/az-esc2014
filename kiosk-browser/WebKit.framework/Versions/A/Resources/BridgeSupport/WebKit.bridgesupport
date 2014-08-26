@@ -1,0 +1,1341 @@
+<?xml version='1.0'?>
+<!DOCTYPE signatures SYSTEM "file://localhost/System/Library/DTDs/BridgeSupport.dtd">
+<signatures version='1.0'>
+<depends_on path='/System/Library/Frameworks/JavaScriptCore.framework'/>
+<depends_on path='/System/Library/Frameworks/QuartzCore.framework'/>
+<depends_on path='/System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/WebCore.framework'/>
+<depends_on path='/System/Library/Frameworks/Carbon.framework'/>
+<depends_on path='/System/Library/Frameworks/Cocoa.framework'/>
+<depends_on path='/System/Library/Frameworks/DiskArbitration.framework'/>
+<depends_on path='/System/Library/Frameworks/IOKit.framework'/>
+<depends_on path='/System/Library/Frameworks/OpenGL.framework'/>
+<depends_on path='/System/Library/Frameworks/Security.framework'/>
+<depends_on path='/System/Library/Frameworks/Foundation.framework'/>
+<depends_on path='/System/Library/Frameworks/CoreText.framework'/>
+<depends_on path='/System/Library/Frameworks/CoreFoundation.framework'/>
+<depends_on path='/System/Library/Frameworks/AppKit.framework'/>
+<depends_on path='/System/Library/Frameworks/CFNetwork.framework'/>
+<depends_on path='/System/Library/Frameworks/ApplicationServices.framework'/>
+<depends_on path='/System/Library/Frameworks/CoreServices.framework'/>
+<depends_on path='/System/Library/Frameworks/CoreGraphics.framework'/>
+<opaque name='DOMObjectInternal' type='^{DOMObjectInternal=}'/>
+<opaque name='WebPreferencesPrivate' type='^{WebPreferencesPrivate=}'/>
+<constant name='DOMEventException' type='@'/>
+<constant name='DOMException' type='@'/>
+<constant name='DOMRangeException' type='@'/>
+<constant name='DOMXPathException' type='@'/>
+<constant name='WebActionButtonKey' type='@'/>
+<constant name='WebActionElementKey' type='@'/>
+<constant name='WebActionModifierFlagsKey' type='@'/>
+<constant name='WebActionNavigationTypeKey' type='@'/>
+<constant name='WebActionOriginalURLKey' type='@'/>
+<constant name='WebArchivePboardType' type='@'/>
+<constant name='WebElementDOMNodeKey' type='@'/>
+<constant name='WebElementFrameKey' type='@'/>
+<constant name='WebElementImageAltStringKey' type='@'/>
+<constant name='WebElementImageKey' type='@'/>
+<constant name='WebElementImageRectKey' type='@'/>
+<constant name='WebElementImageURLKey' type='@'/>
+<constant name='WebElementIsSelectedKey' type='@'/>
+<constant name='WebElementLinkLabelKey' type='@'/>
+<constant name='WebElementLinkTargetFrameKey' type='@'/>
+<constant name='WebElementLinkTitleKey' type='@'/>
+<constant name='WebElementLinkURLKey' type='@'/>
+<constant name='WebHistoryAllItemsRemovedNotification' type='@'/>
+<constant name='WebHistoryItemChangedNotification' type='@'/>
+<constant name='WebHistoryItemsAddedNotification' type='@'/>
+<constant name='WebHistoryItemsKey' type='@'/>
+<constant name='WebHistoryItemsRemovedNotification' type='@'/>
+<constant name='WebHistoryLoadedNotification' type='@'/>
+<constant name='WebHistorySavedNotification' type='@'/>
+<constant name='WebKitErrorDomain' type='@'/>
+<constant name='WebKitErrorMIMETypeKey' type='@'/>
+<constant name='WebKitErrorPlugInNameKey' type='@'/>
+<constant name='WebKitErrorPlugInPageURLStringKey' type='@'/>
+<constant name='WebPlugInAttributesKey' type='@'/>
+<constant name='WebPlugInBaseURLKey' type='@'/>
+<constant name='WebPlugInContainerKey' type='@'/>
+<constant name='WebPlugInContainingElementKey' type='@'/>
+<constant name='WebPlugInShouldLoadMainResourceKey' type='@'/>
+<constant name='WebPreferencesChangedNotification' type='@'/>
+<constant name='WebViewDidBeginEditingNotification' type='@'/>
+<constant name='WebViewDidChangeNotification' type='@'/>
+<constant name='WebViewDidChangeSelectionNotification' type='@'/>
+<constant name='WebViewDidChangeTypingStyleNotification' type='@'/>
+<constant name='WebViewDidEndEditingNotification' type='@'/>
+<constant name='WebViewProgressEstimateChangedNotification' type='@'/>
+<constant name='WebViewProgressFinishedNotification' type='@'/>
+<constant name='WebViewProgressStartedNotification' type='@'/>
+<enum name='DOM_ADDITION' value='2'/>
+<enum name='DOM_ALLOW_KEYBOARD_INPUT' value='1'/>
+<enum name='DOM_ANY_TYPE' value='0'/>
+<enum name='DOM_ANY_UNORDERED_NODE_TYPE' value='8'/>
+<enum name='DOM_ATTRIBUTE_NODE' value='2'/>
+<enum name='DOM_AT_TARGET' value='2'/>
+<enum name='DOM_BAD_BOUNDARYPOINTS_ERR' value='1'/>
+<enum name='DOM_BOOLEAN_TYPE' value='3'/>
+<enum name='DOM_BOTH' value='2'/>
+<enum name='DOM_BUBBLING_PHASE' value='3'/>
+<enum name='DOM_CAPTURING_PHASE' value='1'/>
+<enum name='DOM_CDATA_SECTION_NODE' value='4'/>
+<enum name='DOM_CHARSET_RULE' value='2'/>
+<enum name='DOM_COMMENT_NODE' value='8'/>
+<enum name='DOM_CSS_ATTR' value='22'/>
+<enum name='DOM_CSS_CM' value='6'/>
+<enum name='DOM_CSS_COUNTER' value='23'/>
+<enum name='DOM_CSS_CUSTOM' value='3'/>
+<enum name='DOM_CSS_DEG' value='11'/>
+<enum name='DOM_CSS_DIMENSION' value='18'/>
+<enum name='DOM_CSS_EMS' value='3'/>
+<enum name='DOM_CSS_EXS' value='4'/>
+<enum name='DOM_CSS_GRAD' value='13'/>
+<enum name='DOM_CSS_HZ' value='16'/>
+<enum name='DOM_CSS_IDENT' value='21'/>
+<enum name='DOM_CSS_IN' value='8'/>
+<enum name='DOM_CSS_INHERIT' value='0'/>
+<enum name='DOM_CSS_KHZ' value='17'/>
+<enum name='DOM_CSS_MM' value='7'/>
+<enum name='DOM_CSS_MS' value='14'/>
+<enum name='DOM_CSS_NUMBER' value='1'/>
+<enum name='DOM_CSS_PC' value='10'/>
+<enum name='DOM_CSS_PERCENTAGE' value='2'/>
+<enum name='DOM_CSS_PRIMITIVE_VALUE' value='1'/>
+<enum name='DOM_CSS_PT' value='9'/>
+<enum name='DOM_CSS_PX' value='5'/>
+<enum name='DOM_CSS_RAD' value='12'/>
+<enum name='DOM_CSS_RECT' value='24'/>
+<enum name='DOM_CSS_RGBCOLOR' value='25'/>
+<enum name='DOM_CSS_S' value='15'/>
+<enum name='DOM_CSS_STRING' value='19'/>
+<enum name='DOM_CSS_UNKNOWN' value='0'/>
+<enum name='DOM_CSS_URI' value='20'/>
+<enum name='DOM_CSS_VALUE_LIST' value='2'/>
+<enum name='DOM_CSS_VH' value='27'/>
+<enum name='DOM_CSS_VMAX' value='29'/>
+<enum name='DOM_CSS_VMIN' value='28'/>
+<enum name='DOM_CSS_VW' value='26'/>
+<enum name='DOM_DOCUMENT_FRAGMENT_NODE' value='11'/>
+<enum name='DOM_DOCUMENT_NODE' value='9'/>
+<enum name='DOM_DOCUMENT_POSITION_CONTAINED_BY' value='16'/>
+<enum name='DOM_DOCUMENT_POSITION_CONTAINS' value='8'/>
+<enum name='DOM_DOCUMENT_POSITION_DISCONNECTED' value='1'/>
+<enum name='DOM_DOCUMENT_POSITION_FOLLOWING' value='4'/>
+<enum name='DOM_DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC' value='32'/>
+<enum name='DOM_DOCUMENT_POSITION_PRECEDING' value='2'/>
+<enum name='DOM_DOCUMENT_TYPE_NODE' value='10'/>
+<enum name='DOM_DOMSTRING_SIZE_ERR' value='2'/>
+<enum name='DOM_DOM_DELTA_LINE' value='1'/>
+<enum name='DOM_DOM_DELTA_PAGE' value='2'/>
+<enum name='DOM_DOM_DELTA_PIXEL' value='0'/>
+<enum name='DOM_ELEMENT_NODE' value='1'/>
+<enum name='DOM_END_TO_END' value='2'/>
+<enum name='DOM_END_TO_START' value='3'/>
+<enum name='DOM_ENTITY_NODE' value='6'/>
+<enum name='DOM_ENTITY_REFERENCE_NODE' value='5'/>
+<enum name='DOM_FILTER_ACCEPT' value='1'/>
+<enum name='DOM_FILTER_REJECT' value='2'/>
+<enum name='DOM_FILTER_SKIP' value='3'/>
+<enum name='DOM_FIRST_ORDERED_NODE_TYPE' value='9'/>
+<enum name='DOM_FONT_FACE_RULE' value='5'/>
+<enum name='DOM_HIERARCHY_REQUEST_ERR' value='3'/>
+<enum name='DOM_HORIZONTAL' value='0'/>
+<enum name='DOM_IMPORT_RULE' value='3'/>
+<enum name='DOM_INDEX_SIZE_ERR' value='1'/>
+<enum name='DOM_INUSE_ATTRIBUTE_ERR' value='10'/>
+<enum name='DOM_INVALID_ACCESS_ERR' value='15'/>
+<enum name='DOM_INVALID_CHARACTER_ERR' value='5'/>
+<enum name='DOM_INVALID_EXPRESSION_ERR' value='51'/>
+<enum name='DOM_INVALID_MODIFICATION_ERR' value='13'/>
+<enum name='DOM_INVALID_NODE_TYPE_ERR' value='2'/>
+<enum name='DOM_INVALID_STATE_ERR' value='11'/>
+<enum name='DOM_KEY_LOCATION_LEFT' value='1'/>
+<enum name='DOM_KEY_LOCATION_NUMPAD' value='3'/>
+<enum name='DOM_KEY_LOCATION_RIGHT' value='2'/>
+<enum name='DOM_KEY_LOCATION_STANDARD' value='0'/>
+<enum name='DOM_MEDIA_RULE' value='4'/>
+<enum name='DOM_MODIFICATION' value='1'/>
+<enum name='DOM_NAMESPACE_ERR' value='14'/>
+<enum name='DOM_NODE_AFTER' value='1'/>
+<enum name='DOM_NODE_BEFORE' value='0'/>
+<enum name='DOM_NODE_BEFORE_AND_AFTER' value='2'/>
+<enum name='DOM_NODE_INSIDE' value='3'/>
+<enum name='DOM_NONE' value='0'/>
+<enum name='DOM_NOTATION_NODE' value='12'/>
+<enum name='DOM_NOT_FOUND_ERR' value='8'/>
+<enum name='DOM_NOT_SUPPORTED_ERR' value='9'/>
+<enum name='DOM_NO_DATA_ALLOWED_ERR' value='6'/>
+<enum name='DOM_NO_MODIFICATION_ALLOWED_ERR' value='7'/>
+<enum name='DOM_NUMBER_TYPE' value='1'/>
+<enum name='DOM_ORDERED_NODE_ITERATOR_TYPE' value='5'/>
+<enum name='DOM_ORDERED_NODE_SNAPSHOT_TYPE' value='7'/>
+<enum name='DOM_PAGE_RULE' value='6'/>
+<enum name='DOM_PROCESSING_INSTRUCTION_NODE' value='7'/>
+<enum name='DOM_REMOVAL' value='3'/>
+<enum name='DOM_SHOW_ALL' value='4294967295'/>
+<enum name='DOM_SHOW_ATTRIBUTE' value='2'/>
+<enum name='DOM_SHOW_CDATA_SECTION' value='8'/>
+<enum name='DOM_SHOW_COMMENT' value='128'/>
+<enum name='DOM_SHOW_DOCUMENT' value='256'/>
+<enum name='DOM_SHOW_DOCUMENT_FRAGMENT' value='1024'/>
+<enum name='DOM_SHOW_DOCUMENT_TYPE' value='512'/>
+<enum name='DOM_SHOW_ELEMENT' value='1'/>
+<enum name='DOM_SHOW_ENTITY' value='32'/>
+<enum name='DOM_SHOW_ENTITY_REFERENCE' value='16'/>
+<enum name='DOM_SHOW_NOTATION' value='2048'/>
+<enum name='DOM_SHOW_PROCESSING_INSTRUCTION' value='64'/>
+<enum name='DOM_SHOW_TEXT' value='4'/>
+<enum name='DOM_START_TO_END' value='1'/>
+<enum name='DOM_START_TO_START' value='0'/>
+<enum name='DOM_STRING_TYPE' value='2'/>
+<enum name='DOM_STYLE_RULE' value='1'/>
+<enum name='DOM_SYNTAX_ERR' value='12'/>
+<enum name='DOM_TEXT_NODE' value='3'/>
+<enum name='DOM_TYPE_ERR' value='52'/>
+<enum name='DOM_UNKNOWN_RULE' value='0'/>
+<enum name='DOM_UNORDERED_NODE_ITERATOR_TYPE' value='4'/>
+<enum name='DOM_UNORDERED_NODE_SNAPSHOT_TYPE' value='6'/>
+<enum name='DOM_UNSPECIFIED_EVENT_TYPE_ERR' value='0'/>
+<enum name='DOM_VERTICAL' value='1'/>
+<enum name='DOM_WEBKIT_KEYFRAMES_RULE' value='7'/>
+<enum name='DOM_WEBKIT_KEYFRAME_RULE' value='8'/>
+<enum name='DOM_WEBKIT_REGION_RULE' value='16'/>
+<enum name='DOM_WRONG_DOCUMENT_ERR' value='4'/>
+<enum name='WebCacheModelDocumentBrowser' value='1'/>
+<enum name='WebCacheModelDocumentViewer' value='0'/>
+<enum name='WebCacheModelPrimaryWebBrowser' value='2'/>
+<enum name='WebDragDestinationActionAny' value='4294967295'/>
+<enum name='WebDragDestinationActionDHTML' value='1'/>
+<enum name='WebDragDestinationActionEdit' value='2'/>
+<enum name='WebDragDestinationActionLoad' value='4'/>
+<enum name='WebDragDestinationActionNone' value='0'/>
+<enum name='WebDragSourceActionAny' value='4294967295'/>
+<enum name='WebDragSourceActionDHTML' value='1'/>
+<enum name='WebDragSourceActionImage' value='2'/>
+<enum name='WebDragSourceActionLink' value='4'/>
+<enum name='WebDragSourceActionNone' value='0'/>
+<enum name='WebDragSourceActionSelection' value='8'/>
+<enum name='WebKitErrorBlockedPlugInVersion' value='203'/>
+<enum name='WebKitErrorCannotFindPlugIn' value='200'/>
+<enum name='WebKitErrorCannotLoadPlugIn' value='201'/>
+<enum name='WebKitErrorCannotShowMIMEType' value='100'/>
+<enum name='WebKitErrorCannotShowURL' value='101'/>
+<enum name='WebKitErrorFrameLoadInterruptedByPolicyChange' value='102'/>
+<enum name='WebKitErrorJavaUnavailable' value='202'/>
+<enum name='WebMenuItemPDFActualSize' value='24'/>
+<enum name='WebMenuItemPDFAutoSize' value='27'/>
+<enum name='WebMenuItemPDFContinuous' value='30'/>
+<enum name='WebMenuItemPDFFacingPages' value='29'/>
+<enum name='WebMenuItemPDFNextPage' value='31'/>
+<enum name='WebMenuItemPDFPreviousPage' value='32'/>
+<enum name='WebMenuItemPDFSinglePage' value='28'/>
+<enum name='WebMenuItemPDFZoomIn' value='25'/>
+<enum name='WebMenuItemPDFZoomOut' value='26'/>
+<enum name='WebMenuItemTagCopy' value='8'/>
+<enum name='WebMenuItemTagCopyImageToClipboard' value='6'/>
+<enum name='WebMenuItemTagCopyLinkToClipboard' value='3'/>
+<enum name='WebMenuItemTagCut' value='13'/>
+<enum name='WebMenuItemTagDownloadImageToDisk' value='5'/>
+<enum name='WebMenuItemTagDownloadLinkToDisk' value='2'/>
+<enum name='WebMenuItemTagGoBack' value='9'/>
+<enum name='WebMenuItemTagGoForward' value='10'/>
+<enum name='WebMenuItemTagIgnoreSpelling' value='17'/>
+<enum name='WebMenuItemTagLearnSpelling' value='18'/>
+<enum name='WebMenuItemTagLookUpInDictionary' value='22'/>
+<enum name='WebMenuItemTagNoGuessesFound' value='16'/>
+<enum name='WebMenuItemTagOpenFrameInNewWindow' value='7'/>
+<enum name='WebMenuItemTagOpenImageInNewWindow' value='4'/>
+<enum name='WebMenuItemTagOpenLinkInNewWindow' value='1'/>
+<enum name='WebMenuItemTagOpenWithDefaultApplication' value='23'/>
+<enum name='WebMenuItemTagOther' value='19'/>
+<enum name='WebMenuItemTagPaste' value='14'/>
+<enum name='WebMenuItemTagReload' value='12'/>
+<enum name='WebMenuItemTagSearchInSpotlight' value='20'/>
+<enum name='WebMenuItemTagSearchWeb' value='21'/>
+<enum name='WebMenuItemTagSpellingGuess' value='15'/>
+<enum name='WebMenuItemTagStop' value='11'/>
+<enum name='WebNavigationTypeBackForward' value='2'/>
+<enum name='WebNavigationTypeFormResubmitted' value='4'/>
+<enum name='WebNavigationTypeFormSubmitted' value='1'/>
+<enum name='WebNavigationTypeLinkClicked' value='0'/>
+<enum name='WebNavigationTypeOther' value='5'/>
+<enum name='WebNavigationTypeReload' value='3'/>
+<enum name='WebViewInsertActionDropped' value='2'/>
+<enum name='WebViewInsertActionPasted' value='1'/>
+<enum name='WebViewInsertActionTyped' value='0'/>
+<class name='DOMAttr'>
+<method selector='specified'>
+<retval type='B'/>
+</method>
+</class>
+<class name='DOMCSSStyleDeclaration'>
+<method selector='isPropertyImplicit:'>
+<retval type='B'/>
+</method>
+</class>
+<class name='DOMDocument'>
+<method selector='createNodeIterator::::'>
+<arg index='3' type='B'/>
+</method>
+<method selector='createNodeIterator:whatToShow:filter:expandEntityReferences:'>
+<arg index='3' type='B'/>
+</method>
+<method selector='createTreeWalker::::'>
+<arg index='3' type='B'/>
+</method>
+<method selector='createTreeWalker:whatToShow:filter:expandEntityReferences:'>
+<arg index='3' type='B'/>
+</method>
+<method selector='execCommand:'>
+<retval type='B'/>
+</method>
+<method selector='execCommand:userInterface:'>
+<arg index='1' type='B'/>
+<retval type='B'/>
+</method>
+<method selector='execCommand:userInterface:value:'>
+<arg index='1' type='B'/>
+<retval type='B'/>
+</method>
+<method selector='getMatchedCSSRules:pseudoElement:authorOnly:'>
+<arg index='2' type='B'/>
+</method>
+<method selector='importNode::'>
+<arg index='1' type='B'/>
+</method>
+<method selector='importNode:deep:'>
+<arg index='1' type='B'/>
+</method>
+<method selector='queryCommandEnabled:'>
+<retval type='B'/>
+</method>
+<method selector='queryCommandIndeterm:'>
+<retval type='B'/>
+</method>
+<method selector='queryCommandState:'>
+<retval type='B'/>
+</method>
+<method selector='queryCommandSupported:'>
+<retval type='B'/>
+</method>
+<method selector='setXmlStandalone:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='xmlStandalone'>
+<retval type='B'/>
+</method>
+</class>
+<class name='DOMElement'>
+<method selector='hasAttribute:'>
+<retval type='B'/>
+</method>
+<method selector='hasAttributeNS::'>
+<retval type='B'/>
+</method>
+<method selector='hasAttributeNS:localName:'>
+<retval type='B'/>
+</method>
+<method selector='scrollIntoView:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='scrollIntoViewIfNeeded:'>
+<arg index='0' type='B'/>
+</method>
+</class>
+<class name='DOMEvent'>
+<method selector='bubbles'>
+<retval type='B'/>
+</method>
+<method selector='cancelBubble'>
+<retval type='B'/>
+</method>
+<method selector='cancelable'>
+<retval type='B'/>
+</method>
+<method selector='initEvent:::'>
+<arg index='1' type='B'/>
+<arg index='2' type='B'/>
+</method>
+<method selector='initEvent:canBubbleArg:cancelableArg:'>
+<arg index='1' type='B'/>
+<arg index='2' type='B'/>
+</method>
+<method selector='returnValue'>
+<retval type='B'/>
+</method>
+<method selector='setCancelBubble:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setReturnValue:'>
+<arg index='0' type='B'/>
+</method>
+</class>
+<class name='DOMHTMLAreaElement'>
+<method selector='noHref'>
+<retval type='B'/>
+</method>
+<method selector='setNoHref:'>
+<arg index='0' type='B'/>
+</method>
+</class>
+<class name='DOMHTMLButtonElement'>
+<method selector='autofocus'>
+<retval type='B'/>
+</method>
+<method selector='disabled'>
+<retval type='B'/>
+</method>
+<method selector='setAutofocus:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setDisabled:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='willValidate'>
+<retval type='B'/>
+</method>
+</class>
+<class name='DOMHTMLDListElement'>
+<method selector='compact'>
+<retval type='B'/>
+</method>
+<method selector='setCompact:'>
+<arg index='0' type='B'/>
+</method>
+</class>
+<class name='DOMHTMLDirectoryElement'>
+<method selector='compact'>
+<retval type='B'/>
+</method>
+<method selector='setCompact:'>
+<arg index='0' type='B'/>
+</method>
+</class>
+<class name='DOMHTMLDocument'>
+<method selector='hasFocus'>
+<retval type='B'/>
+</method>
+</class>
+<class name='DOMHTMLElement'>
+<method selector='isContentEditable'>
+<retval type='B'/>
+</method>
+</class>
+<class name='DOMHTMLFrameElement'>
+<method selector='noResize'>
+<retval type='B'/>
+</method>
+<method selector='setNoResize:'>
+<arg index='0' type='B'/>
+</method>
+</class>
+<class name='DOMHTMLHRElement'>
+<method selector='noShade'>
+<retval type='B'/>
+</method>
+<method selector='setNoShade:'>
+<arg index='0' type='B'/>
+</method>
+</class>
+<class name='DOMHTMLImageElement'>
+<method selector='complete'>
+<retval type='B'/>
+</method>
+<method selector='isMap'>
+<retval type='B'/>
+</method>
+<method selector='setIsMap:'>
+<arg index='0' type='B'/>
+</method>
+</class>
+<class name='DOMHTMLInputElement'>
+<method selector='autofocus'>
+<retval type='B'/>
+</method>
+<method selector='checked'>
+<retval type='B'/>
+</method>
+<method selector='defaultChecked'>
+<retval type='B'/>
+</method>
+<method selector='disabled'>
+<retval type='B'/>
+</method>
+<method selector='indeterminate'>
+<retval type='B'/>
+</method>
+<method selector='multiple'>
+<retval type='B'/>
+</method>
+<method selector='readOnly'>
+<retval type='B'/>
+</method>
+<method selector='setAutofocus:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setChecked:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setDefaultChecked:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setDisabled:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setIndeterminate:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setMultiple:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setReadOnly:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='willValidate'>
+<retval type='B'/>
+</method>
+</class>
+<class name='DOMHTMLLinkElement'>
+<method selector='disabled'>
+<retval type='B'/>
+</method>
+<method selector='setDisabled:'>
+<arg index='0' type='B'/>
+</method>
+</class>
+<class name='DOMHTMLMenuElement'>
+<method selector='compact'>
+<retval type='B'/>
+</method>
+<method selector='setCompact:'>
+<arg index='0' type='B'/>
+</method>
+</class>
+<class name='DOMHTMLOListElement'>
+<method selector='compact'>
+<retval type='B'/>
+</method>
+<method selector='setCompact:'>
+<arg index='0' type='B'/>
+</method>
+</class>
+<class name='DOMHTMLObjectElement'>
+<method selector='declare'>
+<retval type='B'/>
+</method>
+<method selector='setDeclare:'>
+<arg index='0' type='B'/>
+</method>
+</class>
+<class name='DOMHTMLOptGroupElement'>
+<method selector='disabled'>
+<retval type='B'/>
+</method>
+<method selector='setDisabled:'>
+<arg index='0' type='B'/>
+</method>
+</class>
+<class name='DOMHTMLOptionElement'>
+<method selector='defaultSelected'>
+<retval type='B'/>
+</method>
+<method selector='disabled'>
+<retval type='B'/>
+</method>
+<method selector='selected'>
+<retval type='B'/>
+</method>
+<method selector='setDefaultSelected:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setDisabled:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setSelected:'>
+<arg index='0' type='B'/>
+</method>
+</class>
+<class name='DOMHTMLPreElement'>
+<method selector='setWrap:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='wrap'>
+<retval type='B'/>
+</method>
+</class>
+<class name='DOMHTMLScriptElement'>
+<method selector='defer'>
+<retval type='B'/>
+</method>
+<method selector='setDefer:'>
+<arg index='0' type='B'/>
+</method>
+</class>
+<class name='DOMHTMLSelectElement'>
+<method selector='autofocus'>
+<retval type='B'/>
+</method>
+<method selector='disabled'>
+<retval type='B'/>
+</method>
+<method selector='multiple'>
+<retval type='B'/>
+</method>
+<method selector='setAutofocus:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setDisabled:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setMultiple:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='willValidate'>
+<retval type='B'/>
+</method>
+</class>
+<class name='DOMHTMLStyleElement'>
+<method selector='disabled'>
+<retval type='B'/>
+</method>
+<method selector='setDisabled:'>
+<arg index='0' type='B'/>
+</method>
+</class>
+<class name='DOMHTMLTableCellElement'>
+<method selector='noWrap'>
+<retval type='B'/>
+</method>
+<method selector='setNoWrap:'>
+<arg index='0' type='B'/>
+</method>
+</class>
+<class name='DOMHTMLTextAreaElement'>
+<method selector='autofocus'>
+<retval type='B'/>
+</method>
+<method selector='disabled'>
+<retval type='B'/>
+</method>
+<method selector='readOnly'>
+<retval type='B'/>
+</method>
+<method selector='setAutofocus:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setDisabled:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setReadOnly:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='willValidate'>
+<retval type='B'/>
+</method>
+</class>
+<class name='DOMHTMLUListElement'>
+<method selector='compact'>
+<retval type='B'/>
+</method>
+<method selector='setCompact:'>
+<arg index='0' type='B'/>
+</method>
+</class>
+<class name='DOMImplementation'>
+<method selector='hasFeature::'>
+<retval type='B'/>
+</method>
+<method selector='hasFeature:version:'>
+<retval type='B'/>
+</method>
+</class>
+<class name='DOMKeyboardEvent'>
+<method selector='altGraphKey'>
+<retval type='B'/>
+</method>
+<method selector='altKey'>
+<retval type='B'/>
+</method>
+<method selector='ctrlKey'>
+<retval type='B'/>
+</method>
+<method selector='getModifierState:'>
+<retval type='B'/>
+</method>
+<method selector='initKeyboardEvent:canBubble:cancelable:view:keyIdentifier:keyLocation:ctrlKey:altKey:shiftKey:metaKey:'>
+<arg index='1' type='B'/>
+<arg index='2' type='B'/>
+<arg index='6' type='B'/>
+<arg index='7' type='B'/>
+<arg index='8' type='B'/>
+<arg index='9' type='B'/>
+</method>
+<method selector='initKeyboardEvent:canBubble:cancelable:view:keyIdentifier:keyLocation:ctrlKey:altKey:shiftKey:metaKey:altGraphKey:'>
+<arg index='1' type='B'/>
+<arg index='2' type='B'/>
+<arg index='6' type='B'/>
+<arg index='7' type='B'/>
+<arg index='8' type='B'/>
+<arg index='9' type='B'/>
+<arg index='10' type='B'/>
+</method>
+<method selector='metaKey'>
+<retval type='B'/>
+</method>
+<method selector='shiftKey'>
+<retval type='B'/>
+</method>
+</class>
+<class name='DOMMouseEvent'>
+<method selector='altKey'>
+<retval type='B'/>
+</method>
+<method selector='ctrlKey'>
+<retval type='B'/>
+</method>
+<method selector='initMouseEvent:::::::::::::::'>
+<arg index='1' type='B'/>
+<arg index='2' type='B'/>
+<arg index='9' type='B'/>
+<arg index='10' type='B'/>
+<arg index='11' type='B'/>
+<arg index='12' type='B'/>
+</method>
+<method selector='initMouseEvent:canBubble:cancelable:view:detail:screenX:screenY:clientX:clientY:ctrlKey:altKey:shiftKey:metaKey:button:relatedTarget:'>
+<arg index='1' type='B'/>
+<arg index='2' type='B'/>
+<arg index='9' type='B'/>
+<arg index='10' type='B'/>
+<arg index='11' type='B'/>
+<arg index='12' type='B'/>
+</method>
+<method selector='metaKey'>
+<retval type='B'/>
+</method>
+<method selector='shiftKey'>
+<retval type='B'/>
+</method>
+</class>
+<class name='DOMMutationEvent'>
+<method selector='initMutationEvent::::::::'>
+<arg index='1' type='B'/>
+<arg index='2' type='B'/>
+</method>
+<method selector='initMutationEvent:canBubble:cancelable:relatedNode:prevValue:newValue:attrName:attrChange:'>
+<arg index='1' type='B'/>
+<arg index='2' type='B'/>
+</method>
+</class>
+<class name='DOMNode'>
+<method selector='cloneNode:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='contains:'>
+<retval type='B'/>
+</method>
+<method selector='hasAttributes'>
+<retval type='B'/>
+</method>
+<method selector='hasChildNodes'>
+<retval type='B'/>
+</method>
+<method selector='isContentEditable'>
+<retval type='B'/>
+</method>
+<method selector='isDefaultNamespace:'>
+<retval type='B'/>
+</method>
+<method selector='isEqualNode:'>
+<retval type='B'/>
+</method>
+<method selector='isSameNode:'>
+<retval type='B'/>
+</method>
+<method selector='isSupported::'>
+<retval type='B'/>
+</method>
+<method selector='isSupported:version:'>
+<retval type='B'/>
+</method>
+</class>
+<class name='DOMNodeIterator'>
+<method selector='expandEntityReferences'>
+<retval type='B'/>
+</method>
+<method selector='pointerBeforeReferenceNode'>
+<retval type='B'/>
+</method>
+</class>
+<class name='DOMOverflowEvent'>
+<method selector='horizontalOverflow'>
+<retval type='B'/>
+</method>
+<method selector='initOverflowEvent:horizontalOverflow:verticalOverflow:'>
+<arg index='1' type='B'/>
+<arg index='2' type='B'/>
+</method>
+<method selector='verticalOverflow'>
+<retval type='B'/>
+</method>
+</class>
+<class name='DOMProgressEvent'>
+<method selector='lengthComputable'>
+<retval type='B'/>
+</method>
+</class>
+<class name='DOMRange'>
+<method selector='collapse:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='collapsed'>
+<retval type='B'/>
+</method>
+<method selector='intersectsNode:'>
+<retval type='B'/>
+</method>
+<method selector='isPointInRange:offset:'>
+<retval type='B'/>
+</method>
+</class>
+<class name='DOMStyleSheet'>
+<method selector='disabled'>
+<retval type='B'/>
+</method>
+<method selector='setDisabled:'>
+<arg index='0' type='B'/>
+</method>
+</class>
+<class name='DOMTreeWalker'>
+<method selector='expandEntityReferences'>
+<retval type='B'/>
+</method>
+</class>
+<class name='DOMUIEvent'>
+<method selector='initUIEvent:::::'>
+<arg index='1' type='B'/>
+<arg index='2' type='B'/>
+</method>
+<method selector='initUIEvent:canBubble:cancelable:view:detail:'>
+<arg index='1' type='B'/>
+<arg index='2' type='B'/>
+</method>
+</class>
+<class name='DOMWheelEvent'>
+<method selector='initWheelEvent:wheelDeltaY:view:screenX:screenY:clientX:clientY:ctrlKey:altKey:shiftKey:metaKey:'>
+<arg index='7' type='B'/>
+<arg index='8' type='B'/>
+<arg index='9' type='B'/>
+<arg index='10' type='B'/>
+</method>
+<method selector='isHorizontal'>
+<retval type='B'/>
+</method>
+</class>
+<class name='DOMXPathResult'>
+<method selector='booleanValue'>
+<retval type='B'/>
+</method>
+<method selector='invalidIteratorState'>
+<retval type='B'/>
+</method>
+</class>
+<class name='NSObject'>
+<method selector='addEventListener:::'>
+<arg index='2' type='B'/>
+</method>
+<method selector='addEventListener:listener:useCapture:'>
+<arg index='2' type='B'/>
+</method>
+<method selector='canProvideDocumentSource'>
+<retval type='B'/>
+</method>
+<method selector='dispatchEvent:'>
+<retval type='B'/>
+</method>
+<method class_method='true' selector='isKeyExcludedFromWebScript:'>
+<retval type='B'/>
+</method>
+<method class_method='true' selector='isSelectorExcludedFromWebScript:'>
+<retval type='B'/>
+</method>
+<method selector='removeEventListener:::'>
+<arg index='2' type='B'/>
+</method>
+<method selector='removeEventListener:listener:useCapture:'>
+<arg index='2' type='B'/>
+</method>
+<method selector='searchFor:direction:caseSensitive:wrap:'>
+<arg index='1' type='B'/>
+<arg index='2' type='B'/>
+<arg index='3' type='B'/>
+<retval type='B'/>
+</method>
+<method selector='setNeedsLayout:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='supportsTextEncoding'>
+<retval type='B'/>
+</method>
+<method selector='webPlugInSetIsSelected:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='webView:doCommandBySelector:'>
+<retval type='B'/>
+</method>
+<method selector='webView:runBeforeUnloadConfirmPanelWithMessage:initiatedByFrame:'>
+<retval type='B'/>
+</method>
+<method selector='webView:runJavaScriptConfirmPanelWithMessage:'>
+<retval type='B'/>
+</method>
+<method selector='webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:'>
+<retval type='B'/>
+</method>
+<method selector='webView:runOpenPanelForFileButtonWithResultListener:allowMultipleFiles:'>
+<arg index='2' type='B'/>
+</method>
+<method selector='webView:setResizable:'>
+<arg index='1' type='B'/>
+</method>
+<method selector='webView:setStatusBarVisible:'>
+<arg index='1' type='B'/>
+</method>
+<method selector='webView:setToolbarsVisible:'>
+<arg index='1' type='B'/>
+</method>
+<method selector='webView:shouldApplyStyle:toElementsInDOMRange:'>
+<retval type='B'/>
+</method>
+<method selector='webView:shouldBeginEditingInDOMRange:'>
+<retval type='B'/>
+</method>
+<method selector='webView:shouldChangeSelectedDOMRange:toDOMRange:affinity:stillSelecting:'>
+<arg index='4' type='B'/>
+<retval type='B'/>
+</method>
+<method selector='webView:shouldChangeTypingStyle:toStyle:'>
+<retval type='B'/>
+</method>
+<method selector='webView:shouldDeleteDOMRange:'>
+<retval type='B'/>
+</method>
+<method selector='webView:shouldEndEditingInDOMRange:'>
+<retval type='B'/>
+</method>
+<method selector='webView:shouldInsertNode:replacingDOMRange:givenAction:'>
+<retval type='B'/>
+</method>
+<method selector='webView:shouldInsertText:replacingDOMRange:givenAction:'>
+<retval type='B'/>
+</method>
+<method selector='webView:shouldPerformAction:fromSender:'>
+<retval type='B'/>
+</method>
+<method selector='webView:validateUserInterfaceItem:defaultValidation:'>
+<arg index='2' type='B'/>
+<retval type='B'/>
+</method>
+<method selector='webViewAreToolbarsVisible:'>
+<retval type='B'/>
+</method>
+<method selector='webViewIsResizable:'>
+<retval type='B'/>
+</method>
+<method selector='webViewIsStatusBarVisible:'>
+<retval type='B'/>
+</method>
+</class>
+<class name='WebBackForwardList'>
+<method selector='containsItem:'>
+<retval type='B'/>
+</method>
+</class>
+<class name='WebDataSource'>
+<method selector='isLoading'>
+<retval type='B'/>
+</method>
+</class>
+<class name='WebFrameView'>
+<method selector='allowsScrolling'>
+<retval type='B'/>
+</method>
+<method selector='canPrintHeadersAndFooters'>
+<retval type='B'/>
+</method>
+<method selector='documentViewShouldHandlePrint'>
+<retval type='B'/>
+</method>
+<method selector='setAllowsScrolling:'>
+<arg index='0' type='B'/>
+</method>
+</class>
+<class name='WebHistory'>
+<method selector='loadFromURL:error:'>
+<arg index='1' type_modifier='o'/>
+<retval type='B'/>
+</method>
+<method selector='saveToURL:error:'>
+<arg index='1' type_modifier='o'/>
+<retval type='B'/>
+</method>
+</class>
+<class name='WebPreferences'>
+<method selector='allowsAnimatedImageLooping'>
+<retval type='B'/>
+</method>
+<method selector='allowsAnimatedImages'>
+<retval type='B'/>
+</method>
+<method selector='arePlugInsEnabled'>
+<retval type='B'/>
+</method>
+<method selector='autosaves'>
+<retval type='B'/>
+</method>
+<method selector='isJavaEnabled'>
+<retval type='B'/>
+</method>
+<method selector='isJavaScriptEnabled'>
+<retval type='B'/>
+</method>
+<method selector='javaScriptCanOpenWindowsAutomatically'>
+<retval type='B'/>
+</method>
+<method selector='loadsImagesAutomatically'>
+<retval type='B'/>
+</method>
+<method selector='privateBrowsingEnabled'>
+<retval type='B'/>
+</method>
+<method selector='setAllowsAnimatedImageLooping:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setAllowsAnimatedImages:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setAutosaves:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setJavaEnabled:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setJavaScriptCanOpenWindowsAutomatically:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setJavaScriptEnabled:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setLoadsImagesAutomatically:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setPlugInsEnabled:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setPrivateBrowsingEnabled:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setShouldPrintBackgrounds:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setSuppressesIncrementalRendering:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setTabsToLinks:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setUserStyleSheetEnabled:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setUsesPageCache:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='shouldPrintBackgrounds'>
+<retval type='B'/>
+</method>
+<method selector='suppressesIncrementalRendering'>
+<retval type='B'/>
+</method>
+<method selector='tabsToLinks'>
+<retval type='B'/>
+</method>
+<method selector='userStyleSheetEnabled'>
+<retval type='B'/>
+</method>
+<method selector='usesPageCache'>
+<retval type='B'/>
+</method>
+</class>
+<class name='WebScriptObject'>
+<method class_method='true' selector='throwException:'>
+<retval type='B'/>
+</method>
+</class>
+<class name='WebView'>
+<method selector='canGoBack'>
+<retval type='B'/>
+</method>
+<method selector='canGoForward'>
+<retval type='B'/>
+</method>
+<method selector='canMakeTextLarger'>
+<retval type='B'/>
+</method>
+<method selector='canMakeTextSmaller'>
+<retval type='B'/>
+</method>
+<method selector='canMakeTextStandardSize'>
+<retval type='B'/>
+</method>
+<method class_method='true' selector='canShowMIMEType:'>
+<retval type='B'/>
+</method>
+<method class_method='true' selector='canShowMIMETypeAsHTML:'>
+<retval type='B'/>
+</method>
+<method selector='drawsBackground'>
+<retval type='B'/>
+</method>
+<method selector='goBack'>
+<retval type='B'/>
+</method>
+<method selector='goForward'>
+<retval type='B'/>
+</method>
+<method selector='goToBackForwardItem:'>
+<retval type='B'/>
+</method>
+<method selector='isContinuousSpellCheckingEnabled'>
+<retval type='B'/>
+</method>
+<method selector='isEditable'>
+<retval type='B'/>
+</method>
+<method selector='isLoading'>
+<retval type='B'/>
+</method>
+<method selector='maintainsInactiveSelection'>
+<retval type='B'/>
+</method>
+<method selector='searchFor:direction:caseSensitive:wrap:'>
+<arg index='1' type='B'/>
+<arg index='2' type='B'/>
+<arg index='3' type='B'/>
+<retval type='B'/>
+</method>
+<method selector='setContinuousSpellCheckingEnabled:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setDrawsBackground:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setEditable:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setMaintainsBackForwardList:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setShouldCloseWithWindow:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setShouldUpdateWhileOffscreen:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='setSmartInsertDeleteEnabled:'>
+<arg index='0' type='B'/>
+</method>
+<method selector='shouldCloseWithWindow'>
+<retval type='B'/>
+</method>
+<method selector='shouldUpdateWhileOffscreen'>
+<retval type='B'/>
+</method>
+<method selector='smartInsertDeleteEnabled'>
+<retval type='B'/>
+</method>
+<method selector='supportsTextEncoding'>
+<retval type='B'/>
+</method>
+</class>
+<informal_protocol name='DOMEventListener'>
+<method selector='handleEvent:' type='v12@0:4@8' type64='v24@0:8@16'/>
+</informal_protocol>
+<informal_protocol name='DOMEventTarget'>
+<method selector='addEventListener:::' type='v20@0:4@8@12B16' type64='v36@0:8@16@24B32'/>
+<method selector='addEventListener:listener:useCapture:' type='v20@0:4@8@12B16' type64='v36@0:8@16@24B32'/>
+<method selector='dispatchEvent:' type='B12@0:4@8' type64='B24@0:8@16'/>
+<method selector='removeEventListener:::' type='v20@0:4@8@12B16' type64='v36@0:8@16@24B32'/>
+<method selector='removeEventListener:listener:useCapture:' type='v20@0:4@8@12B16' type64='v36@0:8@16@24B32'/>
+</informal_protocol>
+<informal_protocol name='DOMNodeFilter'>
+<method selector='acceptNode:' type='s12@0:4@8' type64='s24@0:8@16'/>
+</informal_protocol>
+<informal_protocol name='DOMXPathNSResolver'>
+<method selector='lookupNamespaceURI:' type='@12@0:4@8' type64='@24@0:8@16'/>
+</informal_protocol>
+<informal_protocol name='WebDocumentRepresentation'>
+<method selector='canProvideDocumentSource' type='B8@0:4' type64='B16@0:8'/>
+<method selector='documentSource' type='@8@0:4' type64='@16@0:8'/>
+<method selector='finishedLoadingWithDataSource:' type='v12@0:4@8' type64='v24@0:8@16'/>
+<method selector='receivedData:withDataSource:' type='v16@0:4@8@12' type64='v32@0:8@16@24'/>
+<method selector='receivedError:withDataSource:' type='v16@0:4@8@12' type64='v32@0:8@16@24'/>
+<method selector='setDataSource:' type='v12@0:4@8' type64='v24@0:8@16'/>
+<method selector='title' type='@8@0:4' type64='@16@0:8'/>
+</informal_protocol>
+<informal_protocol name='WebDocumentSearching'>
+<method selector='searchFor:direction:caseSensitive:wrap:' type='B24@0:4@8B12B16B20' type64='B36@0:8@16B24B28B32'/>
+</informal_protocol>
+<informal_protocol name='WebDocumentText'>
+<method selector='attributedString' type='@8@0:4' type64='@16@0:8'/>
+<method selector='deselectAll' type='v8@0:4' type64='v16@0:8'/>
+<method selector='selectAll' type='v8@0:4' type64='v16@0:8'/>
+<method selector='selectedAttributedString' type='@8@0:4' type64='@16@0:8'/>
+<method selector='selectedString' type='@8@0:4' type64='@16@0:8'/>
+<method selector='string' type='@8@0:4' type64='@16@0:8'/>
+<method selector='supportsTextEncoding' type='B8@0:4' type64='B16@0:8'/>
+</informal_protocol>
+<informal_protocol name='WebDocumentView'>
+<method selector='dataSourceUpdated:' type='v12@0:4@8' type64='v24@0:8@16'/>
+<method selector='layout' type='v8@0:4' type64='v16@0:8'/>
+<method selector='setDataSource:' type='v12@0:4@8' type64='v24@0:8@16'/>
+<method selector='setNeedsLayout:' type='v12@0:4B8' type64='v20@0:8B16'/>
+<method selector='viewDidMoveToHostWindow' type='v8@0:4' type64='v16@0:8'/>
+<method selector='viewWillMoveToHostWindow:' type='v12@0:4@8' type64='v24@0:8@16'/>
+</informal_protocol>
+<informal_protocol name='WebDownloadDelegate'>
+<method selector='downloadWindowForAuthenticationSheet:' type='@12@0:4@8' type64='@24@0:8@16'/>
+</informal_protocol>
+<informal_protocol name='WebFrameLoadDelegate'>
+<method selector='webView:didCancelClientRedirectForFrame:' type='v16@0:4@8@12' type64='v32@0:8@16@24'/>
+<method selector='webView:didChangeLocationWithinPageForFrame:' type='v16@0:4@8@12' type64='v32@0:8@16@24'/>
+<method selector='webView:didClearWindowObject:forFrame:' type='v20@0:4@8@12@16' type64='v40@0:8@16@24@32'/>
+<method selector='webView:didCommitLoadForFrame:' type='v16@0:4@8@12' type64='v32@0:8@16@24'/>
+<method selector='webView:didFailLoadWithError:forFrame:' type='v20@0:4@8@12@16' type64='v40@0:8@16@24@32'/>
+<method selector='webView:didFailProvisionalLoadWithError:forFrame:' type='v20@0:4@8@12@16' type64='v40@0:8@16@24@32'/>
+<method selector='webView:didFinishLoadForFrame:' type='v16@0:4@8@12' type64='v32@0:8@16@24'/>
+<method selector='webView:didReceiveIcon:forFrame:' type='v20@0:4@8@12@16' type64='v40@0:8@16@24@32'/>
+<method selector='webView:didReceiveServerRedirectForProvisionalLoadForFrame:' type='v16@0:4@8@12' type64='v32@0:8@16@24'/>
+<method selector='webView:didReceiveTitle:forFrame:' type='v20@0:4@8@12@16' type64='v40@0:8@16@24@32'/>
+<method selector='webView:didStartProvisionalLoadForFrame:' type='v16@0:4@8@12' type64='v32@0:8@16@24'/>
+<method selector='webView:willCloseFrame:' type='v16@0:4@8@12' type64='v32@0:8@16@24'/>
+<method selector='webView:willPerformClientRedirectToURL:delay:fireDate:forFrame:' type='v32@0:4@8@12d16@24@28' type64='v56@0:8@16@24d32@40@48'/>
+<method selector='webView:windowScriptObjectAvailable:' type='v16@0:4@8@12' type64='v32@0:8@16@24'/>
+</informal_protocol>
+<informal_protocol name='WebOpenPanelResultListener'>
+<method selector='cancel' type='v8@0:4' type64='v16@0:8'/>
+<method selector='chooseFilename:' type='v12@0:4@8' type64='v24@0:8@16'/>
+<method selector='chooseFilenames:' type='v12@0:4@8' type64='v24@0:8@16'/>
+</informal_protocol>
+<informal_protocol name='WebPlugIn'>
+<method selector='objectForWebScript' type='@8@0:4' type64='@16@0:8'/>
+<method selector='webPlugInDestroy' type='v8@0:4' type64='v16@0:8'/>
+<method selector='webPlugInInitialize' type='v8@0:4' type64='v16@0:8'/>
+<method selector='webPlugInMainResourceDidFailWithError:' type='v12@0:4@8' type64='v24@0:8@16'/>
+<method selector='webPlugInMainResourceDidFinishLoading' type='v8@0:4' type64='v16@0:8'/>
+<method selector='webPlugInMainResourceDidReceiveData:' type='v12@0:4@8' type64='v24@0:8@16'/>
+<method selector='webPlugInMainResourceDidReceiveResponse:' type='v12@0:4@8' type64='v24@0:8@16'/>
+<method selector='webPlugInSetIsSelected:' type='v12@0:4B8' type64='v20@0:8B16'/>
+<method selector='webPlugInStart' type='v8@0:4' type64='v16@0:8'/>
+<method selector='webPlugInStop' type='v8@0:4' type64='v16@0:8'/>
+</informal_protocol>
+<informal_protocol name='WebPlugInContainer'>
+<method selector='webFrame' type='@8@0:4' type64='@16@0:8'/>
+<method selector='webPlugInContainerLoadRequest:inFrame:' type='v16@0:4@8@12' type64='v32@0:8@16@24'/>
+<method selector='webPlugInContainerSelectionColor' type='@8@0:4' type64='@16@0:8'/>
+<method selector='webPlugInContainerShowStatus:' type='v12@0:4@8' type64='v24@0:8@16'/>
+</informal_protocol>
+<informal_protocol name='WebPlugInViewFactory'>
+<method class_method='true' selector='plugInViewWithArguments:' type='@12@0:4@8' type64='@24@0:8@16'/>
+</informal_protocol>
+<informal_protocol name='WebPolicyDecisionListener'>
+<method selector='download' type='v8@0:4' type64='v16@0:8'/>
+<method selector='ignore' type='v8@0:4' type64='v16@0:8'/>
+<method selector='use' type='v8@0:4' type64='v16@0:8'/>
+</informal_protocol>
+<informal_protocol name='WebPolicyDelegate'>
+<method selector='webView:decidePolicyForMIMEType:request:frame:decisionListener:' type='v28@0:4@8@12@16@20@24' type64='v56@0:8@16@24@32@40@48'/>
+<method selector='webView:decidePolicyForNavigationAction:request:frame:decisionListener:' type='v28@0:4@8@12@16@20@24' type64='v56@0:8@16@24@32@40@48'/>
+<method selector='webView:decidePolicyForNewWindowAction:request:newFrameName:decisionListener:' type='v28@0:4@8@12@16@20@24' type64='v56@0:8@16@24@32@40@48'/>
+<method selector='webView:unableToImplementPolicyWithError:frame:' type='v20@0:4@8@12@16' type64='v40@0:8@16@24@32'/>
+</informal_protocol>
+<informal_protocol name='WebResourceLoadDelegate'>
+<method selector='webView:identifierForInitialRequest:fromDataSource:' type='@20@0:4@8@12@16' type64='@40@0:8@16@24@32'/>
+<method selector='webView:plugInFailedWithError:dataSource:' type='v20@0:4@8@12@16' type64='v40@0:8@16@24@32'/>
+<method selector='webView:resource:didCancelAuthenticationChallenge:fromDataSource:' type='v24@0:4@8@12@16@20' type64='v48@0:8@16@24@32@40'/>
+<method selector='webView:resource:didFailLoadingWithError:fromDataSource:' type='v24@0:4@8@12@16@20' type64='v48@0:8@16@24@32@40'/>
+<method selector='webView:resource:didFinishLoadingFromDataSource:' type='v20@0:4@8@12@16' type64='v40@0:8@16@24@32'/>
+<method selector='webView:resource:didReceiveAuthenticationChallenge:fromDataSource:' type='v24@0:4@8@12@16@20' type64='v48@0:8@16@24@32@40'/>
+<method selector='webView:resource:didReceiveContentLength:fromDataSource:' type='v24@0:4@8@12i16@20' type64='v48@0:8@16@24q32@40'/>
+<method selector='webView:resource:didReceiveResponse:fromDataSource:' type='v24@0:4@8@12@16@20' type64='v48@0:8@16@24@32@40'/>
+<method selector='webView:resource:willSendRequest:redirectResponse:fromDataSource:' type='@28@0:4@8@12@16@20@24' type64='@56@0:8@16@24@32@40@48'/>
+</informal_protocol>
+<informal_protocol name='WebScripting'>
+<method selector='finalizeForWebScript' type='v8@0:4' type64='v16@0:8'/>
+<method selector='invokeDefaultMethodWithArguments:' type='@12@0:4@8' type64='@24@0:8@16'/>
+<method selector='invokeUndefinedMethodFromWebScript:withArguments:' type='@16@0:4@8@12' type64='@32@0:8@16@24'/>
+<method class_method='true' selector='isKeyExcludedFromWebScript:' type='B12@0:4r*8' type64='B24@0:8r*16'/>
+<method class_method='true' selector='isSelectorExcludedFromWebScript:' type='B12@0:4:8' type64='B24@0:8:16'/>
+<method class_method='true' selector='webScriptNameForKey:' type='@12@0:4r*8' type64='@24@0:8r*16'/>
+<method class_method='true' selector='webScriptNameForSelector:' type='@12@0:4:8' type64='@24@0:8:16'/>
+</informal_protocol>
+<informal_protocol name='WebUIDelegate'>
+<method selector='webView:contextMenuItemsForElement:defaultMenuItems:' type='@20@0:4@8@12@16' type64='@40@0:8@16@24@32'/>
+<method selector='webView:createWebViewModalDialogWithRequest:' type='@16@0:4@8@12' type64='@32@0:8@16@24'/>
+<method selector='webView:createWebViewWithRequest:' type='@16@0:4@8@12' type64='@32@0:8@16@24'/>
+<method selector='webView:dragDestinationActionMaskForDraggingInfo:' type='I16@0:4@8@12' type64='Q32@0:8@16@24'/>
+<method selector='webView:dragSourceActionMaskForPoint:' type='I20@0:4@8{_NSPoint=ff}12' type64='Q40@0:8@16{CGPoint=dd}24'/>
+<method selector='webView:drawFooterInRect:' type='v28@0:4@8{_NSRect={_NSPoint=ff}{_NSSize=ff}}12' type64='v56@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24'/>
+<method selector='webView:drawHeaderInRect:' type='v28@0:4@8{_NSRect={_NSPoint=ff}{_NSSize=ff}}12' type64='v56@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24'/>
+<method selector='webView:makeFirstResponder:' type='v16@0:4@8@12' type64='v32@0:8@16@24'/>
+<method selector='webView:mouseDidMoveOverElement:modifierFlags:' type='v20@0:4@8@12I16' type64='v40@0:8@16@24Q32'/>
+<method selector='webView:printFrameView:' type='v16@0:4@8@12' type64='v32@0:8@16@24'/>
+<method selector='webView:runBeforeUnloadConfirmPanelWithMessage:initiatedByFrame:' type='B20@0:4@8@12@16' type64='B40@0:8@16@24@32'/>
+<method selector='webView:runJavaScriptAlertPanelWithMessage:' type='v16@0:4@8@12' type64='v32@0:8@16@24'/>
+<method selector='webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:' type='v20@0:4@8@12@16' type64='v40@0:8@16@24@32'/>
+<method selector='webView:runJavaScriptConfirmPanelWithMessage:' type='B16@0:4@8@12' type64='B32@0:8@16@24'/>
+<method selector='webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:' type='B20@0:4@8@12@16' type64='B40@0:8@16@24@32'/>
+<method selector='webView:runJavaScriptTextInputPanelWithPrompt:defaultText:' type='@20@0:4@8@12@16' type64='@40@0:8@16@24@32'/>
+<method selector='webView:runJavaScriptTextInputPanelWithPrompt:defaultText:initiatedByFrame:' type='@24@0:4@8@12@16@20' type64='@48@0:8@16@24@32@40'/>
+<method selector='webView:runOpenPanelForFileButtonWithResultListener:' type='v16@0:4@8@12' type64='v32@0:8@16@24'/>
+<method selector='webView:runOpenPanelForFileButtonWithResultListener:allowMultipleFiles:' type='v20@0:4@8@12B16' type64='v36@0:8@16@24B32'/>
+<method selector='webView:setContentRect:' type='v28@0:4@8{_NSRect={_NSPoint=ff}{_NSSize=ff}}12' type64='v56@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24'/>
+<method selector='webView:setFrame:' type='v28@0:4@8{_NSRect={_NSPoint=ff}{_NSSize=ff}}12' type64='v56@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24'/>
+<method selector='webView:setResizable:' type='v16@0:4@8B12' type64='v28@0:8@16B24'/>
+<method selector='webView:setStatusBarVisible:' type='v16@0:4@8B12' type64='v28@0:8@16B24'/>
+<method selector='webView:setStatusText:' type='v16@0:4@8@12' type64='v32@0:8@16@24'/>
+<method selector='webView:setToolbarsVisible:' type='v16@0:4@8B12' type64='v28@0:8@16B24'/>
+<method selector='webView:shouldPerformAction:fromSender:' type='B20@0:4@8:12@16' type64='B40@0:8@16:24@32'/>
+<method selector='webView:validateUserInterfaceItem:defaultValidation:' type='B20@0:4@8@12B16' type64='B36@0:8@16@24B32'/>
+<method selector='webView:willPerformDragDestinationAction:forDraggingInfo:' type='v20@0:4@8i12@16' type64='v36@0:8@16i24@28'/>
+<method selector='webView:willPerformDragSourceAction:fromPoint:withPasteboard:' type='v28@0:4@8i12{_NSPoint=ff}16@24' type64='v52@0:8@16i24{CGPoint=dd}28@44'/>
+<method selector='webViewAreToolbarsVisible:' type='B12@0:4@8' type64='B24@0:8@16'/>
+<method selector='webViewClose:' type='v12@0:4@8' type64='v24@0:8@16'/>
+<method selector='webViewContentRect:' type='{_NSRect={_NSPoint=ff}{_NSSize=ff}}12@0:4@8' type64='{CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16'/>
+<method selector='webViewFirstResponder:' type='@12@0:4@8' type64='@24@0:8@16'/>
+<method selector='webViewFocus:' type='v12@0:4@8' type64='v24@0:8@16'/>
+<method selector='webViewFooterHeight:' type='f12@0:4@8' type64='f24@0:8@16'/>
+<method selector='webViewFrame:' type='{_NSRect={_NSPoint=ff}{_NSSize=ff}}12@0:4@8' type64='{CGRect={CGPoint=dd}{CGSize=dd}}24@0:8@16'/>
+<method selector='webViewHeaderHeight:' type='f12@0:4@8' type64='f24@0:8@16'/>
+<method selector='webViewIsResizable:' type='B12@0:4@8' type64='B24@0:8@16'/>
+<method selector='webViewIsStatusBarVisible:' type='B12@0:4@8' type64='B24@0:8@16'/>
+<method selector='webViewRunModal:' type='v12@0:4@8' type64='v24@0:8@16'/>
+<method selector='webViewShow:' type='v12@0:4@8' type64='v24@0:8@16'/>
+<method selector='webViewStatusText:' type='@12@0:4@8' type64='@24@0:8@16'/>
+<method selector='webViewUnfocus:' type='v12@0:4@8' type64='v24@0:8@16'/>
+</informal_protocol>
+<informal_protocol name='WebViewEditingDelegate'>
+<method selector='undoManagerForWebView:' type='@12@0:4@8' type64='@24@0:8@16'/>
+<method selector='webView:doCommandBySelector:' type='B16@0:4@8:12' type64='B32@0:8@16:24'/>
+<method selector='webView:shouldApplyStyle:toElementsInDOMRange:' type='B20@0:4@8@12@16' type64='B40@0:8@16@24@32'/>
+<method selector='webView:shouldBeginEditingInDOMRange:' type='B16@0:4@8@12' type64='B32@0:8@16@24'/>
+<method selector='webView:shouldChangeSelectedDOMRange:toDOMRange:affinity:stillSelecting:' type='B28@0:4@8@12@16I20B24' type64='B52@0:8@16@24@32Q40B48'/>
+<method selector='webView:shouldChangeTypingStyle:toStyle:' type='B20@0:4@8@12@16' type64='B40@0:8@16@24@32'/>
+<method selector='webView:shouldDeleteDOMRange:' type='B16@0:4@8@12' type64='B32@0:8@16@24'/>
+<method selector='webView:shouldEndEditingInDOMRange:' type='B16@0:4@8@12' type64='B32@0:8@16@24'/>
+<method selector='webView:shouldInsertNode:replacingDOMRange:givenAction:' type='B24@0:4@8@12@16i20' type64='B44@0:8@16@24@32i40'/>
+<method selector='webView:shouldInsertText:replacingDOMRange:givenAction:' type='B24@0:4@8@12@16i20' type64='B44@0:8@16@24@32i40'/>
+<method selector='webViewDidBeginEditing:' type='v12@0:4@8' type64='v24@0:8@16'/>
+<method selector='webViewDidChange:' type='v12@0:4@8' type64='v24@0:8@16'/>
+<method selector='webViewDidChangeSelection:' type='v12@0:4@8' type64='v24@0:8@16'/>
+<method selector='webViewDidChangeTypingStyle:' type='v12@0:4@8' type64='v24@0:8@16'/>
+<method selector='webViewDidEndEditing:' type='v12@0:4@8' type64='v24@0:8@16'/>
+</informal_protocol>
+</signatures>
