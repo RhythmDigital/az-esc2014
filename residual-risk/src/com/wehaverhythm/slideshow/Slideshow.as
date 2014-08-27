@@ -147,17 +147,13 @@ package com.wehaverhythm.slideshow
 					slides[i].x = Math.floor(slides[i-1].x + slides[i-1].width + 80);
 					addChildAt(slides[i], 1); 
 				}
+				
+				slides[i].alpha = 0;
 			}
 			
 			slides[0].alpha = 0;
 			TweenMax.to(slides[0], .3, {delay:.1, alpha:1, ease:Sine.easeIn});
-			
-			if (slides.length > 1)
-			{
-				slides[1].alpha = 0;
-				TweenMax.to(slides[1], .8, {delay:.1, alpha:1, ease:Sine.easeIn});
-			}
-			
+
 			slideBy = slides[0].width + 80;
 			reset();
 			show();
@@ -203,7 +199,7 @@ package com.wehaverhythm.slideshow
 				for (var i:int=0; i<slides.length; ++i) 
 				{
 					var newX:Number = Math.floor(slides[i].x-slideBy);
-					var alpha:Number = i == currentSlide ? 1 : newX < 0 ? 0 : .4;
+					var alpha:Number = i == currentSlide ? 1 : newX < 0 ? 0 : 0; // last number here is alpha off right edge...
 					
 					t.add( TweenMax.to(slides[i], .6, {
 						delay:0, 
@@ -228,7 +224,7 @@ package com.wehaverhythm.slideshow
 				for (var i:int=0; i<slides.length; ++i)
 				{
 					var newX:Number = Math.floor(slides[i].x+slideBy);
-					var alpha:Number = i == currentSlide ? 1 : newX < 0 ? 0 : .4;
+					var alpha:Number = i == currentSlide ? 1 : newX < 0 ? 0 : 0; // last number here is alpha off right edge...
 					
 					t.add( TweenMax.to(slides[i], .6, {
 						delay:0, 
@@ -267,12 +263,22 @@ package com.wehaverhythm.slideshow
 			}
 			
 			slides = [];
-			if (doReset) reset(true);
+			if (doReset) reset();
 		}
 		
-		public function reset(hideHomebar:Boolean=true):void
+		public function reset():void
 		{
+			if (currentSlide > 0)
+			{
+				for (var i:int = 0; i<slides.length; ++i)
+				{
+					slides[i].x += Math.floor(currentSlide * slideBy);
+					slides[i].alpha = 0;
+				}
+			}			
+			
 			currentSlide = 0;
+			slides[0].alpha = 1;
 			updateNav();
 		}
 		
@@ -285,7 +291,7 @@ package com.wehaverhythm.slideshow
 		
 		public function hide():void
 		{
-			TweenMax.to(this, .8, {y:1080, ease:Sine.easeInOut});
+			TweenMax.to(this, .8, {y:1080, ease:Sine.easeInOut, onComplete:reset});
 			starlingStage.removeEventListener(TouchEvent.TOUCH, onStageTouch);
 		}
 		
