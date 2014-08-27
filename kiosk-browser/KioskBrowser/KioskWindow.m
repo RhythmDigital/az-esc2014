@@ -52,14 +52,30 @@
 
 - (void)keyDown:(NSEvent *)e
 {
-    //NSLog(@"PREV: %d, NEW: %d", self.prevKey, e.keyCode);
+    NSLog(@"PREV: %d, NEW: %d", self.prevKey, e.keyCode);
+    
+    NSInteger firstKey = 53; // esc
+    NSInteger lastKey = 46; // m
     
     // ESC + F2
-    if(self.prevKey == 53 && e.keyCode == 120) {
+    if(e.keyCode == firstKey)
+    {
+        // set timer to reset the prev key.
+        [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(resetPrevKey) userInfo:nil repeats:NO];
+    }
+    
+    if(self.prevKey == firstKey && e.keyCode == lastKey) {
         [self loadAdminPanel];
     }
     
+    
     self.prevKey = e.keyCode;
+}
+
+-(void)resetPrevKey
+{
+    NSLog(@"Reset prev key");
+    self.prevKey = 0;
 }
 
 -(void)resetTimeout

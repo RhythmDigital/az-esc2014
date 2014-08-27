@@ -23,6 +23,11 @@
 		4366CAB619A73E4B002731B7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4366CAB519A73E4B002731B7 /* WebKit.framework */; };
 		4366CAB919A751A7002731B7 /* AdminView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4366CAB819A751A7002731B7 /* AdminView.m */; };
 		43BA907619ACD6AB00C4A9CF /* Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 43BA907519ACD6AB00C4A9CF /* Button.png */; };
+		43BCE07819ADD6EF00312235 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BCE07719ADD6EF00312235 /* GradientView.m */; };
+		43BCE07A19ADF30D00312235 /* GradientBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 43BCE07919ADF30D00312235 /* GradientBar.png */; };
+		43BCE07E19ADFA0100312235 /* BackBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 43BCE07B19ADFA0100312235 /* BackBtn.png */; };
+		43BCE07F19ADFA0100312235 /* ForwardBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 43BCE07C19ADFA0100312235 /* ForwardBtn.png */; };
+		43BCE08019ADFA0100312235 /* HomeBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 43BCE07D19ADFA0100312235 /* HomeBtn.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +67,12 @@
 		4366CAB719A751A7002731B7 /* AdminView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminView.h; sourceTree = "<group>"; };
 		4366CAB819A751A7002731B7 /* AdminView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminView.m; sourceTree = "<group>"; };
 		43BA907519ACD6AB00C4A9CF /* Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Button.png; path = KioskBrowser/Button.png; sourceTree = "<group>"; };
+		43BCE07619ADD6EF00312235 /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
+		43BCE07719ADD6EF00312235 /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
+		43BCE07919ADF30D00312235 /* GradientBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GradientBar.png; path = KioskBrowser/GradientBar.png; sourceTree = "<group>"; };
+		43BCE07B19ADFA0100312235 /* BackBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BackBtn.png; path = KioskBrowser/BackBtn.png; sourceTree = "<group>"; };
+		43BCE07C19ADFA0100312235 /* ForwardBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ForwardBtn.png; path = KioskBrowser/ForwardBtn.png; sourceTree = "<group>"; };
+		43BCE07D19ADFA0100312235 /* HomeBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HomeBtn.png; path = KioskBrowser/HomeBtn.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +101,10 @@
 		43219C8419A61A9C00EFBC82 = {
 			isa = PBXGroup;
 			children = (
+				43BCE07B19ADFA0100312235 /* BackBtn.png */,
+				43BCE07C19ADFA0100312235 /* ForwardBtn.png */,
+				43BCE07D19ADFA0100312235 /* HomeBtn.png */,
+				43BCE07919ADF30D00312235 /* GradientBar.png */,
 				43BA907519ACD6AB00C4A9CF /* Button.png */,
 				43219C9619A61A9C00EFBC82 /* KioskBrowser */,
 				43219CB419A61A9D00EFBC82 /* KioskBrowserTests */,
@@ -141,6 +156,8 @@
 				43091B1619A64233008C85E3 /* KioskWindow.m */,
 				4366CAB719A751A7002731B7 /* AdminView.h */,
 				4366CAB819A751A7002731B7 /* AdminView.m */,
+				43BCE07619ADD6EF00312235 /* GradientView.h */,
+				43BCE07719ADD6EF00312235 /* GradientView.m */,
 			);
 			path = KioskBrowser;
 			sourceTree = "<group>";
@@ -253,7 +270,11 @@
 			files = (
 				43BA907619ACD6AB00C4A9CF /* Button.png in Resources */,
 				43219C9B19A61A9C00EFBC82 /* InfoPlist.strings in Resources */,
+				43BCE07F19ADFA0100312235 /* ForwardBtn.png in Resources */,
+				43BCE07E19ADFA0100312235 /* BackBtn.png in Resources */,
 				43219CA919A61A9C00EFBC82 /* Images.xcassets in Resources */,
+				43BCE08019ADFA0100312235 /* HomeBtn.png in Resources */,
+				43BCE07A19ADF30D00312235 /* GradientBar.png in Resources */,
 				43219CA119A61A9C00EFBC82 /* Credits.rtf in Resources */,
 				43219CA719A61A9C00EFBC82 /* MainMenu.xib in Resources */,
 			);
@@ -274,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43BCE07819ADD6EF00312235 /* GradientView.m in Sources */,
 				43219CA419A61A9C00EFBC82 /* AppDelegate.m in Sources */,
 				43091B1719A64233008C85E3 /* KioskWindow.m in Sources */,
 				4366CAB919A751A7002731B7 /* AdminView.m in Sources */,

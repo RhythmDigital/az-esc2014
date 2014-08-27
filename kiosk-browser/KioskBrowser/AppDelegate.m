@@ -86,6 +86,10 @@
 
 
 - (IBAction)saveAndRefresh:(id)sender {
+    // clear history
+    [[self webView] setMaintainsBackForwardList:NO];
+    [[self webView] setMaintainsBackForwardList:YES];
+
     [[[self window] adminPanel] setHidden:YES];
     [self saveDefaults];
     [self loadUrlInTextField];
