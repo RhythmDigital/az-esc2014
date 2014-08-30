@@ -41,6 +41,11 @@ package com.wehaverhythm.air
 				timeoutBits.visible = timeoutTF.visible = false;
 				dragBits.y = 0;
 			}
+			
+			if(Capabilities.isDebugger)
+			{
+				setDebugMode();
+			}
 		}
 		
 		protected function onTextChange(event:Event):void
@@ -74,6 +79,26 @@ package com.wehaverhythm.air
 				MouseManager.getInstance().show();
 			}
 		}
+		
+		public function setDebugMode():void
+		{
+			if (Starling.current.nativeOverlay.contains(this)) Starling.current.nativeOverlay.removeChild(this);
+			Starling.current.stage.touchable = true;
+			
+			x = portrait ? 540 : 960;
+			y = portrait ? 960 : 540;
+			
+			if (portrait)
+			{
+				bg.width = 1080;
+				bg.height = 1920;
+			}
+			
+			//Starling.current.nativeOverlay.addChild(this);
+			//Starling.current.stage.touchable = false;
+			MouseManager.getInstance().show();
+		}
+		
 		
 		private function getConfig(forceDefault:Boolean):Object
 		{			
