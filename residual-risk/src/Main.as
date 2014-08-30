@@ -16,8 +16,13 @@ package
 	import com.wehaverhythm.utils.Validate;
 	
 	import flash.display.Stage;
+	import flash.events.Event;
+	import flash.events.IOErrorEvent;
 	import flash.filesystem.File;
 	import flash.geom.Rectangle;
+	import flash.net.URLLoader;
+	import flash.net.URLRequest;
+	import flash.net.URLRequestMethod;
 	
 	import cc.cote.feathers.softkeyboard.KeyEvent;
 	import cc.cote.feathers.softkeyboard.layouts.Layout;
@@ -196,7 +201,28 @@ package
 		
 		private function submitEmail(emailAddress:String):void
 		{
-			trace("Submitting: " + emailAddress);
+			var emailURI:String = encodeURIComponent(emailAddress);
+			
+			var l:URLLoader = new URLLoader();
+			l.addEventListener(IOErrorEvent.IO_ERROR, onEmailIOError);
+			l.addEventListener(flash.events.Event.COMPLETE, onEmailSubmitSuccess);
+			
+			var url:String = "https://wehaverhythm.com/clients/wrg/az-esc2014/residualrisk/register/submit?email="+emailURI;
+			trace("Submitting: " + url);
+			
+			var req:URLRequest = new URLRequest(url);
+			req.method = URLRequestMethod.GET;
+			l.load(req);
+		}
+		
+		protected function onEmailSubmitSuccess(e:flash.events.Event):void
+		{
+			trace("Email submitted successfully");
+		}
+		
+		protected function onEmailIOError(e:IOErrorEvent):void
+		{
+			trace("Email error");
 		}
 		
 		private function onRequestInfoClicked(e:TouchEvent):void
