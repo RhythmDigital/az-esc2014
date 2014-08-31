@@ -81,6 +81,7 @@ package
 		private var emailFlashRect:Quad;
 		private var thankyou:ClipSprite;
 		private var requestFormClickBlock:DisplayObject;
+		private var localEmailStore:TextFileWriter;
 				
 		public function Main()
 		{
@@ -202,6 +203,10 @@ package
 			emailText.x = 37;
 			emailText.y = 64;
 			emailForm.addChild(emailText);
+			
+			
+			// email text file
+			localEmailStore = new TextFileWriter();			
 		}
 		
 		private function onKeyUp(e:KeyEvent):void
@@ -220,6 +225,7 @@ package
 				if(Validate.isValidEmail(emailText.text))
 				{
 					trace("Submitting email");
+					localEmailStore.writeLine(emailText.text);
 					submitEmail(emailText.text);
 					showThankYou(.5);
 					closeRequestForm();
