@@ -11,7 +11,6 @@ package
 	import flash.display.Sprite;
 	import flash.events.Event;
 	
-	
 	[SWF (frameRate="60", width="1920", height="1080", backgroundColor="#EEEEEE")]
 	public class AZ_ESC_Residual_Risk extends Sprite
 	{

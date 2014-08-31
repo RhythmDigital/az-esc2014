@@ -45,7 +45,7 @@
   <flashCatalyst validateFlashCatalystCompatibility="false"/>
   <buildTargets>
     <buildTarget buildTargetName="default" platformId="default">
-      <airSettings airCertificatePath="/Users/ad/Documents/Rhythm Limited/clients/AstraZeneca/repo-esc2014/residual-risk/src/rhythm.p12" airTimestamp="true" anePathSet="true" version="1">
+      <airSettings airCertificatePath="/Users/jamiewhite/Documents/Development/rhythm-git/az-esc-2014/residual-risk/src/rhythm.p12" airTimestamp="true" anePathSet="true" version="1">
         <airExcludes/>
         <anePaths/>
         <newLaunchParams/>
