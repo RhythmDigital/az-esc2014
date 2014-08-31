@@ -28,6 +28,7 @@ package
 	import cc.cote.feathers.softkeyboard.layouts.Layout;
 	
 	import starling.core.Starling;
+	import starling.display.DisplayObject;
 	import starling.display.Image;
 	import starling.display.Quad;
 	import starling.display.Sprite;
@@ -41,6 +42,7 @@ package
 	
 	public class Main extends Sprite implements IDestroyable
 	{
+		private const EMAIL_ENABLED:Boolean = true;
 		private var MAX_EMAIL_CHARS:int = 40;
 		
 		private var stage:flash.display.Stage;
@@ -76,6 +78,9 @@ package
 		private var keyboard:StarlingKeyboard;
 		private var emailText:TextField;
 		private var submitBtn:Quad;
+		private var emailFlashRect:Quad;
+		private var thankyou:ClipSprite;
+		private var requestFormClickBlock:DisplayObject;
 				
 		public function Main()
 		{
@@ -93,6 +98,7 @@ package
 			loader.append(new ImageLoader(File.applicationDirectory.url + 'assets/infoBtn.png', {name:'infoBtn'}));
 			loader.append(new ImageLoader(File.applicationDirectory.url + 'assets/requestBtn.png', {name:'requestBtn'}));
 			loader.append(new ImageLoader(File.applicationDirectory.url + 'assets/emailForm.png', {name:'emailForm'}));
+			loader.append(new ImageLoader(File.applicationDirectory.url + 'assets/thankyou.png', {name:'thankyou'}));
 			
 			loader.load();			
 			loaderHarness.insert(loader);
@@ -110,30 +116,35 @@ package
 			addChild(bgSlider);
 			
 			bg = StarlingUtils.imageFromBitmap(LoaderMax.getContent('bg').rawContent);
+			bg.touchable = true;
 			bgSlider.alpha = 0;
 			TweenMax.to(bgSlider, .5, {alpha:1, ease:Sine.easeIn});
 			bgSlider.addChild(bg);
 			
 			infoBtn = StarlingUtils.imageFromBitmap(LoaderMax.getContent('infoBtn').rawContent);
 			infoBtn.addEventListener(TouchEvent.TOUCH, onShowInfoClicked);
-			infoBtn.x = 244;
-			infoBtn.y = 456;
+			infoBtn.x = EMAIL_ENABLED ? 244 : 1181;
+			infoBtn.y = EMAIL_ENABLED ? 456 : 585;
 			infoBtn.touchable = true;
 			bgSlider.addChild(infoBtn);
 			
-			initRequestForm();
+			if(EMAIL_ENABLED) initRequestForm();
 		}
 		
 		private function initRequestForm():void
-		{
+		{			
 			requestContainer = new Sprite();
 			requestContainer.x = 1181;
 			requestContainer.y = 615;
 			requestContainer.touchable = true;
 			bgSlider.addChild(requestContainer);
 			
-			emailFormImage = StarlingUtils.imageFromBitmap(LoaderMax.getContent('emailForm').rawContent);
+			requestFormClickBlock = new Quad(850,570,0xff0000);
+			requestFormClickBlock.x = -525;
+			requestFormClickBlock.alpha = 0;
+			requestContainer.addChild(requestFormClickBlock);
 			
+			emailFormImage = StarlingUtils.imageFromBitmap(LoaderMax.getContent('emailForm').rawContent);
 			emailForm = new ClipSprite(emailFormImage.width);
 			emailForm.addChild(emailFormImage);
 			emailForm.clipRect = new Rectangle(0, 0, 0, emailFormImage.height);
@@ -141,6 +152,14 @@ package
 			emailForm.y = 27;
 			emailForm.touchable = true;
 			requestContainer.addChild(emailForm);
+			
+			var thankyouImage:Image = StarlingUtils.imageFromBitmap(LoaderMax.getContent('thankyou').rawContent);
+			thankyou = new ClipSprite(thankyouImage.width);
+			thankyou.addChild(thankyouImage);
+			thankyou.clipRect = new Rectangle(0, 0, 0, thankyouImage.height);
+			thankyou.x = 120;
+			thankyou.y = 27;
+			requestContainer.addChild(thankyou);
 			
 			submitBtn = new Quad(100,35, 0xff0000);
 			submitBtn.alpha = 0;
@@ -171,6 +190,12 @@ package
 			//requestTimeline.append(TweenMax.to(keyboard.clipRect, .35, {height:emailForm.originalHeight, ease:Sine.easeInOut}), 0);
 			requestTimeline.pause(0);
 			
+			emailFlashRect = new Quad(363, 36, 0xff0000);
+			emailFlashRect.x = 27;
+			emailFlashRect.y = 63;
+			emailFlashRect.alpha = 0;
+			emailForm.addChild(emailFlashRect);
+			
 			emailText = new TextField(340, 36, "Email address", "Helvetica Neue", 18, 0x000000, false);
 			//emailText.border = true;
 			emailText.autoScale = true;
@@ -190,13 +215,27 @@ package
 		
 		public function onSubmitClicked(e:TouchEvent):void
 		{
-			if (e.touches[0].phase == TouchPhase.BEGAN &&
-				Validate.isValidEmail(emailText.text))
+			if (e.touches[0].phase == TouchPhase.BEGAN)
 			{
-				trace("Submitting email");
-				submitEmail(emailText.text);
-				closeRequestForm();
+				if(Validate.isValidEmail(emailText.text))
+				{
+					trace("Submitting email");
+					submitEmail(emailText.text);
+					showThankYou(.5);
+					closeRequestForm();
+				} else {
+					// flash error.
+					emailFlashRect.alpha = 0;
+					TweenMax.killTweensOf(emailFlashRect);
+					TweenMax.to(emailFlashRect, .2, {alpha:.4, repeat:1, yoyo:true, ease:Sine.easeOut, overwrite:2});
+				}				
 			}
+		}
+		
+		private function showThankYou(delay:Number = 2):void
+		{
+			TweenMax.to(thankyou, .35, {delay:delay, repeat:1, yoyo:true, repeatDelay:2, x:-440, ease:Sine.easeInOut})
+			TweenMax.to(thankyou.clipRect, .35, {delay:delay, repeat:1, yoyo:true, repeatDelay:2, width:thankyou.originalWidth, ease:Sine.easeInOut});
 		}
 		
 		private function submitEmail(emailAddress:String):void
@@ -229,13 +268,7 @@ package
 		{
 			if (e.touches[0].phase == TouchPhase.BEGAN)
 			{
-				// animate up
 				openRequestForm();
-				
-				
-				// show input field
-				
-				// show keyboard
 			}
 		}
 		
@@ -244,6 +277,15 @@ package
 			requestTimeline.play();
 			requestBtn.removeEventListener(TouchEvent.TOUCH, onRequestInfoClicked);
 			emailText.text = "";
+			bg.addEventListener(TouchEvent.TOUCH, onTapStageDuringRegister);
+		}
+		
+		protected function onTapStageDuringRegister(e:TouchEvent):void
+		{
+			if(e.touches[0].phase == TouchPhase.BEGAN)
+			{
+				closeRequestForm();
+			}
 		}
 		
 		public function closeRequestForm():void
@@ -251,6 +293,7 @@ package
 			requestBtn.addEventListener(TouchEvent.TOUCH, onRequestInfoClicked);
 			requestTimeline.reverse();
 			emailText.text = "";
+			bg.removeEventListener(TouchEvent.TOUCH, onTapStageDuringRegister);
 		}
 		
 		private function onShowInfoClicked(e:TouchEvent):void
@@ -261,7 +304,7 @@ package
 				
 				addChild(slideshow);
 				slideshow.show();				
-				closeRequestForm();
+				if(EMAIL_ENABLED) closeRequestForm();
 			}
 		}
 
@@ -281,6 +324,7 @@ package
 		{
 			TweenMax.to(bgSlider, .8, {y:0, ease:Sine.easeInOut});
 			slideshow.hide();
+			if(EMAIL_ENABLED) closeRequestForm();
 		}
 		
 		public function destroy():void
