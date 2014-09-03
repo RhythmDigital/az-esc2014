@@ -1,0 +1,17 @@
+meeteric
+
+swish1 0,0
+swish2 0,752
+whiteBG 10,49
+swish3 43,1520
+eric 43, 480
+
+sustainedEfficacy
+
+whiteBG 10,96
+swish1 0,615
+swish2 0, 1190
+arrow1 638, 987
+viewStudyTab 931,970
+
+
