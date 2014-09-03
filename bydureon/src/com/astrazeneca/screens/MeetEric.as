@@ -1,5 +1,6 @@
-package
+package com.astrazeneca.screens
 {
+	import com.astrazeneca.starling.StarlingCounter;
 	import com.greensock.TimelineMax;
 	import com.greensock.TweenMax;
 	import com.greensock.easing.Circ;
@@ -11,15 +12,19 @@ package
 	import starling.display.Quad;
 	import starling.events.TouchEvent;
 	import starling.events.TouchPhase;
+	import com.astrazeneca.ClipSprite;
+	import com.astrazeneca.ScreenBase;
 
-	public class Screen1 extends ScreenBase
+	public class MeetEric extends ScreenBase
 	{		
 		private var timeline:TimelineMax;
 		private var greenTextBar:ClipSprite;
+
+		private var counter:StarlingCounter;
 		
 		
 		
-		public function Screen1()
+		public function MeetEric()
 		{
 			super();
 			
@@ -33,9 +38,9 @@ package
 			];
 		}
 		
-		override public function init():void
+		override public function init(id:String):void
 		{
-			super.init();			
+			super.init(id);			
 			
 			greenTextBar = new ClipSprite(965);
 			greenTextBar.addChild(new Quad(greenTextBar.originalWidth, 61, 0x006935));
@@ -55,13 +60,18 @@ package
 			addChild(greenTextBar);
 			addChild(images['copy']);
 			
+			counter = new StarlingCounter(3, " kg");
+			counter.x = 200;
+			counter.y = 200;
+			addChild(counter);
+			
 			timeline = new TimelineMax( {paused: true, onComplete:onTransitionComplete, onReverseComplete:onReverseTransitionComplete} );
 			timeline.append( TweenMax.to(images['green'].clipRect, 1, { width:images['green'].originalWidth, ease:Sine.easeInOut }) );
 			timeline.append( TweenMax.to(images['orange'].clipRect, 1, { width:images['orange'].originalWidth, ease:Sine.easeOut }), -.8 );
 			timeline.append( TweenMax.to(images['eric'], .3, { alpha:1, ease:Sine.easeIn }), -.8 );
 			timeline.append( TweenMax.to(greenTextBar.clipRect, .6, { x:0, width:greenTextBar.originalWidth, ease:Circ.easeOut }), -.5 );
 			timeline.append( TweenMax.to(images['copy'], .3, { delay:.2, alpha:1, ease:Sine.easeOut }), -.3);
-			
+						
 			reset();
 		}
 		
@@ -73,7 +83,9 @@ package
 		private function onReverseTransitionComplete():void
 		{
 			transitioning = CLOSED;
+			counter.setTo(0);
 			TweenMax.to(this, .2, {alpha:0, ease:Sine.easeIn});
+			notifyScreenClosed();
 		}
 		
 		override public function show():void
@@ -83,6 +95,8 @@ package
 			transitioning = OPENING;
 			timeline.timeScale(.7);
 			timeline.play();
+			
+			counter.countTo(20, 2);
 		}
 		
 		override public function hide():void
@@ -90,6 +104,7 @@ package
 			transitioning = CLOSING;
 			timeline.timeScale(4);
 			timeline.reverse();
+			counter.countTo(0, 0.2);
 		}
 		
 		override public function reset():void

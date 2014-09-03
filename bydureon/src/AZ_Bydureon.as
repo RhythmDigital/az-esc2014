@@ -1,5 +1,6 @@
 package
 {
+	import com.astrazeneca.starling.StarlingCounter;
 	import com.astrazeneca.starling.StarlingManager;
 	import com.astrazeneca.starling.StarlingStage;
 	import com.wehaverhythm.air.FullScreenManager;
@@ -10,6 +11,7 @@ package
 	import flash.display.Screen;
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import com.astrazeneca.Main;
 	
 	
 	[SWF (frameRate="60", width="1080", height="1920", backgroundColor="#000000")]

@@ -1,4 +1,4 @@
-package
+package com.astrazeneca
 {
 	import starling.display.Sprite;
 	

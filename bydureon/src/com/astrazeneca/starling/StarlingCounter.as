@@ -1,7 +1,7 @@
 package com.astrazeneca.starling
 {
 	import com.greensock.TweenMax;
-	import com.greensock.easing.Linear;
+	import com.greensock.easing.Sine;
 	
 	import starling.display.Sprite;
 	import starling.text.TextField;
@@ -25,13 +25,12 @@ package com.astrazeneca.starling
 			tf.alignPivot(HAlign.CENTER);
 			addChild(tf);
 			
-			setTo(-50);
-			countTo(20.67);
+			setTo(0);
 		}
-		
 		
 		public function setTo(value:Number):void
 		{
+			TweenMax.killTweensOf(this);
 			currentValue = value;
 			updateCounter();
 		}
@@ -41,9 +40,9 @@ package com.astrazeneca.starling
 			return x.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		}
 		
-		public function countTo(value:Number):void
+		public function countTo(value:Number, time:Number=1):void
 		{
-			TweenMax.to(this, 10, {currentValue:value, onUpdate:updateCounter, onComplete:updateCounter, ease:Linear.easeNone});
+			TweenMax.to(this, time, {currentValue:value, onUpdate:updateCounter, onComplete:updateCounter, ease:Sine.easeInOut});
 		}
 		
 		public function updateCounter():void

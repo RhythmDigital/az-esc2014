@@ -1,4 +1,4 @@
-package
+package com.astrazeneca
 {
 	import com.greensock.TweenMax;
 	import com.greensock.easing.Sine;
@@ -11,6 +11,7 @@ package
 	
 	import starling.display.Image;
 	import starling.display.Sprite;
+	import starling.events.Event;
 	
 	
 	public class ScreenBase extends Sprite
@@ -27,6 +28,7 @@ package
 		
 		public static const OPEN:String = "OPEN";
 		public static const CLOSED:String = "CLOSED";
+		public var id:String;
 		
 		
 		public function ScreenBase()
@@ -35,8 +37,9 @@ package
 			alpha = 0;
 		}
 		
-		public function init():void
+		public function init(id:String):void
 		{			
+			this.id = id;
 			loadImageManifest();
 		}
 		
@@ -79,6 +82,11 @@ package
 		protected function imagesReady():void
 		{
 			
+		}
+		
+		protected function notifyScreenClosed():void
+		{
+			dispatchEvent(new Event("SCREEN_CLOSED", true));
 		}
 		
 		public function reset():void

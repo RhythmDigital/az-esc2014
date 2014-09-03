@@ -37,6 +37,7 @@ package com.astrazeneca.starling
 		{
 			this.stage = stage;
 			
+			Starling.handleLostContext = true;
 			starling = new Starling(StarlingStage, stage, new Rectangle(0, 0, stage.stageWidth, stage.stageHeight));//, null, 'auto', Context3DProfile.BASELINE);
 			starling.addEventListener(starling.events.Event.ROOT_CREATED, onStarlingReady);			
 			// starling.showStats = Capabilities.isDebugger;
