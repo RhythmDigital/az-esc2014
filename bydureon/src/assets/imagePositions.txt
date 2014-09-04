@@ -12,8 +12,29 @@ sustainedEfficacy
 whiteBG 10,96
 swish1 0,615
 swish2 0, 1190
+swish3 0, 804
 arrow1 638, 987
 viewStudyTab 931,970
 popUp 0, 238
 
+
 superiorBasal
+
+swish1 48, 0
+viewStudyTab 931,1217
+whiteBG 10,96
+
+
+weeklyDosing
+
+
+
+safetyTolerability
+
+
+
+busyLives
+
+
+
+rfid
