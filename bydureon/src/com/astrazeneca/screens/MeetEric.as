@@ -59,25 +59,8 @@ package com.astrazeneca.screens
 			timeline.append( TweenMax.to(images['eric'], .3, { alpha:1, ease:Sine.easeIn }), -0.8 );
 			timeline.append( TweenMax.to(images['swish3'].clipRect, .4, { width:images['swish3'].originalWidth, ease:Sine.easeOut }), -0.4 );
 			
-			/*addChild(images['orange']);
-			addChild(images['eric']);
-			addChild(images['green']);
-			addChild(greenTextBar);
-			addChild(images['copy']);
-			
-			counter = new StarlingCounter(3, " kg");
-			counter.x = 200;
-			counter.y = 200;
-			addChild(counter);
-			
-			timeline = new TimelineMax( {paused: true, onComplete:onTransitionComplete, onReverseComplete:onReverseTransitionComplete} );
-			timeline.append( TweenMax.to(images['green'].clipRect, 1, { width:images['green'].originalWidth, ease:Sine.easeInOut }) );
-			timeline.append( TweenMax.to(images['orange'].clipRect, 1, { width:images['orange'].originalWidth, ease:Sine.easeOut }), -.8 );
-			timeline.append( TweenMax.to(images['eric'], .3, { alpha:1, ease:Sine.easeIn }), -.8 );
-			timeline.append( TweenMax.to(greenTextBar.clipRect, .6, { x:0, width:greenTextBar.originalWidth, ease:Circ.easeOut }), -.5 );
-			timeline.append( TweenMax.to(images['copy'], .3, { delay:.2, alpha:1, ease:Sine.easeOut }), -.3);
-			*/		
 			reset();
+			notifyReady();
 		}
 		
 		private function onTransitionComplete():void

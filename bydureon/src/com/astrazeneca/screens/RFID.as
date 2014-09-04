@@ -34,6 +34,7 @@ package com.astrazeneca.screens
 			timeline = new TimelineMax( {paused: true, onComplete:onTransitionComplete, onReverseComplete:onReverseTransitionComplete} );			
 			timeline.insert(TweenMax.to(quad, 1, {alpha:1}));
 			reset();
+			notifyReady();
 		}
 		
 		private function onTransitionComplete():void

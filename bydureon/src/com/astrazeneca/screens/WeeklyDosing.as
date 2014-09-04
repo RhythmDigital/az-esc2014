@@ -71,6 +71,7 @@ package com.astrazeneca.screens
 			timeline.append( TweenMax.to(images['wDinjection'], 1, { alpha:1, ease:Sine.easeInOut }), -.8);
 			
 			reset();
+			notifyReady();
 		}
 		
 		private function onTransitionComplete():void

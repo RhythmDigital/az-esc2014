@@ -28,6 +28,9 @@ package com.astrazeneca
 		private var currentScreen:ScreenBase;
 		private var nextScreenID:Object;
 		private var screens:Array = [];
+		private var screensReady:int;
+		
+		private const DEFAULT_SCREEN:String = "meetEric";
 		
 		public function Main()
 		{
@@ -38,6 +41,7 @@ package com.astrazeneca
 		{			
 			this.stage = stage;
 			this.starlingStage = Starling.current.stage;
+			this.screensReady = 0;
 			
 			var bg:Quad = new Quad(1080, 1920, 0xd1d1d1);
 			addChild(bg);
@@ -47,8 +51,6 @@ package com.astrazeneca
 			addEventListener(StarlingQuadButton.TOUCHED, onMenuButtonTouched);
 			
 			initScreens();
-			
-			TweenMax.delayedCall(1, showScreen, ["meetEric"]);
 		}
 		
 		private function onMenuButtonTouched(e:Event):void
@@ -105,6 +107,7 @@ package com.astrazeneca
 			
 			for(var i:int = 0; i < screens.length; ++i){
 				screens[i].screen.addEventListener("SCREEN_CLOSED", onScreenClosed);
+				screens[i].screen.addEventListener("READY", onScreenReady);
 				screens[i].screen.init(screens[i].id);
 			}
 			
@@ -114,6 +117,16 @@ package com.astrazeneca
 		{
 			trace("Screen closed");
 			showNextScreen();
+		}
+		
+		private function onScreenReady(e:Event):void
+		{
+			trace("Screen " + screens[screensReady].id + " is ready.");
+			screensReady ++;
+			
+			if(screensReady == screens.length) {
+				showScreen(DEFAULT_SCREEN);
+			}
 		}
 		
 		public function reset():void

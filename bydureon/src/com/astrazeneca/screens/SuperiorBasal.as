@@ -23,13 +23,13 @@ package com.astrazeneca.screens
 		public function SuperiorBasal()
 		{
 			super();
-			var baseDir:String = "superiorBasal/";
+			var path:String = "superiorBasal/";
 			
 			imageManifest = [
-				{ img: baseDir+'whiteBG.png', x:13, y:96, clipSprite:false, name:'sBwhiteBG' }
-				,	{ img: baseDir+'swish1.png', x:48, y:0, clipSprite:true, name:'sBswish1' }
-				,	{ img: baseDir+'viewStudyTag.png', x:0, y:0, clipSprite:false, name:'sBviewStudyTag' }
-				,	{ img: baseDir+'popUp.png', x:0, y:0, clipSprite:false, name:'sBpopUp' }
+				{ img: path+'whiteBG.png', x:13, y:96, clipSprite:false, name:'sBwhiteBG' }
+				,	{ img: path+'swish1.png', x:48, y:0, clipSprite:true, name:'sBswish1' }
+				,	{ img: path+'viewStudyTag.png', x:0, y:0, clipSprite:false, name:'sBviewStudyTag' }
+				,	{ img: path+'popUp.png', x:0, y:0, clipSprite:false, name:'sBpopUp' }
 			];
 		}
 		
@@ -58,6 +58,7 @@ package com.astrazeneca.screens
 			TweenMax.to(viewStudyButton, .3, {scaleX:.95, scaleY:.95, ease:com.greensock.easing.Quad.easeOut, repeat:-1, yoyo:true});
 			
 			reset();
+			notifyReady();
 		}
 		
 		private function onShowViewStudyButton(e:Event = null):void

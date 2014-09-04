@@ -24,15 +24,16 @@ package com.astrazeneca.screens
 		public function SustainedEfficacy()
 		{
 			super();
-			var baseDir:String = "sustainedEfficacy/";
+			
+			var path:String = "sustainedEfficacy/";
 			
 			imageManifest = [
-					{ img: baseDir+'whiteBG.png', x:0, y:96, clipSprite:false, name:'sEwhiteBG' }
-				,	{ img: baseDir+'swish1.png', x:0, y:615, clipSprite:true, name:'sEswish1' }
-				,	{ img: baseDir+'swish2.png', x:0, y:1190, clipSprite:true, name:'sEswish2' }
-				,	{ img: baseDir+'swish3.png', x:0, y:904, clipSprite:true, name:'sEswish3' }
-				,	{ img: baseDir+'viewStudyTag.png', x:0, y:0, clipSprite:false, name:'sEviewStudyTag' }
-				,	{ img: baseDir+'popUpBg.png', x:0, y:0, clipSprite:false, name:'sEpopUp' }
+					{ img: path+'whiteBG.png', x:0, y:96, clipSprite:false, name:'sEwhiteBG' }
+				,	{ img: path+'swish1.png', x:0, y:615, clipSprite:true, name:'sEswish1' }
+				,	{ img: path+'swish2.png', x:0, y:1190, clipSprite:true, name:'sEswish2' }
+				,	{ img: path+'swish3.png', x:0, y:904, clipSprite:true, name:'sEswish3' }
+				,	{ img: path+'viewStudyTag.png', x:0, y:0, clipSprite:false, name:'sEviewStudyTag' }
+				,	{ img: path+'popUpBg.png', x:0, y:0, clipSprite:false, name:'sEpopUp' }
 			];
 		}
 		
@@ -66,6 +67,7 @@ package com.astrazeneca.screens
 			TweenMax.to(viewStudyButton, .3, {scaleX:.95, scaleY:.95, ease:com.greensock.easing.Quad.easeOut, repeat:-1, yoyo:true});
 			
 			reset();
+			notifyReady();
 		}
 		
 		private function onShowViewStudyButton(e:Event = null):void

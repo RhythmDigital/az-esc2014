@@ -46,7 +46,7 @@ package com.astrazeneca
 		
 		private function loadImageManifest():void
 		{
-			loader = new LoaderMax({ onComplete:onInitialLoad });
+			loader = new LoaderMax({ onComplete:onInitialLoad, onError:onError });
 			
 			for each (var file:Object in imageManifest)
 			{
@@ -54,6 +54,11 @@ package com.astrazeneca
 			}
 			
 			loader.load();		
+		}
+		
+		private function onError():void
+		{
+			trace("Error!");
 		}
 		
 		private function onInitialLoad(e:LoaderEvent):void
@@ -83,6 +88,11 @@ package com.astrazeneca
 		protected function imagesReady():void
 		{
 			
+		}
+		
+		protected function notifyReady():void
+		{
+			dispatchEventWith("READY", true);
 		}
 		
 		protected function notifyScreenClosed():void

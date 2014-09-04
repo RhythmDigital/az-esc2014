@@ -16,7 +16,12 @@ package com.astrazeneca.screens
 		{
 			super();
 			
-			imageManifest = [];
+			var path:String = "safetyTolerability/";
+			
+			imageManifest = [
+					{ img: path+'whiteBG.png', x:10, y:96, clipSprite:false, name:'sTwhiteBG' }
+				,	{ img: path+'greenSwoosh.png', x:44, y:0, clipSprite:true, name:'sTgreenSwoosh' }
+			];
 		}
 		
 		override public function init(id:String):void
@@ -28,12 +33,14 @@ package com.astrazeneca.screens
 		
 		override protected function imagesReady():void
 		{
-			quad = new Quad(1080, 1920, 0x00fff0);
-			addChild(quad);
+			addChild(images['sTwhiteBG']);
+			addChild(images['sTgreenSwoosh']);
 			
 			timeline = new TimelineMax( {paused: true, onComplete:onTransitionComplete, onReverseComplete:onReverseTransitionComplete} );			
-			timeline.insert(TweenMax.to(quad, 1, {alpha:1}));
+			timeline.append( TweenMax.to(images['sTwhiteBG'], .5, { x:10, ease:Sine.easeOut }) );
+			timeline.append( TweenMax.to(images['sTgreenSwoosh'].clipRect, 1, { width:images['sTgreenSwoosh'].originalWidth, ease:Sine.easeOut }) );
 			reset();
+			notifyReady();
 		}
 		
 		private function onTransitionComplete():void
@@ -66,7 +73,8 @@ package com.astrazeneca.screens
 		
 		override public function reset():void
 		{
-			quad.alpha = 0;
+			images['sTwhiteBG'].x = -1080;
+			images['sTgreenSwoosh'].clipRect.width = 0;
 		}
 	}
 }
