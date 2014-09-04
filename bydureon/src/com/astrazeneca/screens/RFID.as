@@ -9,14 +9,18 @@ package com.astrazeneca.screens
 	
 	public class RFID extends ScreenBase
 	{
-		private var quad:Quad;
 		private var timeline:TimelineMax;
 		
 		public function RFID()
 		{
 			super();
 			
-			imageManifest = [];
+			var path:String = "rfid/";
+			
+			imageManifest = [
+					{ img: path+'whiteBG.png', x:10, y:96, clipSprite:false, name:'RFIDwhiteBG' }
+				,	{ img: path+'orangeSwoosh.png', x:43, y:0, clipSprite:true, name:'RFIDorangeSwoosh' }
+			];
 		}
 		
 		override public function init(id:String):void
@@ -28,11 +32,12 @@ package com.astrazeneca.screens
 		
 		override protected function imagesReady():void
 		{
-			quad = new Quad(1080, 1920, 0x0000ff);
-			addChild(quad);
+			addChild(images['RFIDwhiteBG']);
+			addChild(images['RFIDorangeSwoosh']);
 			
-			timeline = new TimelineMax( {paused: true, onComplete:onTransitionComplete, onReverseComplete:onReverseTransitionComplete} );			
-			timeline.insert(TweenMax.to(quad, 1, {alpha:1}));
+			timeline = new TimelineMax( {paused: true, onComplete:onTransitionComplete, onReverseComplete:onReverseTransitionComplete} );		
+			timeline.append( TweenMax.to(images['RFIDwhiteBG'], .5, { x:10, ease:Sine.easeOut }) );
+			timeline.append( TweenMax.to(images['RFIDorangeSwoosh'].clipRect, 1, { width:images['RFIDorangeSwoosh'].originalWidth, ease:Sine.easeInOut }), -0.8 );
 			reset();
 			notifyReady();
 		}
@@ -67,7 +72,8 @@ package com.astrazeneca.screens
 		
 		override public function reset():void
 		{
-			quad.alpha = 0;
+			images['RFIDwhiteBG'].x = -1080;
+			images['RFIDorangeSwoosh'].clipRect.width = 0;
 		}
 	}
 }

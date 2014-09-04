@@ -28,7 +28,6 @@ package com.astrazeneca.screens
 		override public function init(id:String):void
 		{
 			super.init(id);			
-			
 			transitioning = CLOSED;
 		}
 		

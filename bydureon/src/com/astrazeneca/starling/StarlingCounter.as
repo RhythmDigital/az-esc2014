@@ -11,28 +11,36 @@ package com.astrazeneca.starling
 	public class StarlingCounter extends Sprite
 	{
 		public var currentValue:Number = 0;
-		private var tf:TextField;
+		protected var tf:TextField;
 		private var decimalPlaces:Number;
 		private var suffix:String;
+		protected var initialValue:Number;
 		
-		public function StarlingCounter(decimalPlaces:Number=1, suffix:String="")
+		public function StarlingCounter(decimalPlaces:Number=1, suffix:String="", initialValue:Number = 0)
 		{
 			this.decimalPlaces = decimalPlaces;
 			this.suffix = suffix;
+			this.initialValue = initialValue;
 			
-			tf = new TextField(250, 100, "counter", "Arial", 25, 0x000000, false);
-			tf.autoSize = TextFieldAutoSize.HORIZONTAL;
+			tf = new TextField(300, 100, "counter", "Arial", 29, 0x000000, false);
+			//tf.autoSize = TextFieldAutoSize.HORIZONTAL;
 			tf.alignPivot(HAlign.CENTER);
 			addChild(tf);
 			
-			setTo(0);
+			setTo(initialValue);
 		}
 		
 		public function setTo(value:Number):void
 		{
-			TweenMax.killTweensOf(this);
+			TweenMax.killTweensOf(this, {currentValue:true});
 			currentValue = value;
 			updateCounter();
+			tf.alignPivot(HAlign.CENTER);
+		}
+		
+		public function reset():void
+		{
+			setTo(initialValue);
 		}
 		
 		private function getNumberWithCommas(x:String):String
@@ -40,9 +48,9 @@ package com.astrazeneca.starling
 			return x.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		}
 		
-		public function countTo(value:Number, time:Number=1):void
+		public function countTo(value:Number, time:Number=1, delay:Number = 0):void
 		{
-			TweenMax.to(this, time, {currentValue:value, onUpdate:updateCounter, onComplete:updateCounter, ease:Sine.easeInOut});
+			TweenMax.to(this, time, {delay:delay, currentValue:value, onUpdate:updateCounter, onComplete:updateCounter, ease:Sine.easeInOut});
 		}
 		
 		public function updateCounter():void
