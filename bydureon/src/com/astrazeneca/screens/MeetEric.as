@@ -31,8 +31,8 @@ package com.astrazeneca.screens
 			imageManifest = [
 					{ img: 'meetEric/swish1.png', x:0, y:0, clipSprite:true, name:'swish1' }
 				,	{ img: 'meetEric/swish2.png', x:0, y:201, clipSprite:true, name:'swish2' }
-				,	{ img: 'meetEric/swish3.png', x:43, y:1520, clipSprite:true, name:'swish3' }
-				,	{ img: 'meetEric/bigEric.png', x:43, y:470, clipSprite:false, name:'eric' }
+				,	{ img: 'meetEric/swish3.png', x:43, y:1525, clipSprite:true, name:'swish3' }
+				,	{ img: 'meetEric/bigEric.png', x:43, y:475, clipSprite:false, name:'eric' }
 				,	{ img: 'meetEric/whiteBG.png', x:-1080, y:49, clipSprite:false, name:'whiteBG' }
 			];
 		}
