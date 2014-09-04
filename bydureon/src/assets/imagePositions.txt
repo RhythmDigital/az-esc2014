@@ -43,18 +43,29 @@ injection 238, 580
 
 
 safetyTolerability
+
 whiteBG 10,96
 greenSwoosh 44, 0
 
-vvvvvvv don’t use yet vvvvv 
+
 
 busyLives
-whiteBG 10,96
-topOrangeSwoosh 619, 718
-whiteSwoosh 600, 736
-greenSwoosh 584, 754
-bottomOrange 56, 0
 
+whiteBG 10,96
+topOrangeSwoosh 159, 0
+whiteSwoosh 120, 0
+greenSwoosh 88, 0
+bottomOrange 56, 0
+eric 460, 157
 
 
 rfid
+whiteBG 10,96
+orangeSwoosh 43, 0
+whiteIcon 114, 350
+redIcon 114, 822
+orangeIcon 114, 982
+greenIcon 115, 1199
+
+
+
