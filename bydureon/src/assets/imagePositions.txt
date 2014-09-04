@@ -27,15 +27,15 @@ whiteBG 10,96
 
 weeklyDosing
 
-orangeSwish 312, 721
-greenCircle 624, 867
-firstGrey 834,1050 
-secondGrey 834, 1072
-thirdGrey 834, 1095
-fourthGrey 834, 1117
-fifthGrey 834, 1139
-SixthGrey 834, 1161
-seventhGrey 834, 1183
+orangeSwish 0, 420
+greenCircle 490, 732
+firstGrey 588, 712
+secondGrey 588, 756
+thirdGrey 588, 800
+fourthGrey 588, 845
+fifthGrey 588, 899
+SixthGrey 588, 933
+seventhGrey 588, 977
 ericsBox 534, 1192
 whiteBG 10,96
 injection 238, 580
@@ -43,10 +43,17 @@ injection 238, 580
 
 
 safetyTolerability
-greenSwoosh 
+whiteBG 10,96
+greenSwoosh 44, 0
 
+vvvvvvv don’t use yet vvvvv 
 
 busyLives
+whiteBG 10,96
+topOrangeSwoosh 619, 718
+whiteSwoosh 600, 736
+greenSwoosh 584, 754
+bottomOrange 56, 0
 
 
 
