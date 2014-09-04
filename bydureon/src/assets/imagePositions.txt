@@ -36,6 +36,7 @@ fourthGrey 834, 1117
 fifthGrey 834, 1139
 SixthGrey 834, 1161
 seventhGrey 834, 1183
+ericsBox 534, 852
  
 
 
