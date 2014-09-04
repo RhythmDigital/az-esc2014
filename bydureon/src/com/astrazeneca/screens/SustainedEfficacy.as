@@ -2,6 +2,7 @@ package com.astrazeneca.screens
 {
 	import com.astrazeneca.PopUp;
 	import com.astrazeneca.ScreenBase;
+	import com.astrazeneca.screens.sustainedefficacy.ImageCounter;
 	import com.greensock.TimelineMax;
 	import com.greensock.TweenMax;
 	import com.greensock.easing.Sine;
@@ -20,6 +21,7 @@ package com.astrazeneca.screens
 		private var timeline:TimelineMax;
 		private var viewStudyButton:Sprite;
 		private var popup:PopUp;
+		private var kgCounter:ImageCounter;
 
 		public function SustainedEfficacy()
 		{
@@ -34,6 +36,8 @@ package com.astrazeneca.screens
 				,	{ img: path+'swish3.png', x:0, y:904, clipSprite:true, name:'sEswish3' }
 				,	{ img: path+'viewStudyTag.png', x:0, y:0, clipSprite:false, name:'sEviewStudyTag' }
 				,	{ img: path+'popUpBg.png', x:0, y:0, clipSprite:false, name:'sEpopUp' }
+				,	{ img: path+'orangeDial.png', x:0, y:0, clipSprite:false, name:'sEorangeDial' }
+				,	{ img: path+'textLayer.png', x:0, y:0, clipSprite:false, name:'sEtextLayer' }
 			];
 		}
 		
@@ -49,25 +53,38 @@ package com.astrazeneca.screens
 			addChild(images['sEswish3']);
 			addChild(images['sEswish1']);
 			addChild(images['sEswish2']);
+			addChild(images['sEtextLayer']);
 			
 			initViewStudyButton();
+			initCounters();
 			
-
 			popup = new PopUp(images['sEpopUp'], 0, 238, new Rectangle(859,35,67,64));
 			popup.addEventListener("HIDING", onShowViewStudyButton);
 			addChild(popup);
+
 			
 			timeline = new TimelineMax( {paused: true, onComplete:onTransitionComplete, onReverseComplete:onReverseTransitionComplete} );			
 			timeline.append(TweenMax.to(images['sEwhiteBG'], .5, {x:10, ease:Sine.easeOut}));
 			timeline.append(TweenMax.to(images['sEswish1'].clipRect, 1, {width:images['sEswish1'].originalWidth, ease:Sine.easeInOut}),-.2);
 			timeline.append(TweenMax.to(images['sEswish3'].clipRect, 1, {width:images['sEswish3'].originalWidth, ease:Sine.easeOut}), -0.8);
 			timeline.append(TweenMax.to(images['sEswish2'].clipRect, 1, {width:images['sEswish2'].originalWidth, ease:Sine.easeOut}), -0.8);
-			//timeline.append(TweenMax.to(viewStudyButton, .3, {x: 1080, ease:Sine.easeOut}));
+			timeline.append(TweenMax.to(images['sEtextLayer'], .4, {alpha:1, ease:Sine.easeOut}), -0.8);
+			
+			
+			images['sEtextLayer'].touchable = false;
 			
 			TweenMax.to(viewStudyButton, .3, {scaleX:.95, scaleY:.95, ease:com.greensock.easing.Quad.easeOut, repeat:-1, yoyo:true});
 			
 			reset();
 			notifyReady();
+		}
+		
+		private function initCounters():void
+		{
+			var kgDialImg:Image = images['sEorangeDial'];
+			kgCounter = new ImageCounter(kgDialImg, int(kgDialImg.width/2), 38, 1, " kg", 0, -4.3, 306, 601);
+			kgCounter.y = 1260;
+			addChild(kgCounter);
 		}
 		
 		private function onShowViewStudyButton(e:Event = null):void
@@ -119,6 +136,7 @@ package com.astrazeneca.screens
 			timeline.timeScale(.7);
 			timeline.play();
 			
+			kgCounter.countForwards(2, 1);
 			TweenMax.delayedCall(1.8, onShowViewStudyButton);
 		}
 		
@@ -127,6 +145,8 @@ package com.astrazeneca.screens
 			transitioning = CLOSING;
 			timeline.timeScale(4);
 			timeline.reverse();
+			
+			kgCounter.countBackwards(0.1);
 			
 			popup.hide();
 			hideViewStudyButton();
@@ -138,8 +158,12 @@ package com.astrazeneca.screens
 			images['sEswish1'].clipRect.width = 0;
 			images['sEswish2'].clipRect.width = 0;
 			images['sEswish3'].clipRect.width = 0;
+			images['sEtextLayer'].alpha = 0;
+			
 			viewStudyButton.x = 1100+viewStudyButton.width;
 			TweenMax.killTweensOf(viewStudyButton);
+					
+			kgCounter.reset();
 			
 			popup.reset();
 		}

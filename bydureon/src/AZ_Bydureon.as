@@ -1,5 +1,6 @@
 package
 {
+	import com.astrazeneca.Main;
 	import com.astrazeneca.starling.StarlingCounter;
 	import com.astrazeneca.starling.StarlingManager;
 	import com.astrazeneca.starling.StarlingStage;
@@ -11,7 +12,10 @@ package
 	import flash.display.Screen;
 	import flash.display.Sprite;
 	import flash.events.Event;
-	import com.astrazeneca.Main;
+	
+	import starling.text.BitmapFont;
+	import starling.text.TextField;
+	import starling.textures.Texture;
 	
 	
 	[SWF (frameRate="60", width="1080", height="1920", backgroundColor="#000000")]
@@ -25,8 +29,15 @@ package
 		private var main:Main;
 		
 		
+		[Embed(source="/assets/BydureonOblongBMP.fnt", mimeType="application/octet-stream")]
+		public static const BydureonOblongBMPXML:Class;
+		[Embed(source = "/assets/BydureonOblongBMP.png")]
+		public static const BydureonOblongPNG:Class;
+		public static const FONT_BydureonOblong:String = "Bydureon Oblong";
+		
+		
 		public function AZ_Bydureon()
-		{
+		{			
 			addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 		}
 		
@@ -41,6 +52,12 @@ package
 		
 		private function onStarlingReady(e:CustomEvent):void
 		{
+			// register bmp font
+			var texture:Texture = Texture.fromBitmap(new BydureonOblongPNG());
+			var xml:XML = XML(new BydureonOblongBMPXML());
+			TextField.registerBitmapFont(new BitmapFont(texture, xml));
+			
+			
 			starlingManager.removeEventListener(StarlingManager.STARLING_READY, onStarlingReady);
 			starlingStage = e.params.starlingStage;
 			
