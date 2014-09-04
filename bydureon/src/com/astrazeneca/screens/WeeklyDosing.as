@@ -16,23 +16,35 @@ package com.astrazeneca.screens
 		{
 			super();
 			
-			imageManifest = [];
+			var path:String = "weeklyDosing/";
+			
+			imageManifest = [
+					{ img: path+'whiteBG.png', x:-1080, y:96, clipSprite:false, name:'wDwhiteBG' }
+				,	{ img: path+'ericsBox.png', x:46, y:811, clipSprite:false, name:'wDericsBox' }
+				,	{ img: path+'orangeSwish.png', x:0, y:420, clipSprite:true, name:'wDorangeSwish' }
+				,	{ img: path+'firstGrey.png', x:834, y:1050, clipSprite:true, name:'wDfirstGrey' }
+			];
 		}
 		
 		override public function init(id:String):void
 		{
 			super.init(id);			
-			
 			transitioning = CLOSED;
 		}
 		
 		override protected function imagesReady():void
 		{
-			quad = new Quad(1080, 1920, 0x00ff00);
-			addChild(quad);
+			addChild(images['wDwhiteBG']);
+			addChild(images['wDericsBox']);
+			addChild(images['wDorangeSwish'])
+			addChild(images['wDfirstGrey']);
 			
-			timeline = new TimelineMax( {paused: true, onComplete:onTransitionComplete, onReverseComplete:onReverseTransitionComplete} );			
-			timeline.insert(TweenMax.to(quad, 1, {alpha:1}));
+			timeline = new TimelineMax( {paused: true, onComplete:onTransitionComplete, onReverseComplete:onReverseTransitionComplete} );	
+			timeline.append( TweenMax.to(images['wDwhiteBG'], .5, { x:10, ease:Sine.easeOut }) );
+			timeline.append( TweenMax.to(images['wDorangeSwish'].clipRect, 1, { width:images['wDorangeSwish'].originalWidth, ease:Sine.easeInOut }), -.2);
+			timeline.append( TweenMax.to(images['wDericsBox'], .5, { alpha:1, ease:Sine.easeOut }) );
+			
+		// 	timeline.insert(TweenMax.to(quad, 1, {alpha:1}));
 			reset();
 		}
 		
@@ -66,7 +78,9 @@ package com.astrazeneca.screens
 		
 		override public function reset():void
 		{
-			quad.alpha = 0;
+			images['wDorangeSwish'].clipRect.width = 0;
+			images['wDwhiteBG'].x = -1080;
+			images['wDericsBox'].alpha = 0;
 		}
 	}
 }

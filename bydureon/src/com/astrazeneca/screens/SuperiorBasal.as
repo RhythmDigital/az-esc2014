@@ -9,7 +9,6 @@ package com.astrazeneca.screens
 	
 	import flash.geom.Rectangle;
 	
-	import starling.display.Image;
 	import starling.display.Quad;
 	import starling.display.Sprite;
 	import starling.events.Event;
