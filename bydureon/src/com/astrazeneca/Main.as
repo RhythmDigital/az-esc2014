@@ -8,6 +8,7 @@ package com.astrazeneca
 	import com.astrazeneca.screens.SustainedEfficacy;
 	import com.astrazeneca.screens.WeeklyDosing;
 	import com.astrazeneca.starling.StarlingQuadButton;
+	import com.greensock.TweenMax;
 	
 	import flash.display.Stage;
 	
@@ -46,6 +47,8 @@ package com.astrazeneca
 			addEventListener(StarlingQuadButton.TOUCHED, onMenuButtonTouched);
 			
 			initScreens();
+			
+			TweenMax.delayedCall(1, showScreen, ["meetEric"]);
 		}
 		
 		private function onMenuButtonTouched(e:Event):void
