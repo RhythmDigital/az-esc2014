@@ -27,6 +27,10 @@ whiteBG 10,96
 
 weeklyDosing
 
+orangeSwish 541, 744
+greenCircle 624, 867
+
+ 
 
 
 safetyTolerability
