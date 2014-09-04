@@ -3,6 +3,7 @@ package com.astrazeneca.screens
 	import com.astrazeneca.ScreenBase;
 	import com.greensock.TimelineMax;
 	import com.greensock.TweenMax;
+	import com.greensock.easing.Elastic;
 	import com.greensock.easing.Sine;
 	
 	import starling.display.Quad;
@@ -11,6 +12,9 @@ package com.astrazeneca.screens
 	{
 		private var quad:Quad;
 		private var timeline:TimelineMax;
+
+		private var greyPositionsY:Array;
+		private var greyPositionsX:Array;
 		
 		public function WeeklyDosing()
 		{
@@ -22,8 +26,13 @@ package com.astrazeneca.screens
 					{ img: path+'whiteBG.png', x:-1080, y:96, clipSprite:false, name:'wDwhiteBG' }
 				,	{ img: path+'ericsBox.png', x:46, y:811, clipSprite:false, name:'wDericsBox' }
 				,	{ img: path+'orangeSwish.png', x:0, y:420, clipSprite:true, name:'wDorangeSwish' }
-				,	{ img: path+'firstGrey.png', x:834, y:1050, clipSprite:true, name:'wDfirstGrey' }
+				,	{ img: path+'injection.png', x:61, y:541, clipSprite:false, name:'wDinjection' }
+				,	{ img: path+'greenCircle.png', x:490, y:732, clipSprite:false, name:'wDgreenCircle' }
 			];
+			
+			greyPositionsX = [588,588,588,590,591,592,592];
+			greyPositionsY = [715,758,801,844,888,931,975];
+			for(var i:int = 0; i < 7; ++i) imageManifest.push({ img: path+'grey'+i+'.png', x:greyPositionsX[i], y:greyPositionsY[i], clipSprite:true, name:'wDgrey'+i });
 		}
 		
 		override public function init(id:String):void
@@ -36,13 +45,32 @@ package com.astrazeneca.screens
 		{
 			addChild(images['wDwhiteBG']);
 			addChild(images['wDericsBox']);
-			addChild(images['wDorangeSwish'])
-			addChild(images['wDfirstGrey']);
+			
+			var i:int;
+			for(i=0; i < 7; ++i) addChild(images['wDgrey'+i]);
+			
+			addChild(images['wDorangeSwish']);
+			addChild(images['wDinjection']);
+			
+			
+			images['wDgreenCircle'].pivotX = images['wDgreenCircle'].width >> 1;
+			images['wDgreenCircle'].pivotY = images['wDgreenCircle'].height >> 1;
+			images['wDgreenCircle'].x += images['wDgreenCircle'].width >> 1;
+			images['wDgreenCircle'].y += images['wDgreenCircle'].height >> 1;
+			addChild(images['wDgreenCircle']);
+			
+			
 			
 			timeline = new TimelineMax( {paused: true, onComplete:onTransitionComplete, onReverseComplete:onReverseTransitionComplete} );	
 			timeline.append( TweenMax.to(images['wDwhiteBG'], .5, { x:10, ease:Sine.easeOut }) );
 			timeline.append( TweenMax.to(images['wDorangeSwish'].clipRect, 1, { width:images['wDorangeSwish'].originalWidth, ease:Sine.easeInOut }), -.2);
-			timeline.append( TweenMax.to(images['wDericsBox'], .5, { alpha:1, ease:Sine.easeOut }) );
+			
+			for(i = 0; i < 7; ++i) timeline.append( TweenMax.to(images['wDgrey'+i].clipRect, .6, { width:images['wDgrey'+i].originalWidth, ease:Sine.easeInOut }), i > 0 ? -.5 : -.19);
+			
+			timeline.append( TweenMax.to(images['wDericsBox'], .5, { alpha:1, ease:Sine.easeOut }), -0.3);
+			timeline.append( TweenMax.to(images['wDgreenCircle'], .7, { alpha:1, scaleX:1, scaleY:1, ease:Elastic.easeOut }), -.5);
+	
+			timeline.append( TweenMax.to(images['wDinjection'], 1, { alpha:1, ease:Sine.easeInOut }), -.8);
 			
 		// 	timeline.insert(TweenMax.to(quad, 1, {alpha:1}));
 			reset();
@@ -80,7 +108,11 @@ package com.astrazeneca.screens
 		{
 			images['wDorangeSwish'].clipRect.width = 0;
 			images['wDwhiteBG'].x = -1080;
-			images['wDericsBox'].alpha = 0;
+			images['wDericsBox'].alpha = images['wDinjection'].alpha = 0;
+			images['wDgreenCircle'].scaleX = images['wDgreenCircle'].scaleY = 0.8;
+			images['wDgreenCircle'].alpha = 0;
+			
+			for(var i:int = 0; i < 7; ++i) images['wDgrey'+i].clipRect.width = 0;
 		}
 	}
 }
