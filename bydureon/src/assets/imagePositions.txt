@@ -27,9 +27,15 @@ whiteBG 10,96
 
 weeklyDosing
 
-orangeSwish 541, 744
+orangeSwish 312, 721
 greenCircle 624, 867
-
+firstGrey 834,1050 
+secondGrey 834, 1072
+thirdGrey 834, 1095
+fourthGrey 834, 1117
+fifthGrey 834, 1139
+SixthGrey 834, 1161
+seventhGrey 834, 1183
  
 
 
