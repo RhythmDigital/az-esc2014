@@ -78,7 +78,8 @@ package com.astrazeneca
 		{
 			if(currentScreen && contains(currentScreen)) removeChild(currentScreen);
 			currentScreen = getScreenById(nextScreenID);
-			addChildAt(currentScreen, 1);
+			addChild(menu);
+			addChild(currentScreen);
 			currentScreen.show();
 		}
 		
