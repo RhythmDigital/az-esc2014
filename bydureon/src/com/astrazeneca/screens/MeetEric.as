@@ -29,12 +29,11 @@ package com.astrazeneca.screens
 			super();
 			
 			imageManifest = [
-				{ img: 'screen1/white-bg.png', x:-10, y:212, clipSprite:false, name:'white-bg' },
-				{ img: 'screen1/green-bar.png', x:0, y:0, clipSprite:true, name:'green' },
-				{ img: 'screen1/orange-bar.png', x:0, y:321, clipSprite:true, name:'orange' },
-				{ img: 'screen1/eric.png', x:365, y:490, clipSprite:false, name:'eric' },
-				
-				{ img: 'screen1/all-copy.png', x:105, y:340, clipSprite:false, name:'copy' }
+					{ img: 'meetEric/swish1.png', x:0, y:0, clipSprite:true, name:'swish1' }
+				,	{ img: 'meetEric/swish2.png', x:0, y:201, clipSprite:true, name:'swish2' }
+				,	{ img: 'meetEric/swish3.png', x:43, y:1520, clipSprite:true, name:'swish3' }
+				,	{ img: 'meetEric/bigEric.png', x:43, y:470, clipSprite:false, name:'eric' }
+				,	{ img: 'meetEric/whiteBG.png', x:-1080, y:49, clipSprite:false, name:'whiteBG' }
 			];
 		}
 		
@@ -42,19 +41,25 @@ package com.astrazeneca.screens
 		{
 			super.init(id);			
 			
-			greenTextBar = new ClipSprite(965);
-			greenTextBar.addChild(new Quad(greenTextBar.originalWidth, 61, 0x006935));
-			greenTextBar.clipRect = new Rectangle(greenTextBar.originalWidth/2, 0, 0, 61);
-			greenTextBar.x = 51;
-			greenTextBar.y = 1347;
-			
 			transitioning = CLOSED;
 		}
 		
 		override protected function imagesReady():void
 		{
-			addChild(images['white-bg']);
-			addChild(images['orange']);
+			addChild(images['whiteBG']);
+			addChild(images['swish2']);
+			addChild(images['swish1']);			
+			addChild(images['eric']);
+			addChild(images['swish3']);
+			
+			timeline = new TimelineMax( {paused: true, onComplete:onTransitionComplete, onReverseComplete:onReverseTransitionComplete} );
+			timeline.append( TweenMax.to(images['whiteBG'], .5, { x:10, ease:Sine.easeOut }) );
+			timeline.append( TweenMax.to(images['swish1'].clipRect, 1, { width:images['swish1'].originalWidth, ease:Sine.easeInOut }), -.2);
+			timeline.append( TweenMax.to(images['swish2'].clipRect, 1, { width:images['swish2'].originalWidth, ease:Sine.easeOut }), -.8 );
+			timeline.append( TweenMax.to(images['eric'], .3, { alpha:1, ease:Sine.easeIn }), -0.8 );
+			timeline.append( TweenMax.to(images['swish3'].clipRect, .4, { width:images['swish3'].originalWidth, ease:Sine.easeOut }), -0.4 );
+			
+			/*addChild(images['orange']);
 			addChild(images['eric']);
 			addChild(images['green']);
 			addChild(greenTextBar);
@@ -71,7 +76,7 @@ package com.astrazeneca.screens
 			timeline.append( TweenMax.to(images['eric'], .3, { alpha:1, ease:Sine.easeIn }), -.8 );
 			timeline.append( TweenMax.to(greenTextBar.clipRect, .6, { x:0, width:greenTextBar.originalWidth, ease:Circ.easeOut }), -.5 );
 			timeline.append( TweenMax.to(images['copy'], .3, { delay:.2, alpha:1, ease:Sine.easeOut }), -.3);
-						
+			*/		
 			reset();
 		}
 		
@@ -83,7 +88,7 @@ package com.astrazeneca.screens
 		private function onReverseTransitionComplete():void
 		{
 			transitioning = CLOSED;
-			counter.setTo(0);
+			//counter.setTo(0);
 			TweenMax.to(this, .2, {alpha:0, ease:Sine.easeIn});
 			notifyScreenClosed();
 		}
@@ -96,7 +101,7 @@ package com.astrazeneca.screens
 			timeline.timeScale(.7);
 			timeline.play();
 			
-			counter.countTo(20, 2);
+			//counter.countTo(20, 2);
 		}
 		
 		override public function hide():void
@@ -104,18 +109,14 @@ package com.astrazeneca.screens
 			transitioning = CLOSING;
 			timeline.timeScale(4);
 			timeline.reverse();
-			counter.countTo(0, 0.2);
+			//counter.countTo(0, 0.2);
 		}
 		
 		override public function reset():void
 		{
-			images['orange'].clipRect.width 
-				= images['green'].clipRect.width 
-				= greenTextBar.clipRect.width
-				= 0;
-			
-			greenTextBar.clipRect.x = 266.5;			
-			images['eric'].alpha = images['copy'].alpha = 0;
+			images['eric'].alpha = 0;
+			images['whiteBG'].x = -1080;
+			images['swish1'].clipRect.width = images['swish2'].clipRect.width = 0;
 		}
 	}
 }
