@@ -60,7 +60,6 @@ package com.astrazeneca.screens
 			addChild(images['wDgreenCircle']);
 			
 			
-			
 			timeline = new TimelineMax( {paused: true, onComplete:onTransitionComplete, onReverseComplete:onReverseTransitionComplete} );	
 			timeline.append( TweenMax.to(images['wDwhiteBG'], .5, { x:10, ease:Sine.easeOut }) );
 			timeline.append( TweenMax.to(images['wDorangeSwish'].clipRect, 1, { width:images['wDorangeSwish'].originalWidth, ease:Sine.easeInOut }), -.2);
@@ -68,11 +67,9 @@ package com.astrazeneca.screens
 			for(i = 0; i < 7; ++i) timeline.append( TweenMax.to(images['wDgrey'+i].clipRect, .6, { width:images['wDgrey'+i].originalWidth, ease:Sine.easeInOut }), i > 0 ? -.5 : -.19);
 			
 			timeline.append( TweenMax.to(images['wDericsBox'], .5, { alpha:1, ease:Sine.easeOut }), -0.3);
-			timeline.append( TweenMax.to(images['wDgreenCircle'], .7, { alpha:1, scaleX:1, scaleY:1, ease:Elastic.easeOut }), -.5);
-	
+			timeline.append( TweenMax.to(images['wDgreenCircle'], .7, { alpha:1, scaleX:1, scaleY:1, ease:Elastic.easeOut }), -.3);
 			timeline.append( TweenMax.to(images['wDinjection'], 1, { alpha:1, ease:Sine.easeInOut }), -.8);
 			
-		// 	timeline.insert(TweenMax.to(quad, 1, {alpha:1}));
 			reset();
 		}
 		
