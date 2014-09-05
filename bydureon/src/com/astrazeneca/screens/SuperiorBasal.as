@@ -2,6 +2,7 @@ package com.astrazeneca.screens
 {
 	import com.astrazeneca.PopUp;
 	import com.astrazeneca.ScreenBase;
+	import com.astrazeneca.screens.sustainedefficacy.ImageCounter;
 	import com.greensock.TimelineMax;
 	import com.greensock.TweenMax;
 	import com.greensock.easing.Sine;
@@ -9,6 +10,7 @@ package com.astrazeneca.screens
 	
 	import flash.geom.Rectangle;
 	
+	import starling.display.Image;
 	import starling.display.Quad;
 	import starling.display.Sprite;
 	import starling.events.Event;
@@ -19,6 +21,10 @@ package com.astrazeneca.screens
 		private var timeline:TimelineMax;
 		private var viewStudyButton:Sprite;
 		private var popup:PopUp;
+		private var kgCounter1:ImageCounter;
+		private var kgCounter2:ImageCounter;
+		private var kgCounter3:ImageCounter;
+		private var kgCounter4:ImageCounter;
 		
 		public function SuperiorBasal()
 		{
@@ -31,6 +37,11 @@ package com.astrazeneca.screens
 				,	{ img: path+'viewStudyTag.png', x:0, y:0, clipSprite:false, name:'sBviewStudyTag' }
 				,	{ img: path+'popUp.png', x:0, y:0, clipSprite:false, name:'sBpopUp' }
 				,	{ img: path+'sBtextLayer.png', x:0, y:0, clipSprite:false, name:'sBtextLayer' }
+				,	{ img: path+'topText1.png', x:0, y:0, clipSprite:false, name:'topText1' }
+				,	{ img: path+'topText2.png', x:0, y:0, clipSprite:false, name:'topText2' }
+				,	{ img: path+'topText3.png', x:0, y:0, clipSprite:false, name:'topText3' }
+				,	{ img: path+'topText4.png', x:0, y:0, clipSprite:false, name:'topText4' }
+				,	{ img: path+'topTextAdd.png', x:243, y:643, clipSprite:false, name:'topTextAdd' }
 			];
 		}
 		
@@ -45,8 +56,13 @@ package com.astrazeneca.screens
 			addChild(images['sBwhiteBG']);
 			addChild(images['sBswish1']);
 			addChild(images['sBtextLayer']);
+			addChild(images['topTextAdd']);
 			
 			initViewStudyButton();
+			initCounters1();
+			initCounters2();
+			initCounters3();
+			initCounters4();
 			
 			
 			popup = new PopUp(images['sBpopUp'], 0, 238, new Rectangle(859,35,67,64));
@@ -57,6 +73,8 @@ package com.astrazeneca.screens
 			timeline.append(TweenMax.to(images['sBwhiteBG'], .5, {x:12, ease:Sine.easeOut}));
 			timeline.append(TweenMax.to(images['sBswish1'].clipRect, 1, {width:images['sBswish1'].originalWidth, ease:Sine.easeInOut}),-.1);
 			timeline.append(TweenMax.to(images['sBtextLayer'], .4, {alpha:1, ease:Sine.easeOut}), -0.8);
+			timeline.append(TweenMax.to(images['topTextAdd'], .4, {alpha:1, ease:Sine.easeOut}), -0.8);
+			
 			
 			images['sBtextLayer'].touchable = false;
 			
@@ -64,6 +82,40 @@ package com.astrazeneca.screens
 			
 			reset();
 			notifyReady();
+		}
+		
+		private function initCounters1():void
+		{
+			var kgDialImg1:Image = images['topText1'];
+			kgCounter1 = new ImageCounter(kgDialImg1, 0, -1.5, 0, "", 0, 20, 221, 221, 450, 588 );
+		//	kgCounter1.y = 588;
+			addChild(kgCounter1);
+			
+	
+		}
+		
+		private function initCounters2():void
+		{
+			var kgDialImg2:Image = images['topText2'];
+			kgCounter2 = new ImageCounter(kgDialImg2, 0, 0, 0, "", 0, 20, 354, 354, 450, 588 );
+		//	kgCounter2.y = 1195;
+			addChild(kgCounter2);
+		}
+		
+		private function initCounters3():void
+		{
+			var kgDialImg3:Image = images['topText3'];
+			kgCounter3 = new ImageCounter(kgDialImg3, 0, 0, 0, "", 0, 20, 539, 539, 588, 588 );
+		//	kgCounter3.y = 1131;
+			addChild(kgCounter3);
+		}
+		
+		private function initCounters4():void
+		{
+			var kgDialImg4:Image = images['topText4'];
+			kgCounter4 = new ImageCounter(kgDialImg4, 0, 0, 0, "", 0, 20, 672, 672, 588, 588 );
+		//	kgCounter4.y = 1131;
+			addChild(kgCounter4);
 		}
 		
 		private function onShowViewStudyButton(e:Event = null):void
@@ -115,6 +167,11 @@ package com.astrazeneca.screens
 			timeline.timeScale(.7);
 			timeline.play();
 			
+			kgCounter1.countForwards(2, 2);
+			kgCounter2.countForwards(2, 2.5);
+			kgCounter3.countForwards(2, 3);
+			kgCounter4.countForwards(2, 3);
+	
 			TweenMax.delayedCall(1.8, onShowViewStudyButton);
 		}
 		
@@ -123,6 +180,12 @@ package com.astrazeneca.screens
 			transitioning = CLOSING;
 			timeline.timeScale(4);
 			timeline.reverse();
+			
+			kgCounter1.countBackwards(0.1);
+			kgCounter2.countBackwards(0.1);
+			kgCounter3.countBackwards(0.1);
+			kgCounter4.countBackwards(0.1);
+
 			
 			popup.hide();
 			hideViewStudyButton();
@@ -133,9 +196,14 @@ package com.astrazeneca.screens
 			images['sBwhiteBG'].x = -1080;
 			images['sBswish1'].clipRect.width = 0;
 			images['sBtextLayer'].alpha = 0;
+			images['topTextAdd'].alpha = 0;
 			
 			viewStudyButton.x = 1100+viewStudyButton.width;
 			TweenMax.killTweensOf(viewStudyButton);
+			
+			kgCounter1.reset();
+			kgCounter2.reset();
+			kgCounter3.reset();
 			
 			popup.reset();
 		}

@@ -12,12 +12,17 @@ package com.astrazeneca.screens.sustainedefficacy
 		private var countToValue:Number;
 		private var startX:int;
 		private var endX:int;
-		public function ImageCounter(img:Image, counterX:int, counterY:int, decimalPlaces:int, suffix:String, initialValue:Number, countToValue:Number, startX:int, endX:int)
+		private var startY:int;
+		private var endY:int;
+		
+		public function ImageCounter(img:Image, counterX:int, counterY:int, decimalPlaces:int, suffix:String, initialValue:Number, countToValue:Number, startX:int, endX:int, startY:int, endY:int)
 		{
 			super(1, suffix, initialValue);
 			
 			this.startX = startX;
 			this.endX = endX;
+			this.startY = startY;
+			this.endY = endY;
 			
 			addChild(img);
 			addChild(tf);
@@ -34,16 +39,26 @@ package com.astrazeneca.screens.sustainedefficacy
 		{
 			countTo(countToValue, time, delay);
 			
-			TweenMax.to(this, time, {delay:delay, x:endX, ease:Sine.easeOut});
-			TweenMax.to(this, time/10, {delay:delay, alpha:1,ease:Sine.easeOut});
-			
+			if(startX!=endX)
+			{
+				TweenMax.to(this, time, {delay:delay, x:endX, ease:Sine.easeOut});
+				TweenMax.to(this, time/10, {delay:delay, alpha:1,ease:Sine.easeOut});
+			}else{
+				TweenMax.to(this, time, {delay:delay, y:endY, ease:Sine.easeOut});
+				TweenMax.to(this, time/10, {delay:delay, alpha:1,ease:Sine.easeOut});
+			}
 		}
 		public function countBackwards(time:Number=0.2, delay:Number=0):void
 		{
 			countTo(initialValue, time);
-			
-			TweenMax.to(this, time, {delay:delay, x:startX, ease:Sine.easeOut});
-			TweenMax.to(this, time/10, {delay: time-(time/10), alpha:0,ease:Sine.easeOut});
+			if(startY!=endY)
+			{
+				TweenMax.to(this, time, {delay:delay, x:startX, ease:Sine.easeOut});
+				TweenMax.to(this, time/10, {delay: time-(time/10), alpha:0,ease:Sine.easeOut});
+			}else{
+				TweenMax.to(this, time, {delay:delay, y:startY, ease:Sine.easeOut});
+				TweenMax.to(this, time/10, {delay:delay, alpha:1,ease:Sine.easeOut});
+			}
 		}
 		
 		override public function reset():void
