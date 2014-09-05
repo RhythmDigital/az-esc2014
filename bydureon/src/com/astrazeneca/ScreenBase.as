@@ -41,10 +41,10 @@ package com.astrazeneca
 		public function init(id:String):void
 		{			
 			this.id = id;
-			loadImageManifest();
+		//	loadImageManifest();
 		}
 		
-		private function loadImageManifest():void
+		public function loadImageManifest():void
 		{
 			loader = new LoaderMax({ onComplete:onInitialLoad, onError:onError });
 			
@@ -97,6 +97,7 @@ package com.astrazeneca
 		
 		protected function notifyScreenClosed():void
 		{
+			disposeTextures();
 			dispatchEvent(new Event("SCREEN_CLOSED", true));
 		}
 		
@@ -114,6 +115,24 @@ package com.astrazeneca
 		public function hide():void
 		{
 			
+		}
+		
+		public function disposeTextures():void
+		{
+			for each (var img:Object in images)
+			{	
+				if(img is Image) {	
+					removeChild(Image(img));
+					img.texture.dispose();
+					img.dispose();
+				}else{
+					removeChild(Sprite(img));
+					img.getChildAt(0).texture.dispose();
+					img.getChildAt(0).dispose();
+					
+				}
+				img=null;				
+			}
 		}
 	}
 }

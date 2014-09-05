@@ -26,12 +26,12 @@ package com.astrazeneca
 		
 		private var menu:Menu;
 		private var currentScreen:ScreenBase;
-		private var nextScreenID:Object;
 		private var screens:Array = [];
 		private var screensReady:int;
 		
 		private const DEFAULT_SCREEN:String = "meetEric";
-		
+		private var nextScreenId:String;		
+		private var screenToLoad:Object;
 		public function Main()
 		{
 			super();		
@@ -56,17 +56,32 @@ package com.astrazeneca
 		private function onMenuButtonTouched(e:Event):void
 		{
 			trace("Menu button", e.data.id);
-			showScreen(e.data.id);
+			//nextScreenId = String(e.data.id);
+			//showScreen(e.data.id);
+			screenToLoad = e.data.id;
+			loadNextScreenImages();
 		}
 		
-		private function showScreen(nextScreenId:String):void
+		private function loadNextScreenImages():void
 		{
-			trace("Show screen: ", nextScreenId);
+			getScreenById(screenToLoad).loadImageManifest();
+			getScreenById(screenToLoad).addEventListener("READY", screenImagesLoaded);
+		}
+		
+		private function screenImagesLoaded(e:Event):void
+		{
+			getScreenById(screenToLoad).removeEventListener("READY", screenImagesLoaded);
+			showScreen(screenToLoad);
+		}
+		
+		private function showScreen(screenID):void
+		{
+			trace("Show screen: ", screenID);			
 			
-			if(getScreenById(nextScreenId).transitioning == ScreenBase.CLOSING) return;			
-			if((currentScreen && this.currentScreen.id == nextScreenId)) return;
+			if(getScreenById(screenID).transitioning == ScreenBase.CLOSING) return;			
+			if((currentScreen && this.currentScreen.id == screenID)) return;
 						
-			this.nextScreenID = nextScreenId;
+			nextScreenId = screenID;
 			this.menu.highlight(nextScreenId);
 			
 			if(!currentScreen) {
@@ -79,7 +94,7 @@ package com.astrazeneca
 		private function showNextScreen():void
 		{
 			if(currentScreen && contains(currentScreen)) removeChild(currentScreen);
-			currentScreen = getScreenById(nextScreenID);
+			currentScreen = getScreenById(nextScreenId);
 			addChild(menu);
 			addChild(currentScreen);
 			currentScreen.show();
@@ -107,9 +122,14 @@ package com.astrazeneca
 			
 			for(var i:int = 0; i < screens.length; ++i){
 				screens[i].screen.addEventListener("SCREEN_CLOSED", onScreenClosed);
-				screens[i].screen.addEventListener("READY", onScreenReady);
+//				screens[i].screen.addEventListener("READY", onScreenReady);
 				screens[i].screen.init(screens[i].id);
 			}
+			
+			screenToLoad = DEFAULT_SCREEN;
+			loadNextScreenImages();
+			
+			//showScreen();
 			
 		}		
 		
@@ -119,15 +139,15 @@ package com.astrazeneca
 			showNextScreen();
 		}
 		
-		private function onScreenReady(e:Event):void
-		{
-			trace("Screen " + screens[screensReady].id + " is ready.");
-			screensReady ++;
-			
-			if(screensReady == screens.length) {
-				showScreen(DEFAULT_SCREEN);
-			}
-		}
+//		private function onScreenReady(e:Event):void
+//		{
+//			trace("Screen " + screens[screensReady].id + " is ready.");
+//			screensReady ++;
+//			
+//			if(screensReady == screens.length) {
+//				showScreen(DEFAULT_SCREEN);
+//			}
+//		}
 		
 		public function reset():void
 		{

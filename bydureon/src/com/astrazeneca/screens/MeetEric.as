@@ -1,5 +1,7 @@
 package com.astrazeneca.screens
 {
+	import com.astrazeneca.ClipSprite;
+	import com.astrazeneca.ScreenBase;
 	import com.astrazeneca.starling.StarlingCounter;
 	import com.greensock.TimelineMax;
 	import com.greensock.TweenMax;
@@ -9,11 +11,10 @@ package com.astrazeneca.screens
 	import flash.geom.Rectangle;
 	
 	import starling.core.Starling;
+	import starling.display.Image;
 	import starling.display.Quad;
 	import starling.events.TouchEvent;
 	import starling.events.TouchPhase;
-	import com.astrazeneca.ClipSprite;
-	import com.astrazeneca.ScreenBase;
 
 	public class MeetEric extends ScreenBase
 	{		
@@ -109,5 +110,6 @@ package com.astrazeneca.screens
 			images['whiteBG'].x = -1080;
 			images['swish1'].clipRect.width = images['swish2'].clipRect.width = 0;
 		}
+		
 	}
 }
