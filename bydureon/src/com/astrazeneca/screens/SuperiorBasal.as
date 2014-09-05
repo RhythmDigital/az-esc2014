@@ -64,6 +64,7 @@ package com.astrazeneca.screens
 			initCounters3();
 			initCounters4();
 			
+			addChild(images['topTextAdd']);
 			
 			popup = new PopUp(images['sBpopUp'], 0, 238, new Rectangle(859,35,67,64));
 			popup.addEventListener("HIDING", onShowViewStudyButton);
@@ -87,7 +88,7 @@ package com.astrazeneca.screens
 		private function initCounters1():void
 		{
 			var kgDialImg1:Image = images['topText1'];
-			kgCounter1 = new ImageCounter(kgDialImg1, 0, -1.5, 0, "", 0, 20, 221, 221, 450, 588 );
+			kgCounter1 = new ImageCounter(kgDialImg1, 0, -1.5, 0, "", 0, 0, 205, 205, 450, 588 );
 		//	kgCounter1.y = 588;
 			addChild(kgCounter1);
 			
@@ -97,7 +98,7 @@ package com.astrazeneca.screens
 		private function initCounters2():void
 		{
 			var kgDialImg2:Image = images['topText2'];
-			kgCounter2 = new ImageCounter(kgDialImg2, 0, 0, 0, "", 0, 20, 354, 354, 450, 588 );
+			kgCounter2 = new ImageCounter(kgDialImg2, 0, 0, 0, "", 0, 0, 338, 338, 450, 588 );
 		//	kgCounter2.y = 1195;
 			addChild(kgCounter2);
 		}
@@ -105,7 +106,7 @@ package com.astrazeneca.screens
 		private function initCounters3():void
 		{
 			var kgDialImg3:Image = images['topText3'];
-			kgCounter3 = new ImageCounter(kgDialImg3, 0, 0, 0, "", 0, 20, 539, 539, 588, 588 );
+			kgCounter3 = new ImageCounter(kgDialImg3, 0, 0, 0, "", 0,0, 523, 523, 588, 588 );
 		//	kgCounter3.y = 1131;
 			addChild(kgCounter3);
 		}
@@ -113,7 +114,7 @@ package com.astrazeneca.screens
 		private function initCounters4():void
 		{
 			var kgDialImg4:Image = images['topText4'];
-			kgCounter4 = new ImageCounter(kgDialImg4, 0, 0, 0, "", 0, 20, 672, 672, 588, 588 );
+			kgCounter4 = new ImageCounter(kgDialImg4, 0, 0, 0, "", 0, 0, 656, 656, 588, 588 );
 		//	kgCounter4.y = 1131;
 			addChild(kgCounter4);
 		}
@@ -204,6 +205,7 @@ package com.astrazeneca.screens
 			kgCounter1.reset();
 			kgCounter2.reset();
 			kgCounter3.reset();
+			kgCounter4.reset();
 			
 			popup.reset();
 		}
