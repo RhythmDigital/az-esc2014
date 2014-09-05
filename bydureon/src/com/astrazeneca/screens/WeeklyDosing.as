@@ -28,6 +28,7 @@ package com.astrazeneca.screens
 				,	{ img: path+'orangeSwish.png', x:0, y:420, clipSprite:true, name:'wDorangeSwish' }
 				,	{ img: path+'injection.png', x:61, y:541, clipSprite:false, name:'wDinjection' }
 				,	{ img: path+'greenCircle.png', x:490, y:732, clipSprite:false, name:'wDgreenCircle' }
+				,	{ img: path+'wDtextLayer.png', x:0, y:0, clipSprite:false, name:'wDtextLayer' }
 			];
 			
 			greyPositionsX = [588,588,588,590,591,592,592];
@@ -45,6 +46,7 @@ package com.astrazeneca.screens
 		{
 			addChild(images['wDwhiteBG']);
 			addChild(images['wDericsBox']);
+			
 			
 			var i:int;
 			for(i=0; i < 7; ++i) addChild(images['wDgrey'+i]);
@@ -69,6 +71,11 @@ package com.astrazeneca.screens
 			timeline.append( TweenMax.to(images['wDericsBox'], .5, { alpha:1, ease:Sine.easeOut }), -0.3);
 			timeline.append( TweenMax.to(images['wDgreenCircle'], .7, { alpha:1, scaleX:1, scaleY:1, ease:Elastic.easeOut }), -.3);
 			timeline.append( TweenMax.to(images['wDinjection'], 1, { alpha:1, ease:Sine.easeInOut }), -.8);
+			timeline.append(TweenMax.to(images['wDtextLayer'], .4, {alpha:1, ease:Sine.easeOut}), -0.8);
+			
+			images['wDtextLayer'].touchable = false;
+			
+			addChild(images['wDtextLayer']);
 			
 			reset();
 			notifyReady();
@@ -109,6 +116,7 @@ package com.astrazeneca.screens
 			images['wDericsBox'].alpha = images['wDinjection'].alpha = 0;
 			images['wDgreenCircle'].scaleX = images['wDgreenCircle'].scaleY = 0.8;
 			images['wDgreenCircle'].alpha = 0;
+			images['wDtextLayer'].alpha = 0;
 			
 			for(var i:int = 0; i < 7; ++i) images['wDgrey'+i].clipRect.width = 0;
 		}

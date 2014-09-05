@@ -1,0 +1,71 @@
+meeteric
+
+swish1 0,0
+swish2 0,201
+whiteBG 10,49
+swish3 43,1520
+eric 43, 480
+
+
+sustainedEfficacy
+
+whiteBG 10,96
+swish1 0,615
+swish2 0, 1190
+swish3 0, 804
+arrow1 638, 987
+viewStudyTab 931,970
+popUp 0, 238
+
+
+superiorBasal
+
+swish1 48, 0
+viewStudyTab 931,1217
+whiteBG 10,96
+
+
+weeklyDosing
+
+orangeSwish 0, 420
+greenCircle 490, 732
+firstGrey 588, 712
+secondGrey 588, 756
+thirdGrey 588, 800
+fourthGrey 588, 845
+fifthGrey 588, 899
+SixthGrey 588, 933
+seventhGrey 588, 977
+ericsBox 534, 1192
+whiteBG 10,96
+injection 238, 580
+ 
+
+
+safetyTolerability
+
+whiteBG 10,96
+greenSwoosh 44, 0
+
+
+
+busyLives
+
+whiteBG 10,96
+topOrangeSwoosh 159, 0
+whiteSwoosh 120, 0
+greenSwoosh 88, 0
+bottomOrange 56, 0
+eric 460, 157
+
+
+rfid
+whiteBG 10,96
+orangeSwoosh 43, 0
+whiteIcon 114, 350
+redIcon 114, 822
+orangeIcon 114, 982
+greenIcon 115, 1199
+
+
+

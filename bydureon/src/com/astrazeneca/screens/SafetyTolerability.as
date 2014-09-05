@@ -21,6 +21,10 @@ package com.astrazeneca.screens
 			imageManifest = [
 					{ img: path+'whiteBG.png', x:10, y:96, clipSprite:false, name:'sTwhiteBG' }
 				,	{ img: path+'greenSwoosh.png', x:44, y:0, clipSprite:true, name:'sTgreenSwoosh' }
+				,	{ img: path+'sTtextOne.png', x:106, y:206, clipSprite:false, name:'sTtextOne' }
+				,	{ img: path+'sTtextTwo.png', x:106, y:539, clipSprite:false, name:'sTtextTwo' }
+				,	{ img: path+'sTtextThree.png', x:106, y:1056, clipSprite:false, name:'sTtextThree' }
+		
 			];
 		}
 		
@@ -35,10 +39,20 @@ package com.astrazeneca.screens
 		{
 			addChild(images['sTwhiteBG']);
 			addChild(images['sTgreenSwoosh']);
+			addChild(images['sTtextOne']);
+			addChild(images['sTtextTwo']);
+			addChild(images['sTtextThree']);
+	
 			
 			timeline = new TimelineMax( {paused: true, onComplete:onTransitionComplete, onReverseComplete:onReverseTransitionComplete} );			
 			timeline.append( TweenMax.to(images['sTwhiteBG'], .5, { x:10, ease:Sine.easeOut }) );
 			timeline.append( TweenMax.to(images['sTgreenSwoosh'].clipRect, 1, { width:images['sTgreenSwoosh'].originalWidth, ease:Sine.easeOut }) );
+			timeline.append( TweenMax.to(images['sTtextOne'], .4, {alpha:1, ease:Sine.easeOut}), -0.8);
+			timeline.append( TweenMax.to(images['sTtextTwo'], .4, {alpha:1, ease:Sine.easeOut}), -0.8);
+			timeline.append( TweenMax.to(images['sTtextThree'], .4, {alpha:1, ease:Sine.easeOut}), -0.8);
+			
+
+			
 			reset();
 			notifyReady();
 		}
@@ -75,6 +89,9 @@ package com.astrazeneca.screens
 		{
 			images['sTwhiteBG'].x = -1080;
 			images['sTgreenSwoosh'].clipRect.width = 0;
+			images['sTtextOne'].alpha = 0;
+			images['sTtextTwo'].alpha = 0;
+			images['sTtextThree'].alpha = 0;
 		}
 	}
 }

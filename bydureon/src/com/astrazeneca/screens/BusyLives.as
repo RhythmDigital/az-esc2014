@@ -22,6 +22,9 @@ package com.astrazeneca.screens
 				,	{ img: path+'orangeSwoosh.png', x:56, y:0, clipSprite:true, name:'bLOrangeSwoosh' }
 				,	{ img: path+'whiteSwoosh.png', x:120, y:0, clipSprite:true, name:'bLwhiteSwoosh' }
 				,	{ img: path+'eric.png', x:460, y:157, clipSprite:false, name:'bLeric' }
+				,	{ img: path+'bStext1.png', x:204, y:207, clipSprite:false, name:'bStext1' }
+				,	{ img: path+'bStext2.png', x:95, y:703, clipSprite:false, name:'bStext2' }
+			
 			];
 		}
 		
@@ -39,6 +42,9 @@ package com.astrazeneca.screens
 			addChild(images['bLgreenSwoosh']);
 			addChild(images['bLtopOrangeSwoosh']);
 			addChild(images['bLeric']);
+			addChild(images['bStext1']);
+			addChild(images['bStext2']);
+		
 			
 			timeline = new TimelineMax( {paused: true, onComplete:onTransitionComplete, onReverseComplete:onReverseTransitionComplete} );			
 			timeline.append( TweenMax.to(images['bLwhiteBG'], .5, { x:10, ease:Sine.easeOut }) );
@@ -47,6 +53,9 @@ package com.astrazeneca.screens
 			timeline.append( TweenMax.to(images['bLgreenSwoosh'].clipRect, 1, { width:images['bLgreenSwoosh'].originalWidth, ease:Sine.easeInOut }), -0.8);
 			timeline.append( TweenMax.to(images['bLOrangeSwoosh'].clipRect, 1, { width:images['bLOrangeSwoosh'].originalWidth, ease:Sine.easeInOut }), -0.8 );
 			timeline.append( TweenMax.to(images['bLeric'], .6, { alpha:1, ease:Sine.easeInOut }), -0.2 );
+			timeline.append( TweenMax.to(images['bStext1'], .4, {alpha:1, ease:Sine.easeOut}), -0.8);
+			timeline.append( TweenMax.to(images['bStext2'], .4, {alpha:1, ease:Sine.easeOut}), -0.8);
+			
 			reset();
 			notifyReady();
 		}
@@ -87,6 +96,9 @@ package com.astrazeneca.screens
 			images['bLtopOrangeSwoosh'].clipRect.width = 0;
 			images['bLOrangeSwoosh'].clipRect.width = 0;
 			images['bLeric'].alpha = 0;
+			images['bStext1'].alpha = 0;
+			images['bStext2'].alpha = 0;
+	
 		}
 	}
 }

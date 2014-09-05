@@ -35,6 +35,7 @@ package com.astrazeneca.screens
 				,	{ img: 'meetEric/bigEric.png', x:43, y:475, clipSprite:false, name:'eric' }
 				,	{ img: 'meetEric/whiteBG.png', x:-1080, y:49, clipSprite:false, name:'whiteBG' }
 				,	{ img: 'meetEric/textLayer.png', x:0, y:0, clipSprite:false, name:'textLayer' }
+				
 			];
 			
 		}

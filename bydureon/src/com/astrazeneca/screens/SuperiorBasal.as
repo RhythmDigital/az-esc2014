@@ -30,6 +30,7 @@ package com.astrazeneca.screens
 				,	{ img: path+'swish1.png', x:48, y:0, clipSprite:true, name:'sBswish1' }
 				,	{ img: path+'viewStudyTag.png', x:0, y:0, clipSprite:false, name:'sBviewStudyTag' }
 				,	{ img: path+'popUp.png', x:0, y:0, clipSprite:false, name:'sBpopUp' }
+				,	{ img: path+'sBtextLayer.png', x:0, y:0, clipSprite:false, name:'sBtextLayer' }
 			];
 		}
 		
@@ -43,6 +44,7 @@ package com.astrazeneca.screens
 		{
 			addChild(images['sBwhiteBG']);
 			addChild(images['sBswish1']);
+			addChild(images['sBtextLayer']);
 			
 			initViewStudyButton();
 			
@@ -54,6 +56,9 @@ package com.astrazeneca.screens
 			timeline = new TimelineMax( {paused: true, onComplete:onTransitionComplete, onReverseComplete:onReverseTransitionComplete} );			
 			timeline.append(TweenMax.to(images['sBwhiteBG'], .5, {x:12, ease:Sine.easeOut}));
 			timeline.append(TweenMax.to(images['sBswish1'].clipRect, 1, {width:images['sBswish1'].originalWidth, ease:Sine.easeInOut}),-.1);
+			timeline.append(TweenMax.to(images['sBtextLayer'], .4, {alpha:1, ease:Sine.easeOut}), -0.8);
+			
+			images['sBtextLayer'].touchable = false;
 			
 			TweenMax.to(viewStudyButton, .3, {scaleX:.95, scaleY:.95, ease:com.greensock.easing.Quad.easeOut, repeat:-1, yoyo:true});
 			
@@ -127,6 +132,8 @@ package com.astrazeneca.screens
 		{
 			images['sBwhiteBG'].x = -1080;
 			images['sBswish1'].clipRect.width = 0;
+			images['sBtextLayer'].alpha = 0;
+			
 			viewStudyButton.x = 1100+viewStudyButton.width;
 			TweenMax.killTweensOf(viewStudyButton);
 			
