@@ -178,9 +178,9 @@ package com.astrazeneca.screens
 			timeline.timeScale(4);
 			timeline.reverse();
 			
-			kgCounter.countBackwards(0.1);
-			kgCounterTwo.countBackwards(0.1);
-			kgCounterThree.countBackwards(0.1);
+			kgCounter.countBackwards(0.1,0, true);
+			kgCounterTwo.countBackwards(0.1,0,true);
+			kgCounterThree.countBackwards(0.1,0,true);
 			
 			popup.hide();
 			hideViewStudyButton();

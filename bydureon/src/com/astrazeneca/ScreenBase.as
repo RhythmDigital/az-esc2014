@@ -121,11 +121,13 @@ package com.astrazeneca
 		{
 			for each (var img:Object in images)
 			{	
+				trace("img=",img);
 				if(img is Image) {	
 					removeChild(Image(img));
 					img.texture.dispose();
 					img.dispose();
 				}else{
+					trace("image kids",img.numChildren);
 					removeChild(Sprite(img));
 					img.getChildAt(0).texture.dispose();
 					img.getChildAt(0).dispose();
