@@ -53,8 +53,8 @@ package com.astrazeneca.screens
 			timeline.append( TweenMax.to(images['bLgreenSwoosh'].clipRect, 1, { width:images['bLgreenSwoosh'].originalWidth, ease:Sine.easeInOut }), -0.8);
 			timeline.append( TweenMax.to(images['bLOrangeSwoosh'].clipRect, 1, { width:images['bLOrangeSwoosh'].originalWidth, ease:Sine.easeInOut }), -0.8 );
 			timeline.append( TweenMax.to(images['bLeric'], .6, { alpha:1, ease:Sine.easeInOut }), -0.2 );
-			timeline.append( TweenMax.to(images['bStext1'], .4, {alpha:1, ease:Sine.easeOut}), -0.8);
-			timeline.append( TweenMax.to(images['bStext2'], .4, {alpha:1, ease:Sine.easeOut}), -0.8);
+			timeline.append( TweenMax.to(images['bStext1'], .4, {alpha:1, ease:Sine.easeOut}), 0);
+			timeline.append( TweenMax.to(images['bStext2'], .4, {alpha:1, ease:Sine.easeOut}), 0);
 			
 			reset();
 			notifyReady();

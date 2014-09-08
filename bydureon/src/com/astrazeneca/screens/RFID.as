@@ -54,14 +54,17 @@ package com.astrazeneca.screens
 			timeline = new TimelineMax( {paused: true, onComplete:onTransitionComplete, onReverseComplete:onReverseTransitionComplete} );		
 			timeline.append( TweenMax.to(images['RFIDwhiteBG'], .5, { x:10, ease:Sine.easeOut }) );
 			timeline.append( TweenMax.to(images['RFIDorangeSwoosh'].clipRect, 1, { width:images['RFIDorangeSwoosh'].originalWidth, ease:Sine.easeInOut }), -0.8 );
-			timeline.append( TweenMax.to(images['rFtext1'], .4, {alpha:1, ease:Sine.easeOut}), -0.5);
+			timeline.append( TweenMax.to(images['rFtext1'], .4, {alpha:1, ease:Sine.easeOut}), 0);
 			timeline.append( TweenMax.to(images['rFtext2'], .4, {alpha:1, ease:Sine.easeOut}), -0.4);
-			timeline.append( TweenMax.to(images['rFtext3'], .4, {alpha:1, ease:Sine.easeOut}), -0.3);
-			timeline.append( TweenMax.to(images['redIcon'], .4, {alpha:1, ease:Sine.easeOut}), -0.3);
-			timeline.append( TweenMax.to(images['rFtext4'], .4, {alpha:1, ease:Sine.easeOut}), -0.2);
-			timeline.append( TweenMax.to(images['orangeIcon'], .4, {alpha:1, ease:Sine.easeOut}), -0.3);
-			timeline.append( TweenMax.to(images['rFtext5'], .4, {alpha:1, ease:Sine.easeOut}), -0.1);
-			timeline.append( TweenMax.to(images['greenIcon'], .4, {alpha:1, ease:Sine.easeOut}), -0.3);
+
+			timeline.append( TweenMax.to(images['redIcon'], .4, {alpha:1, ease:Sine.easeOut}), 0);					
+			timeline.append( TweenMax.to(images['rFtext3'], .4, {alpha:1, ease:Sine.easeOut}), 0);
+
+			timeline.append( TweenMax.to(images['orangeIcon'], .4, {alpha:1, ease:Sine.easeOut}), 0);
+			timeline.append( TweenMax.to(images['rFtext4'], .4, {alpha:1, ease:Sine.easeOut}), 0);
+
+			timeline.append( TweenMax.to(images['greenIcon'], .4, {alpha:1, ease:Sine.easeOut}), 0);
+			timeline.append( TweenMax.to(images['rFtext5'], .4, {alpha:1, ease:Sine.easeOut}), 0);
 			
 			reset();
 			notifyReady();

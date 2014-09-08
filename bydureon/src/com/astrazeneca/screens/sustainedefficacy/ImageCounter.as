@@ -28,7 +28,7 @@ package com.astrazeneca.screens.sustainedefficacy
 			addChild(tf);
 			
 			this.tf.fontName = AZ_Bydureon.FONT_BydureonOblong;
-			this.tf.color = 0xFF6600//0xffffff;
+			this.tf.color = 0xffffff;
 			tf.x = int(counterX);
 			tf.y = int(counterY);
 			

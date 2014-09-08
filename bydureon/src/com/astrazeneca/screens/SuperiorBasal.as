@@ -14,6 +14,7 @@ package com.astrazeneca.screens
 	import starling.display.Quad;
 	import starling.display.Sprite;
 	import starling.events.Event;
+	import com.astrazeneca.ClipSprite;
 	
 	public class SuperiorBasal extends ScreenBase
 	{
@@ -104,64 +105,117 @@ package com.astrazeneca.screens
 		
 		private function initCounters1():void
 		{
-			var kgDialImg1:Image = images['topText1'];
-			kgCounter1 = new ImageCounter(kgDialImg1, 60, 170, 3, "%", 0, -1.5, 205, 205, 450, 589 );
+		//	var kgDialImg1:Image = images['topText1'];
+			//kgCounter1 = new ImageCounter(kgDialImg1, 60, 170, 3, "kg", 0, -1.5, 205, 205, 450, 589 );
 		//	kgCounter1.y = 588;
-			addChild(kgCounter1);
+			//addChild(kgCounter1);
 		
+			
+			var kgDialImg1:Image = images['topText1'];
+
+			kgCounter1 = new ImageCounter(kgDialImg1, 60, 170, 0, "%", 0, -1.5, 0, 0, -kgDialImg1.height, 0 );
+			kgCounter1.y = -kgDialImg1.height;
+			var clipped:ClipSprite = new ClipSprite(kgDialImg1.width);
+			clipped.addChild(kgCounter1);
+			clipped.clipRect = new Rectangle(0, 0, kgDialImg1.width, kgDialImg1.height);
+			clipped.x = 205;
+			clipped.y = 589;
+			
+			addChild(clipped);
 		}
 		
 		private function initCounters2():void
 		{
 			var kgDialImg2:Image = images['topText2'];
-			kgCounter2 = new ImageCounter(kgDialImg2, 60, 146, 3, "%", 0, -1.3, 338, 338, 450, 589 );
-		//	kgCounter2.y = 1195;
-			addChild(kgCounter2);
+			kgCounter2 = new ImageCounter(kgDialImg2, 60, 146, 3, "%", 0, -1.3, 0, 0, -kgDialImg2.height, 0 );
+			kgCounter2.y = -kgDialImg2.height;
+			var clipped:ClipSprite = new ClipSprite(kgDialImg2.width);
+			clipped.addChild(kgCounter2);
+			clipped.clipRect = new Rectangle(0, 0, kgDialImg2.width, kgDialImg2.height);
+			clipped.x = 338;
+			clipped.y = 589;
+					
+			addChild(clipped);
 		}
 		
 		private function initCounters3():void
-		{
+		{			
 			var kgDialImg3:Image = images['topText3'];
-			kgCounter3 = new ImageCounter(kgDialImg3, 60, 106, 3, "%", 0,-1.0, 523, 523, 588, 589 );
-		//	kgCounter3.y = 1131l;
-			addChild(kgCounter3);
+			kgCounter3 = new ImageCounter(kgDialImg3, 60, 106, 3, "%", 0, -1.0, 0, 0, -kgDialImg3.height, 0 );
+			kgCounter3.y = -kgDialImg3.height;
+			var clipped:ClipSprite = new ClipSprite(kgDialImg3.width);
+			clipped.addChild(kgCounter3);
+			clipped.clipRect = new Rectangle(0, 0, kgDialImg3.width, kgDialImg3.height);
+			clipped.x = 523;
+			clipped.y = 589;
+			
+			addChild(clipped);
 		}
 		
 		private function initCounters4():void
 		{
 			var kgDialImg4:Image = images['topText4'];
-			kgCounter4 = new ImageCounter(kgDialImg4, 60, 88, 3, "%", 0, -0.8, 656, 656, 588, 589 );
-		//	kgCounter4.y = 1131;
-			addChild(kgCounter4);
+			kgCounter4 = new ImageCounter(kgDialImg4, 60, 88, 3, "%", 0, -0.8, 0, 0, -kgDialImg4.height, 0 );
+			kgCounter4.y = -kgDialImg4.height;
+			var clipped:ClipSprite = new ClipSprite(kgDialImg4.width);
+			clipped.addChild(kgCounter4);
+			clipped.clipRect = new Rectangle(0, 0, kgDialImg4.width, kgDialImg4.height);
+			clipped.x = 656;
+			clipped.y = 589;
+			
+			addChild(clipped);
 		}
 		private function initCounters5():void
 		{
 			var kgDialImg5:Image = images['stage1'];
-			kgCounter5 = new ImageCounter(kgDialImg5, 60, 58, 3, "Kg", 0, -2.6, 205, 205, 1196, 1196 );
-			//	kgCounter4.y = 1131;
-			addChild(kgCounter5);
-		}
-		private function initCounters6():void
+			kgCounter5 = new ImageCounter(kgDialImg5, 60, 58, 3, "kg", 0, -2.6, 0, 0, -kgDialImg5.height, 0 );
+			kgCounter5.y = -kgDialImg5.height;
+			var clipped:ClipSprite = new ClipSprite(kgDialImg5.width);
+			clipped.addChild(kgCounter5);
+			clipped.clipRect = new Rectangle(0, 0, kgDialImg5.width, kgDialImg5.height);
+			clipped.x = 205;
+			clipped.y = 1196;
 			
+			addChild(clipped);
+		}
+		private function initCounters6():void			
 		{
 			var kgDialImg6:Image = images['stage2'];
-			kgCounter6 = new ImageCounter(kgDialImg6, 60, 30, 3, "Kg", 0, +1.4, 338, 338, 1148, 1148 );
-			//	kgCounter4.y = 1131;
-			addChild(kgCounter6);
+			kgCounter6 = new ImageCounter(kgDialImg6, 60, 30, 3, "kg", 0, +1.4, 0, 0, kgDialImg6.height, 0 );
+			kgCounter6.y = 0;
+			var clipped:ClipSprite = new ClipSprite(kgDialImg6.width);
+			clipped.addChild(kgCounter6);
+			clipped.clipRect = new Rectangle(0, 0, kgDialImg6.width, kgDialImg6.height);
+			clipped.x = 338;
+			clipped.y = 1148
+			
+			addChild(clipped);
 		}
 		private function initCounters7():void
 		{
 			var kgDialImg7:Image = images['stage3'];
-			kgCounter7 = new ImageCounter(kgDialImg7, 60, 54, 3, "Kg", 0, -2.5, 523, 523, 1196, 1196 );
-			//	kgCounter4.y = 1131;
-			addChild(kgCounter7);
+			kgCounter7 = new ImageCounter(kgDialImg7, 60, 54, 3, "kg", 0, -2.5, 0, 0, -kgDialImg7.height, 0 );
+			kgCounter7.y = -kgDialImg7.height;
+			var clipped:ClipSprite = new ClipSprite(kgDialImg7.width);
+			clipped.addChild(kgCounter7);
+			clipped.clipRect = new Rectangle(0, 0, kgDialImg7.width, kgDialImg7.height);
+			clipped.x = 523;
+			clipped.y = 1196;
+			
+			addChild(clipped);
 		}
 		private function initCounters8():void
 		{
 			var kgDialImg8:Image = images['stage4'];
-			kgCounter8 = new ImageCounter(kgDialImg8, 60, 48, 3, "Kg", 0, +2.0, 656, 656, 1129, 1129 );
-			//	kgCounter4.y = 1131;
-			addChild(kgCounter8);
+			kgCounter8 = new ImageCounter(kgDialImg8, 60, 48, 3, "kg", 0, +2.0, 0, 0, kgDialImg8.height, 0 );
+			kgCounter8.y = 0;
+			var clipped:ClipSprite = new ClipSprite(kgDialImg8.width);
+			clipped.addChild(kgCounter8);
+			clipped.clipRect = new Rectangle(0, 0, kgDialImg8.width, kgDialImg8.height);
+			clipped.x = 656;
+			clipped.y = 1129
+			
+			addChild(clipped);
 		}
 		
 		private function onShowViewStudyButton(e:Event = null):void
@@ -231,14 +285,14 @@ package com.astrazeneca.screens
 			timeline.timeScale(4);
 			timeline.reverse();
 			
-			kgCounter1.countBackwards(0.1);
-			kgCounter2.countBackwards(0.1);
-			kgCounter3.countBackwards(0.1);
-			kgCounter4.countBackwards(0.1);
-			kgCounter5.countBackwards(0.1);
-			kgCounter6.countBackwards(0.1);
-			kgCounter7.countBackwards(0.1);
-			kgCounter8.countBackwards(0.1);
+			kgCounter1.countBackwards(0.1, 0, true);
+			kgCounter2.countBackwards(0.1, 0, true);
+			kgCounter3.countBackwards(0.1, 0, true);
+			kgCounter4.countBackwards(0.1, 0, true);
+			kgCounter5.countBackwards(0.1, 0, true);
+			kgCounter6.countBackwards(0.1, 0, true);
+			kgCounter7.countBackwards(0.1, 0, true);
+			kgCounter8.countBackwards(0.1, 0, true);
 
 			
 			popup.hide();
