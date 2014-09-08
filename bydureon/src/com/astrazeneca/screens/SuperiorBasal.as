@@ -25,6 +25,10 @@ package com.astrazeneca.screens
 		private var kgCounter2:ImageCounter;
 		private var kgCounter3:ImageCounter;
 		private var kgCounter4:ImageCounter;
+		private var kgCounter5:ImageCounter;
+		private var kgCounter6:ImageCounter;
+		private var kgCounter7:ImageCounter;
+		private var kgCounter8:ImageCounter;
 		
 		public function SuperiorBasal()
 		{
@@ -41,7 +45,12 @@ package com.astrazeneca.screens
 				,	{ img: path+'topText2.png', x:0, y:0, clipSprite:false, name:'topText2' }
 				,	{ img: path+'topText3.png', x:0, y:0, clipSprite:false, name:'topText3' }
 				,	{ img: path+'topText4.png', x:0, y:0, clipSprite:false, name:'topText4' }
-				,	{ img: path+'topTextAdd.png', x:243, y:643, clipSprite:false, name:'topTextAdd' }
+				,	{ img: path+'topTextAdd.png', x:264, y:699, clipSprite:false, name:'topTextAdd' }
+				,	{ img: path+'stage1.png', x:0, y:0, clipSprite:false, name:'stage1' }
+				,	{ img: path+'stage2.png', x:0, y:0, clipSprite:false, name:'stage2' }
+				,	{ img: path+'stage3.png', x:0, y:0, clipSprite:false, name:'stage3' }
+				,	{ img: path+'stage4.png', x:0, y:0, clipSprite:false, name:'stage4' }
+				,	{ img: path+'stageText.png', x:263, y:1112, clipSprite:false, name:'stageText' }
 			];
 		}
 		
@@ -57,14 +66,21 @@ package com.astrazeneca.screens
 			addChild(images['sBswish1']);
 			addChild(images['sBtextLayer']);
 			addChild(images['topTextAdd']);
+			addChild(images['stageText']);
 			
 			initViewStudyButton();
 			initCounters1();
 			initCounters2();
 			initCounters3();
 			initCounters4();
+			initCounters5();
+			initCounters6();
+			initCounters7();
+			initCounters8();
+			
 			
 			addChild(images['topTextAdd']);
+			addChild(images['stageText']);
 			
 			popup = new PopUp(images['sBpopUp'], 0, 238, new Rectangle(859,35,67,64));
 			popup.addEventListener("HIDING", onShowViewStudyButton);
@@ -74,7 +90,8 @@ package com.astrazeneca.screens
 			timeline.append(TweenMax.to(images['sBwhiteBG'], .5, {x:12, ease:Sine.easeOut}));
 			timeline.append(TweenMax.to(images['sBswish1'].clipRect, 1, {width:images['sBswish1'].originalWidth, ease:Sine.easeInOut}),-.1);
 			timeline.append(TweenMax.to(images['sBtextLayer'], .4, {alpha:1, ease:Sine.easeOut}), -0.8);
-			timeline.append(TweenMax.to(images['topTextAdd'], .4, {alpha:1, ease:Sine.easeOut}), -0.8);
+			timeline.append(TweenMax.to(images['topTextAdd'], 0.6, {alpha:1, ease:Sine.easeOut}), 2.8);
+			timeline.append(TweenMax.to(images['stageText'], 0.6, {alpha:1, ease:Sine.easeOut}), 0.5);
 			
 			
 			images['sBtextLayer'].touchable = false;
@@ -88,17 +105,16 @@ package com.astrazeneca.screens
 		private function initCounters1():void
 		{
 			var kgDialImg1:Image = images['topText1'];
-			kgCounter1 = new ImageCounter(kgDialImg1, 0, -1.5, 0, "", 0, 0, 205, 205, 450, 588 );
+			kgCounter1 = new ImageCounter(kgDialImg1, 60, 170, 3, "%", 0, -1.5, 205, 205, 450, 589 );
 		//	kgCounter1.y = 588;
 			addChild(kgCounter1);
-			
-	
+		
 		}
 		
 		private function initCounters2():void
 		{
 			var kgDialImg2:Image = images['topText2'];
-			kgCounter2 = new ImageCounter(kgDialImg2, 0, 0, 0, "", 0, 0, 338, 338, 450, 588 );
+			kgCounter2 = new ImageCounter(kgDialImg2, 60, 146, 3, "%", 0, -1.3, 338, 338, 450, 589 );
 		//	kgCounter2.y = 1195;
 			addChild(kgCounter2);
 		}
@@ -106,17 +122,46 @@ package com.astrazeneca.screens
 		private function initCounters3():void
 		{
 			var kgDialImg3:Image = images['topText3'];
-			kgCounter3 = new ImageCounter(kgDialImg3, 0, 0, 0, "", 0,0, 523, 523, 588, 588 );
-		//	kgCounter3.y = 1131;
+			kgCounter3 = new ImageCounter(kgDialImg3, 60, 106, 3, "%", 0,-1.0, 523, 523, 588, 589 );
+		//	kgCounter3.y = 1131l;
 			addChild(kgCounter3);
 		}
 		
 		private function initCounters4():void
 		{
 			var kgDialImg4:Image = images['topText4'];
-			kgCounter4 = new ImageCounter(kgDialImg4, 0, 0, 0, "", 0, 0, 656, 656, 588, 588 );
+			kgCounter4 = new ImageCounter(kgDialImg4, 60, 88, 3, "%", 0, -0.8, 656, 656, 588, 589 );
 		//	kgCounter4.y = 1131;
 			addChild(kgCounter4);
+		}
+		private function initCounters5():void
+		{
+			var kgDialImg5:Image = images['stage1'];
+			kgCounter5 = new ImageCounter(kgDialImg5, 60, 58, 3, "Kg", 0, -2.6, 205, 205, 1196, 1196 );
+			//	kgCounter4.y = 1131;
+			addChild(kgCounter5);
+		}
+		private function initCounters6():void
+			
+		{
+			var kgDialImg6:Image = images['stage2'];
+			kgCounter6 = new ImageCounter(kgDialImg6, 60, 30, 3, "Kg", 0, +1.4, 338, 338, 1148, 1148 );
+			//	kgCounter4.y = 1131;
+			addChild(kgCounter6);
+		}
+		private function initCounters7():void
+		{
+			var kgDialImg7:Image = images['stage3'];
+			kgCounter7 = new ImageCounter(kgDialImg7, 60, 54, 3, "Kg", 0, -2.5, 523, 523, 1196, 1196 );
+			//	kgCounter4.y = 1131;
+			addChild(kgCounter7);
+		}
+		private function initCounters8():void
+		{
+			var kgDialImg8:Image = images['stage4'];
+			kgCounter8 = new ImageCounter(kgDialImg8, 60, 48, 3, "Kg", 0, +2.0, 656, 656, 1129, 1129 );
+			//	kgCounter4.y = 1131;
+			addChild(kgCounter8);
 		}
 		
 		private function onShowViewStudyButton(e:Event = null):void
@@ -172,6 +217,10 @@ package com.astrazeneca.screens
 			kgCounter2.countForwards(2, 2.5);
 			kgCounter3.countForwards(2, 3);
 			kgCounter4.countForwards(2, 3);
+			kgCounter5.countForwards(2, 4);
+			kgCounter6.countForwards(2, 4.5);
+			kgCounter7.countForwards(2, 5);
+			kgCounter8.countForwards(2, 5.5);
 	
 			TweenMax.delayedCall(1.8, onShowViewStudyButton);
 		}
@@ -186,6 +235,10 @@ package com.astrazeneca.screens
 			kgCounter2.countBackwards(0.1);
 			kgCounter3.countBackwards(0.1);
 			kgCounter4.countBackwards(0.1);
+			kgCounter5.countBackwards(0.1);
+			kgCounter6.countBackwards(0.1);
+			kgCounter7.countBackwards(0.1);
+			kgCounter8.countBackwards(0.1);
 
 			
 			popup.hide();
@@ -198,6 +251,7 @@ package com.astrazeneca.screens
 			images['sBswish1'].clipRect.width = 0;
 			images['sBtextLayer'].alpha = 0;
 			images['topTextAdd'].alpha = 0;
+			images['stageText'].alpha = 0;
 			
 			viewStudyButton.x = 1100+viewStudyButton.width;
 			TweenMax.killTweensOf(viewStudyButton);
@@ -206,6 +260,10 @@ package com.astrazeneca.screens
 			kgCounter2.reset();
 			kgCounter3.reset();
 			kgCounter4.reset();
+			kgCounter5.reset();
+			kgCounter6.reset();
+			kgCounter7.reset();
+			kgCounter8.reset();
 			
 			popup.reset();
 		}
