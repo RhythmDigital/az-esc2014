@@ -28,14 +28,14 @@ package com.astrazeneca.screens.sustainedefficacy
 			addChild(tf);
 			
 			this.tf.fontName = AZ_Bydureon.FONT_BydureonOblong;
-			this.tf.color = 0xffffff;
+			this.tf.color = 0xFF6600//0xffffff;
 			tf.x = int(counterX);
 			tf.y = int(counterY);
 			
 			this.countToValue = countToValue;
 		}
 		
-		public function countForwards(time:Number=1, delay:Number=0):void
+		public function countForwards(time:Number=1, delay:Number=0, resetCount:Boolean=false):void
 		{
 			countTo(countToValue, time, delay);
 			
@@ -47,8 +47,10 @@ package com.astrazeneca.screens.sustainedefficacy
 				TweenMax.to(this, time, {delay:delay, y:endY, ease:Sine.easeOut});
 				TweenMax.to(this, time/10, {delay:delay, alpha:1,ease:Sine.easeOut});
 			}
+			
+			if(resetCount)TweenMax.delayedCall(time, reset);
 		}
-		public function countBackwards(time:Number=0.2, delay:Number=0):void
+		public function countBackwards(time:Number=0.2, delay:Number=0, resetCount:Boolean=false):void
 		{
 			countTo(initialValue, time);
 			if(startY!=endY)
@@ -57,16 +59,21 @@ package com.astrazeneca.screens.sustainedefficacy
 				TweenMax.to(this, time/10, {delay: time-(time/10), alpha:0,ease:Sine.easeOut});
 			}else{
 				TweenMax.to(this, time, {delay:delay, y:startY, ease:Sine.easeOut});
-				TweenMax.to(this, time/10, {delay:delay, alpha:1,ease:Sine.easeOut});
+				TweenMax.to(this, time/10, {delay:delay, alpha:0,ease:Sine.easeOut});
 			}
+			
+			if(resetCount)TweenMax.delayedCall(time, reset);
 		}
 		
 		override public function reset():void
 		{
 			super.reset();
 			TweenMax.killTweensOf(this, {x:true, alpha:true});
+			TweenMax.killDelayedCallsTo(reset);
 			x = startX;
+			y = startY;
 			alpha = 0;
 		}
+		
 	}
 }
