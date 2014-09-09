@@ -32,6 +32,9 @@ package com.astrazeneca
 		private const DEFAULT_SCREEN:String = "meetEric";
 		private var nextScreenId:String;		
 		private var screenToLoad:Object;
+		
+		private var screenLoading:Boolean = false;
+		
 		public function Main()
 		{
 			super();		
@@ -56,14 +59,28 @@ package com.astrazeneca
 		private function onMenuButtonTouched(e:Event):void
 		{
 			trace("Menu button", e.data.id);
-			//nextScreenId = String(e.data.id);
-			//showScreen(e.data.id);
+			
+			if(screenLoading) {
+				trace("NO!");
+				//this.menu.highlight(currentScreen.id);
+				return;
+			}
+			this.menu.highlight(e.data.id);
+			stage.invalidate();
+			
 			screenToLoad = e.data.id;
-			loadNextScreenImages();
+			loadNextScreenImages();			
 		}
 		
 		private function loadNextScreenImages():void
 		{
+			screenLoading = true;
+			TweenMax.delayedCall(3, startScreenLoad, null, true);
+		}
+		
+		private function startScreenLoad():void
+		{			
+			// only load one at a time!
 			getScreenById(screenToLoad).loadImageManifest();
 			getScreenById(screenToLoad).addEventListener("READY", screenImagesLoaded);
 		}
@@ -71,24 +88,39 @@ package com.astrazeneca
 		private function screenImagesLoaded(e:Event):void
 		{
 			getScreenById(screenToLoad).removeEventListener("READY", screenImagesLoaded);
-			showScreen(screenToLoad);
+			if(!showScreen(screenToLoad)){
+				// show screen rejected
+				this.menu.highlight(currentScreen.id);
+			}
 		}
 		
-		private function showScreen(screenID):void
+		private function showScreen(screenID):Boolean
 		{
 			trace("Show screen: ", screenID);			
 			
-			if(getScreenById(screenID).transitioning == ScreenBase.CLOSING) return;			
-			if((currentScreen && this.currentScreen.id == screenID)) return;
-						
+			if(getScreenById(screenID).transitioning == ScreenBase.CLOSING) false;			
+			if((currentScreen && this.currentScreen.id == screenID)) false;
+			
 			nextScreenId = screenID;
 			this.menu.highlight(nextScreenId);
 			
-			if(!currentScreen) {
+			if(currentScreen && (currentScreen.transitioning == ScreenBase.OPENING 
+				|| currentScreen.transitioning == ScreenBase.CLOSING
+				|| currentScreen.transitioning == ScreenBase.LOADING
+			))
+			{
+				currentScreen.immediateClose();
 				showNextScreen();
+				
 			} else {
-				currentScreen.hide();
+				if(!currentScreen) {
+					showNextScreen();
+				} else {
+					currentScreen.hide();
+				}
 			}
+			
+			return true;			
 		}
 		
 		private function showNextScreen():void
@@ -97,14 +129,13 @@ package com.astrazeneca
 			currentScreen = getScreenById(nextScreenId);
 			addChild(menu);
 			addChild(currentScreen);
-			currentScreen.show();
+			currentScreen.show();			
 		}
 		
 		private function getScreenById(nextScreenID:Object):ScreenBase
 		{
 			for(var i:int = 0; i < screens.length; ++i)
 				if(screens[i].id == nextScreenID) return screens[i].screen;
-
 			return null;
 		}
 				
@@ -122,6 +153,7 @@ package com.astrazeneca
 			
 			for(var i:int = 0; i < screens.length; ++i){
 				screens[i].screen.addEventListener("SCREEN_CLOSED", onScreenClosed);
+				screens[i].screen.addEventListener("SCREEN_OPENED", onScreenOpened);
 //				screens[i].screen.addEventListener("READY", onScreenReady);
 				screens[i].screen.init(screens[i].id);
 			}
@@ -131,23 +163,19 @@ package com.astrazeneca
 			
 			//showScreen();
 			
-		}		
+		}
 		
+		private function onScreenOpened(e:Event):void
+		{
+			trace("onScreenOpened");
+			screenLoading = false;
+		}
+				
 		private function onScreenClosed(e:Event):void
 		{
 			trace("Screen closed");
 			showNextScreen();
 		}
-		
-//		private function onScreenReady(e:Event):void
-//		{
-//			trace("Screen " + screens[screensReady].id + " is ready.");
-//			screensReady ++;
-//			
-//			if(screensReady == screens.length) {
-//				showScreen(DEFAULT_SCREEN);
-//			}
-//		}
 		
 		public function reset():void
 		{

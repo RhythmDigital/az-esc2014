@@ -84,6 +84,7 @@ package com.astrazeneca.screens
 		private function onTransitionComplete():void
 		{
 			transitioning = OPEN;
+			notifyScreenOpened();
 		}
 		
 		private function onReverseTransitionComplete():void
@@ -111,6 +112,10 @@ package com.astrazeneca.screens
 		
 		override public function reset():void
 		{
+			super.reset();
+			
+			timeline.gotoAndStop(0);
+			
 			images['wDorangeSwish'].clipRect.width = 0;
 			images['wDwhiteBG'].x = -1080;
 			images['wDericsBox'].alpha = images['wDinjection'].alpha = 0;

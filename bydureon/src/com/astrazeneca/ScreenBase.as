@@ -24,6 +24,7 @@ package com.astrazeneca
 		
 		public var transitioning:String;
 		
+		public static const LOADING:String = "LOADING";	
 		public static const OPENING:String = "OPENING";		
 		public static const CLOSING:String = "CLOSING";
 		
@@ -46,6 +47,8 @@ package com.astrazeneca
 		
 		public function loadImageManifest():void
 		{
+			transitioning = LOADING;
+			
 			loader = new LoaderMax({ onComplete:onInitialLoad, onError:onError });
 			
 			for each (var file:Object in imageManifest)
@@ -101,9 +104,18 @@ package com.astrazeneca
 			dispatchEvent(new Event("SCREEN_CLOSED", true));
 		}
 		
+		protected function notifyScreenOpened():void
+		{
+			dispatchEvent(new Event("SCREEN_OPENED", true));
+		}
+		
+		
 		public function reset():void
 		{
-			// reset everything
+			loader.dispose(false);
+			loader.cancel();
+			
+			transitioning = CLOSED;
 		}
 		
 		public function show():void
@@ -135,6 +147,13 @@ package com.astrazeneca
 				}
 				img=null;				
 			}
+		}
+		
+		public function immediateClose():void
+		{
+			trace("Immediate close!");
+			reset();
+			disposeTextures();
 		}
 	}
 }

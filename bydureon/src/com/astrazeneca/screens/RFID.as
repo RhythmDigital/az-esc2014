@@ -73,6 +73,7 @@ package com.astrazeneca.screens
 		private function onTransitionComplete():void
 		{
 			transitioning = OPEN;
+			notifyScreenOpened();
 		}
 		
 		private function onReverseTransitionComplete():void
@@ -100,6 +101,9 @@ package com.astrazeneca.screens
 		
 		override public function reset():void
 		{
+			super.reset();
+			
+			timeline.gotoAndStop(0);
 			images['RFIDwhiteBG'].x = -1080;
 			images['RFIDorangeSwoosh'].clipRect.width = 0;
 			images['rFtext1'].alpha = 0;
