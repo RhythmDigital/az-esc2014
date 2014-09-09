@@ -69,9 +69,12 @@ package com.wehaverhythm.air
 					bg.height = 1920;
 				}
 				
-				Starling.current.nativeOverlay.addChild(this);
-				Starling.current.stage.touchable = false;
-				MouseManager.getInstance().show();
+				if(!Variables.DEBUG) {
+					Starling.current.nativeOverlay.addChild(this);
+					Starling.current.stage.touchable = false;
+					MouseManager.getInstance().show();
+				}
+				
 			}
 		}
 		

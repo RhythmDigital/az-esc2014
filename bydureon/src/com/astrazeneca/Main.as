@@ -11,6 +11,7 @@ package com.astrazeneca
 	import com.greensock.TweenMax;
 	
 	import flash.display.Stage;
+	import flash.utils.getTimer;
 	
 	import starling.core.Starling;
 	import starling.display.Quad;
@@ -33,11 +34,18 @@ package com.astrazeneca
 		private var nextScreenId:String;		
 		private var screenToLoad:Object;
 		
+		private var nextAutoScreen:int = 0;
+		
 		private var screenLoading:Boolean = false;
+		
+		private var startTime:int;
+		private var screensLoaded:int = 0;
+		
 		
 		public function Main()
 		{
-			super();		
+			super();
+			startTime = getTimer();
 		}
 		
 		public function init(stage:flash.display.Stage):void
@@ -75,28 +83,23 @@ package com.astrazeneca
 		private function loadNextScreenImages():void
 		{
 			screenLoading = true;
-			TweenMax.delayedCall(3, startScreenLoad, null, true);
-		}
-		
-		private function startScreenLoad():void
-		{			
-			// only load one at a time!
 			getScreenById(screenToLoad).loadImageManifest();
 			getScreenById(screenToLoad).addEventListener("READY", screenImagesLoaded);
 		}
 		
 		private function screenImagesLoaded(e:Event):void
-		{
+		{		
 			getScreenById(screenToLoad).removeEventListener("READY", screenImagesLoaded);
 			if(!showScreen(screenToLoad)){
 				// show screen rejected
 				this.menu.highlight(currentScreen.id);
+				screenLoading = false;
 			}
 		}
 		
 		private function showScreen(screenID):Boolean
 		{
-			trace("Show screen: ", screenID);			
+			//trace("Show screen: ", screenID);			
 			
 			if(getScreenById(screenID).transitioning == ScreenBase.CLOSING) false;			
 			if((currentScreen && this.currentScreen.id == screenID)) false;
@@ -167,19 +170,38 @@ package com.astrazeneca
 		
 		private function onScreenOpened(e:Event):void
 		{
-			trace("onScreenOpened");
+			//trace("onScreenOpened");
 			screenLoading = false;
+						
+			if(Variables.DEBUG) {
+				screensLoaded ++;
+				nextAutoScreen ++;
+				if(nextAutoScreen == screens.length) nextAutoScreen = 0;
+				
+				screenToLoad = screens[nextAutoScreen].id;
+				//loadNextScreenImages();
+				
+				trace("\n\n*******************\n");
+				trace("Current screen: ", currentScreen.id, " & next: ", screenToLoad); 
+				trace("Time elapsed: ", (getTimer()-startTime));
+				trace("Screens loaded: ", screensLoaded);
+				trace("\n*******************\n\n");
+				
+				TweenMax.delayedCall(5, loadNextScreenImages, null);
+			}
 		}
 				
 		private function onScreenClosed(e:Event):void
 		{
-			trace("Screen closed");
+			//trace("Screen closed");
 			showNextScreen();
 		}
 		
 		public function reset():void
 		{
 			// called after main timeout...
+			screenToLoad = DEFAULT_SCREEN;
+			loadNextScreenImages();
 		}
 		
 	}

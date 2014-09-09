@@ -74,7 +74,7 @@ package
 			starlingStage.addChild(main);			
 			main.init(stage);			
 			
-			IdleTimeout.init(stage, fullScreenPrompt.timeout, main.reset);
+			if(!Variables.DEBUG) IdleTimeout.init(stage, fullScreenPrompt.timeout, main.reset);
 			
 			fullScreenManager = FullScreenManager.getInstance();
 			fullScreenManager.init(stage, null, true);
@@ -83,7 +83,7 @@ package
 		protected function onTimeoutChanged(event:Event):void
 		{
 			trace('resetting timeout to:', fullScreenPrompt.timeout);
-			IdleTimeout.setTimeout(fullScreenPrompt.timeout);
+			if(!Variables.DEBUG) IdleTimeout.setTimeout(fullScreenPrompt.timeout);
 		}
 	}
 }

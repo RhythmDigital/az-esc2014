@@ -112,7 +112,7 @@ package com.astrazeneca
 		
 		public function reset():void
 		{
-			loader.dispose(false);
+			//loader.dispose(false);
 			loader.cancel();
 			
 			transitioning = CLOSED;
@@ -133,13 +133,13 @@ package com.astrazeneca
 		{
 			for each (var img:Object in images)
 			{	
-				trace("img=",img);
+				//trace("img=",img);
 				if(img is Image) {	
 					removeChild(Image(img));
 					img.texture.dispose();
 					img.dispose();
 				}else{
-					trace("image kids",img.numChildren);
+					//trace("image kids",img.numChildren);
 					removeChild(Sprite(img));
 					img.getChildAt(0).texture.dispose();
 					img.getChildAt(0).dispose();	
@@ -150,7 +150,7 @@ package com.astrazeneca
 		
 		public function immediateClose():void
 		{
-			trace("Immediate close!");
+			//trace("Immediate close!");
 			reset();
 			disposeTextures();
 		}
