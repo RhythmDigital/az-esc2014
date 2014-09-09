@@ -89,8 +89,8 @@ package com.astrazeneca.screens
 			
 			timeline = new TimelineMax( {paused: true, onComplete:onTransitionComplete, onReverseComplete:onReverseTransitionComplete} );			
 			timeline.append(TweenMax.to(images['sBwhiteBG'], .5, {x:12, ease:Sine.easeOut}));
-			timeline.append(TweenMax.to(images['sBswish1'].clipRect, 1, {width:images['sBswish1'].originalWidth, ease:Sine.easeInOut}),-.1);
-			timeline.append(TweenMax.to(images['sBtextLayer'], .4, {alpha:1, ease:Sine.easeOut}), -0.8);
+			timeline.append(TweenMax.to(images['sBswish1'].clipRect, .5, {width:images['sBswish1'].originalWidth, ease:Sine.easeOut}),-.1);
+			timeline.append(TweenMax.to(images['sBtextLayer'], .4, {alpha:1, ease:Sine.easeOut}), 0);
 			timeline.append(TweenMax.to(images['topTextAdd'], 0.6, {alpha:1, ease:Sine.easeOut}), 2.8);
 			timeline.append(TweenMax.to(images['stageText'], 0.6, {alpha:1, ease:Sine.easeOut}), 0.5);
 			
@@ -105,12 +105,6 @@ package com.astrazeneca.screens
 		
 		private function initCounters1():void
 		{
-		//	var kgDialImg1:Image = images['topText1'];
-			//kgCounter1 = new ImageCounter(kgDialImg1, 60, 170, 3, "kg", 0, -1.5, 205, 205, 450, 589 );
-		//	kgCounter1.y = 588;
-			//addChild(kgCounter1);
-		
-			
 			var kgDialImg1:Image = images['topText1'];
 
 			kgCounter1 = new ImageCounter(kgDialImg1, 60, 170, 0, "%", 0, -1.5, 0, 0, -kgDialImg1.height, 0 );
@@ -268,16 +262,16 @@ package com.astrazeneca.screens
 			timeline.timeScale(.7);
 			timeline.play();
 			
-			kgCounter1.countForwards(2, 2);
-			kgCounter2.countForwards(2, 2.5);
-			kgCounter3.countForwards(2, 3);
-			kgCounter4.countForwards(2, 3);
-			kgCounter5.countForwards(2, 4);
-			kgCounter6.countForwards(2, 4.5);
-			kgCounter7.countForwards(2, 5);
-			kgCounter8.countForwards(2, 5.5);
+			kgCounter1.countForwards(1, 2);
+			kgCounter2.countForwards(1, 2.5);
+			kgCounter3.countForwards(1, 3);
+			kgCounter4.countForwards(1, 3.5);
+			kgCounter5.countForwards(1, 4);
+			kgCounter6.countForwards(1, 4.5);
+			kgCounter7.countForwards(1, 5);
+			kgCounter8.countForwards(1, 5.5);
 	
-			TweenMax.delayedCall(1.8, onShowViewStudyButton);
+			TweenMax.delayedCall(6.5, onShowViewStudyButton);
 		}
 		
 		override public function hide():void

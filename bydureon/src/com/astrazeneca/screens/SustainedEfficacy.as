@@ -78,13 +78,13 @@ package com.astrazeneca.screens
 			
 			timeline = new TimelineMax( {paused: true, onComplete:onTransitionComplete, onReverseComplete:onReverseTransitionComplete} );			
 			timeline.append(TweenMax.to(images['sEwhiteBG'], .5, {x:10, ease:Sine.easeOut}));
-			timeline.append(TweenMax.to(images['sEswish1'].clipRect, 1, {width:images['sEswish1'].originalWidth, ease:Sine.easeInOut}),-.2);
-			timeline.append(TweenMax.to(images['sEswish3'].clipRect, 1, {width:images['sEswish3'].originalWidth, ease:Sine.easeOut}), -0.8);
-			timeline.append(TweenMax.to(images['sEswish2'].clipRect, 1, {width:images['sEswish2'].originalWidth, ease:Sine.easeOut}), -0.8);
-			timeline.append(TweenMax.to(images['sEtext1'], .4, {alpha:1, ease:Sine.easeOut}), -0.9);
-			timeline.append(TweenMax.to(images['sEtext2'], .4, {alpha:1, ease:Sine.easeOut}), -0.8);
-			timeline.append(TweenMax.to(images['sEtext3'], .4, {alpha:1, ease:Sine.easeOut}), -0.2);
-			timeline.append(TweenMax.to(images['sEtext4'], .4, {alpha:1, ease:Sine.easeOut}), -0.1);
+			timeline.append(TweenMax.to(images['sEswish1'].clipRect, .8, {width:images['sEswish1'].originalWidth, ease:Sine.easeInOut}),-.2);
+			timeline.append(TweenMax.to(images['sEswish3'].clipRect, .8, {width:images['sEswish3'].originalWidth, ease:Sine.easeOut}), -0.8);
+			timeline.append(TweenMax.to(images['sEswish2'].clipRect, .8, {width:images['sEswish2'].originalWidth, ease:Sine.easeOut}), -0.8);
+			timeline.append(TweenMax.to(images['sEtext1'], .4, {alpha:1, ease:Sine.easeOut}), -0.3);
+			timeline.append(TweenMax.to(images['sEtext2'], .4, {alpha:1, ease:Sine.easeOut}), -.2);
+			timeline.append(TweenMax.to(images['sEtext3'], .4, {alpha:1, ease:Sine.easeOut}), 0);
+			timeline.append(TweenMax.to(images['sEtext4'], .4, {alpha:1, ease:Sine.easeOut}), 0);
 			
 			
 			TweenMax.to(viewStudyButton, .3, {scaleX:.95, scaleY:.95, ease:com.greensock.easing.Quad.easeOut, repeat:-1, yoyo:true});
@@ -95,6 +95,7 @@ package com.astrazeneca.screens
 		
 		private function initCounters():void
 		{
+			//scales
 			var kgDialImg:Image = images['sEorangeDial'];
 			kgCounter = new ImageCounter(kgDialImg, int(kgDialImg.width/2), 38, 1, " kg", 0, -4.3, 306, 625, 1240, 1240);
 			kgCounter.y = 1240;
@@ -103,6 +104,7 @@ package com.astrazeneca.screens
 		
 		private function initCountersTwo():void
 		{
+			//green dot
 			var kgDialImgTwo:Image = images['sEgreenDial'];
 			kgCounterTwo = new ImageCounter(kgDialImgTwo, int(kgDialImgTwo.width/2), 68, 1, " kg", 0, -1.6, 306, 638, 712, 712);
 			kgCounterTwo.y = 712;
@@ -111,8 +113,9 @@ package com.astrazeneca.screens
 		
 		private function initCountersThree():void
 		{
+			//green arrow
 			var kgDialImgThree:Image = images['sEgreenArrow'];
-			kgCounterThree = new ImageCounter(kgDialImgThree, int(kgDialImgThree.width/2), 65, 1, " kg", 0, -2.0, 638, 638, 987, 987);
+			kgCounterThree = new ImageCounter(kgDialImgThree, int(kgDialImgThree.width/2), 65, 1, " kg", 0, -2.0, 638, 638, 930, 987);
 			kgCounterThree.y = 987;
 			addChild(kgCounterThree);
 		}
@@ -167,10 +170,10 @@ package com.astrazeneca.screens
 			timeline.timeScale(.7);
 			timeline.play();
 			
-			kgCounter.countForwards(2, 3.0);
-			kgCounterTwo.countForwards(2, 2);
-			kgCounterThree.countForwards(2, 2.5);
-			TweenMax.delayedCall(1.8, onShowViewStudyButton);
+			kgCounter.countForwards(1, 4.5);
+			kgCounterTwo.countForwards(1, 2.5);
+			kgCounterThree.countForwards(1, 3.5);
+			TweenMax.delayedCall(6, onShowViewStudyButton);
 		}
 		
 		override public function hide():void

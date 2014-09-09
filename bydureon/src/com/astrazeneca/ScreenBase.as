@@ -142,8 +142,7 @@ package com.astrazeneca
 					trace("image kids",img.numChildren);
 					removeChild(Sprite(img));
 					img.getChildAt(0).texture.dispose();
-					img.getChildAt(0).dispose();
-					
+					img.getChildAt(0).dispose();	
 				}
 				img=null;				
 			}
