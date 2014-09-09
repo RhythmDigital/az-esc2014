@@ -46,10 +46,10 @@ package com.astrazeneca.screens
 			
 			timeline = new TimelineMax( {paused: true, onComplete:onTransitionComplete, onReverseComplete:onReverseTransitionComplete} );			
 			timeline.append( TweenMax.to(images['sTwhiteBG'], .5, { x:10, ease:Sine.easeOut }) );
-			timeline.append( TweenMax.to(images['sTgreenSwoosh'].clipRect, 1, { width:images['sTgreenSwoosh'].originalWidth, ease:Sine.easeOut }) );
-			timeline.append( TweenMax.to(images['sTtextOne'], .4, {alpha:1, ease:Sine.easeOut}), -0.8);
-			timeline.append( TweenMax.to(images['sTtextTwo'], .4, {alpha:1, ease:Sine.easeOut}), -0.8);
-			timeline.append( TweenMax.to(images['sTtextThree'], .4, {alpha:1, ease:Sine.easeOut}), -0.8);
+			timeline.append( TweenMax.to(images['sTgreenSwoosh'].clipRect, .8, { width:images['sTgreenSwoosh'].originalWidth, ease:Sine.easeOut }) );
+			timeline.append( TweenMax.to(images['sTtextOne'], .4, {alpha:1, ease:Sine.easeOut}), -0.4);
+			timeline.append( TweenMax.to(images['sTtextTwo'], .4, {alpha:1, ease:Sine.easeOut}), 0);
+			timeline.append( TweenMax.to(images['sTtextThree'], .4, {alpha:1, ease:Sine.easeOut}), 0);
 			
 
 			

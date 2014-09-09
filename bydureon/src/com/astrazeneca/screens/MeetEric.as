@@ -63,7 +63,7 @@ package com.astrazeneca.screens
 			timeline.append( TweenMax.to(images['swish2'].clipRect, 1, { width:images['swish2'].originalWidth, ease:Sine.easeOut }), -.8 );
 			timeline.append( TweenMax.to(images['eric'], .3, { alpha:1, ease:Sine.easeIn }), -0.8 );
 			timeline.append( TweenMax.to(images['swish3'].clipRect, .4, { width:images['swish3'].originalWidth, ease:Sine.easeOut }), -0.4 );
-			timeline.append( TweenMax.to(images['textLayer'], .4, { alpha:1, ease:Sine.easeOut }), -0.8 );
+			timeline.append( TweenMax.to(images['textLayer'], .4, { alpha:1, ease:Sine.easeOut }), 0 );
 			
 			images['textLayer'].touchable = false;
 			

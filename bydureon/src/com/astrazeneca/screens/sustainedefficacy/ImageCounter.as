@@ -41,11 +41,11 @@ package com.astrazeneca.screens.sustainedefficacy
 			
 			if(startX!=endX)
 			{
-				TweenMax.to(this, time, {delay:delay, x:endX, ease:Sine.easeOut});
-				TweenMax.to(this, time/10, {delay:delay, alpha:1,ease:Sine.easeOut});
+				TweenMax.to(this, time, {delay:delay, x:endX, ease:Sine.easeInOut});
+				TweenMax.to(this, time/10, {delay:delay, alpha:1,ease:Sine.easeInOut});
 			}else{
-				TweenMax.to(this, time, {delay:delay, y:endY, ease:Sine.easeOut});
-				TweenMax.to(this, time/10, {delay:delay, alpha:1,ease:Sine.easeOut});
+				TweenMax.to(this, time, {delay:delay, y:endY, ease:Sine.easeInOut});
+				TweenMax.to(this, time/10, {delay:delay, alpha:1,ease:Sine.easeInOut});
 			}
 			
 			if(resetCount)TweenMax.delayedCall(time, reset);
@@ -55,11 +55,11 @@ package com.astrazeneca.screens.sustainedefficacy
 			countTo(initialValue, time);
 			if(startY!=endY)
 			{
-				TweenMax.to(this, time, {delay:delay, x:startX, ease:Sine.easeOut});
-				TweenMax.to(this, time/10, {delay: time-(time/10), alpha:0,ease:Sine.easeOut});
+				TweenMax.to(this, time, {delay:delay, x:startX, ease:Sine.easeInOut});
+				TweenMax.to(this, time/10, {delay: time-(time/10), alpha:0,ease:Sine.easeInOut});
 			}else{
-				TweenMax.to(this, time, {delay:delay, y:startY, ease:Sine.easeOut});
-				TweenMax.to(this, time/10, {delay:delay, alpha:0,ease:Sine.easeOut});
+				TweenMax.to(this, time, {delay:delay, y:startY, ease:Sine.easeInOut});
+				TweenMax.to(this, time/10, {delay:delay, alpha:0,ease:Sine.easeInOut});
 			}
 			
 			if(resetCount)TweenMax.delayedCall(time, reset);

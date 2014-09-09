@@ -21,7 +21,7 @@ package com.astrazeneca.screens
 				,	{ img: path+'topOrangeSwoosh.png', x:159, y:0, clipSprite:true, name:'bLtopOrangeSwoosh' }
 				,	{ img: path+'orangeSwoosh.png', x:56, y:0, clipSprite:true, name:'bLOrangeSwoosh' }
 				,	{ img: path+'whiteSwoosh.png', x:120, y:0, clipSprite:true, name:'bLwhiteSwoosh' }
-				,	{ img: path+'eric.png', x:460, y:157, clipSprite:false, name:'bLeric' }
+				,	{ img: path+'eric.png', x:460, y:158, clipSprite:false, name:'bLeric' }
 				,	{ img: path+'bStext1.png', x:204, y:207, clipSprite:false, name:'bStext1' }
 				,	{ img: path+'bStext2.png', x:95, y:703, clipSprite:false, name:'bStext2' }
 			
@@ -48,11 +48,11 @@ package com.astrazeneca.screens
 			
 			timeline = new TimelineMax( {paused: true, onComplete:onTransitionComplete, onReverseComplete:onReverseTransitionComplete} );			
 			timeline.append( TweenMax.to(images['bLwhiteBG'], .5, { x:10, ease:Sine.easeOut }) );
-			timeline.append( TweenMax.to(images['bLtopOrangeSwoosh'].clipRect, 1, { width:images['bLtopOrangeSwoosh'].originalWidth, ease:Sine.easeInOut }), -0.1 );
-			timeline.append( TweenMax.to(images['bLwhiteSwoosh'].clipRect, 1, { width:images['bLwhiteSwoosh'].originalWidth, ease:Sine.easeInOut }), -0.8 );
-			timeline.append( TweenMax.to(images['bLgreenSwoosh'].clipRect, 1, { width:images['bLgreenSwoosh'].originalWidth, ease:Sine.easeInOut }), -0.8);
-			timeline.append( TweenMax.to(images['bLOrangeSwoosh'].clipRect, 1, { width:images['bLOrangeSwoosh'].originalWidth, ease:Sine.easeInOut }), -0.8 );
-			timeline.append( TweenMax.to(images['bLeric'], .6, { alpha:1, ease:Sine.easeInOut }), -0.2 );
+			timeline.append( TweenMax.to(images['bLtopOrangeSwoosh'].clipRect, .8, { width:images['bLtopOrangeSwoosh'].originalWidth, ease:Sine.easeInOut }), -0.1 );
+			timeline.append( TweenMax.to(images['bLwhiteSwoosh'].clipRect, .8, { width:images['bLwhiteSwoosh'].originalWidth, ease:Sine.easeInOut }), -0.6 );
+			timeline.append( TweenMax.to(images['bLgreenSwoosh'].clipRect, .8, { width:images['bLgreenSwoosh'].originalWidth, ease:Sine.easeInOut }), -0.6);
+			timeline.append( TweenMax.to(images['bLOrangeSwoosh'].clipRect, .8, { width:images['bLOrangeSwoosh'].originalWidth, ease:Sine.easeInOut }), -0.6 );
+			timeline.append( TweenMax.to(images['bLeric'], .6, { alpha:1, ease:Sine.easeOut }), -0.2 );
 			timeline.append( TweenMax.to(images['bStext1'], .4, {alpha:1, ease:Sine.easeOut}), 0);
 			timeline.append( TweenMax.to(images['bStext2'], .4, {alpha:1, ease:Sine.easeOut}), 0);
 			
