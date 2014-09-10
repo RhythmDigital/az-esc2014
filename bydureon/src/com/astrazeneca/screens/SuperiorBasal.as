@@ -46,12 +46,12 @@ package com.astrazeneca.screens
 				,	{ img: path+'topText2.png', x:0, y:0, clipSprite:false, name:'topText2' }
 				,	{ img: path+'topText3.png', x:0, y:0, clipSprite:false, name:'topText3' }
 				,	{ img: path+'topText4.png', x:0, y:0, clipSprite:false, name:'topText4' }
-				,	{ img: path+'topTextAdd.png', x:264, y:699, clipSprite:false, name:'topTextAdd' }
+				,	{ img: path+'topTextAdd.png', x:284, y:699, clipSprite:false, name:'topTextAdd' }
 				,	{ img: path+'stage1.png', x:0, y:0, clipSprite:false, name:'stage1' }
 				,	{ img: path+'stage2.png', x:0, y:0, clipSprite:false, name:'stage2' }
 				,	{ img: path+'stage3.png', x:0, y:0, clipSprite:false, name:'stage3' }
 				,	{ img: path+'stage4.png', x:0, y:0, clipSprite:false, name:'stage4' }
-				,	{ img: path+'stageText.png', x:263, y:1112, clipSprite:false, name:'stageText' }
+				,	{ img: path+'stageText.png', x:283, y:1112, clipSprite:false, name:'stageText' }
 			];
 		}
 		
@@ -112,7 +112,7 @@ package com.astrazeneca.screens
 			var clipped:ClipSprite = new ClipSprite(kgDialImg1.width);
 			clipped.addChild(kgCounter1);
 			clipped.clipRect = new Rectangle(0, 0, kgDialImg1.width, kgDialImg1.height);
-			clipped.x = 205;
+			clipped.x = 230;
 			clipped.y = 589;
 			
 			addChild(clipped);
@@ -126,7 +126,7 @@ package com.astrazeneca.screens
 			var clipped:ClipSprite = new ClipSprite(kgDialImg2.width);
 			clipped.addChild(kgCounter2);
 			clipped.clipRect = new Rectangle(0, 0, kgDialImg2.width, kgDialImg2.height);
-			clipped.x = 338;
+			clipped.x = 363;
 			clipped.y = 589;
 					
 			addChild(clipped);
@@ -140,7 +140,7 @@ package com.astrazeneca.screens
 			var clipped:ClipSprite = new ClipSprite(kgDialImg3.width);
 			clipped.addChild(kgCounter3);
 			clipped.clipRect = new Rectangle(0, 0, kgDialImg3.width, kgDialImg3.height);
-			clipped.x = 523;
+			clipped.x = 538;
 			clipped.y = 589;
 			
 			addChild(clipped);
@@ -154,7 +154,7 @@ package com.astrazeneca.screens
 			var clipped:ClipSprite = new ClipSprite(kgDialImg4.width);
 			clipped.addChild(kgCounter4);
 			clipped.clipRect = new Rectangle(0, 0, kgDialImg4.width, kgDialImg4.height);
-			clipped.x = 656;
+			clipped.x = 671;
 			clipped.y = 589;
 			
 			addChild(clipped);
@@ -167,7 +167,7 @@ package com.astrazeneca.screens
 			var clipped:ClipSprite = new ClipSprite(kgDialImg5.width);
 			clipped.addChild(kgCounter5);
 			clipped.clipRect = new Rectangle(0, 0, kgDialImg5.width, kgDialImg5.height);
-			clipped.x = 205;
+			clipped.x = 230;
 			clipped.y = 1196;
 			
 			addChild(clipped);
@@ -180,7 +180,7 @@ package com.astrazeneca.screens
 			var clipped:ClipSprite = new ClipSprite(kgDialImg6.width);
 			clipped.addChild(kgCounter6);
 			clipped.clipRect = new Rectangle(0, 0, kgDialImg6.width, kgDialImg6.height);
-			clipped.x = 338;
+			clipped.x = 363;
 			clipped.y = 1148
 			
 			addChild(clipped);
@@ -193,7 +193,7 @@ package com.astrazeneca.screens
 			var clipped:ClipSprite = new ClipSprite(kgDialImg7.width);
 			clipped.addChild(kgCounter7);
 			clipped.clipRect = new Rectangle(0, 0, kgDialImg7.width, kgDialImg7.height);
-			clipped.x = 523;
+			clipped.x = 538;
 			clipped.y = 1196;
 			
 			addChild(clipped);
@@ -206,7 +206,7 @@ package com.astrazeneca.screens
 			var clipped:ClipSprite = new ClipSprite(kgDialImg8.width);
 			clipped.addChild(kgCounter8);
 			clipped.clipRect = new Rectangle(0, 0, kgDialImg8.width, kgDialImg8.height);
-			clipped.x = 656;
+			clipped.x = 671;
 			clipped.y = 1129
 			
 			addChild(clipped);

@@ -20,7 +20,7 @@ package com.astrazeneca.screens
 			imageManifest = [
 					{ img: path+'whiteBG.png', x:10, y:96, clipSprite:false, name:'RFIDwhiteBG' }
 				,	{ img: path+'orangeSwoosh.png', x:43, y:0, clipSprite:true, name:'RFIDorangeSwoosh' }
-				, 	{ img: path+'rFtext1.png', x:120, y:215, clipSprite:false, name:'rFtext1' }
+				, 	{ img: path+'rFtext1.png', x:114, y:215, clipSprite:false, name:'rFtext1' }
 				, 	{ img: path+'rFtext2.png', x:227, y:505 , clipSprite:false, name:'rFtext2' }
 				, 	{ img: path+'rFtext3.png', x:120, y:721 , clipSprite:false, name:'rFtext3' }
 				, 	{ img: path+'redIcon.png', x:115, y:820 , clipSprite:false, name:'redIcon' }
