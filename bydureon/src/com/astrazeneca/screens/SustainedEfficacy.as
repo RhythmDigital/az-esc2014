@@ -39,11 +39,11 @@ package com.astrazeneca.screens
 				,	{ img: path+'viewStudyTag.png', x:0, y:0, clipSprite:false, name:'sEviewStudyTag' }
 				,	{ img: path+'popUpBg.png', x:0, y:0, clipSprite:false, name:'sEpopUp' }
 				,	{ img: path+'sEtext1.png', x:68, y:208, clipSprite:false, name:'sEtext1' }
-				,	{ img: path+'sEtext2.png', x:95, y:692, clipSprite:false, name:'sEtext2' }
+				,	{ img: path+'sEtext2.png', x:95, y:703, clipSprite:false, name:'sEtext2' }
 				,	{ img: path+'greenDial.png', x:0, y:0, clipSprite:false, name:'sEgreenDial' }
 				,	{ img: path+'sEtext3.png', x:95, y:1037, clipSprite:false, name:'sEtext3' }
 				,	{ img: path+'greenArrow.png', x:0, y:0, clipSprite:false, name:'sEgreenArrow' }
-				,	{ img: path+'sEtext4.png', x:95, y:1278, clipSprite:false, name:'sEtext4' }
+				,	{ img: path+'sEtext4.png', x:95, y:1281, clipSprite:false, name:'sEtext4' }
 				,	{ img: path+'orangeDial.png', x:0, y:0, clipSprite:false, name:'sEorangeDial' }
 	
 			];
