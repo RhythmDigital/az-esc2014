@@ -173,7 +173,7 @@ package com.astrazeneca
 			//trace("onScreenOpened");
 			screenLoading = false;
 						
-			if(Variables.DEBUG) {
+			/*if(Variables.DEBUG) {
 				screensLoaded ++;
 				nextAutoScreen ++;
 				if(nextAutoScreen == screens.length) nextAutoScreen = 0;
@@ -188,7 +188,7 @@ package com.astrazeneca
 				trace("\n*******************\n\n");
 				
 				TweenMax.delayedCall(5, loadNextScreenImages, null);
-			}
+			}*/
 		}
 				
 		private function onScreenClosed(e:Event):void
@@ -200,8 +200,11 @@ package com.astrazeneca
 		public function reset():void
 		{
 			// called after main timeout...
-			screenToLoad = DEFAULT_SCREEN;
-			loadNextScreenImages();
+			if(screenToLoad != DEFAULT_SCREEN)
+			{
+				screenToLoad = DEFAULT_SCREEN;
+				loadNextScreenImages();
+			}
 		}
 		
 	}
