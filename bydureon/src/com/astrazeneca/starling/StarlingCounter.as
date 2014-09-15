@@ -56,7 +56,8 @@ package com.astrazeneca.starling
 		public function updateCounter():void
 		{
 			var withDecimalPlaces:String = currentValue.toFixed(decimalPlaces);
-			tf.text = getNumberWithCommas( currentValue % 1 == 0 ? String(currentValue) : withDecimalPlaces ) + suffix;
+			//tf.text = getNumberWithCommas( currentValue % 1 == 0 ? String(currentValue) : withDecimalPlaces ) + suffix;
+			tf.text = getNumberWithCommas( withDecimalPlaces ) + suffix;
 		}
 	}
 }

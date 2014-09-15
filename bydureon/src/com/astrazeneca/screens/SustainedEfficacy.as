@@ -38,12 +38,12 @@ package com.astrazeneca.screens
 				,	{ img: path+'swish3.png', x:0, y:904, clipSprite:true, name:'sEswish3' }
 				,	{ img: path+'viewStudyTag.png', x:0, y:0, clipSprite:false, name:'sEviewStudyTag' }
 				,	{ img: path+'popUpBg.png', x:0, y:0, clipSprite:false, name:'sEpopUp' }
-				,	{ img: path+'sEtext1.png', x:83, y:208, clipSprite:false, name:'sEtext1' }
-				,	{ img: path+'sEtext2.png', x:95, y:692, clipSprite:false, name:'sEtext2' }
+				,	{ img: path+'sEtext1.png', x:68, y:208, clipSprite:false, name:'sEtext1' }
+				,	{ img: path+'sEtext2.png', x:95, y:703, clipSprite:false, name:'sEtext2' }
 				,	{ img: path+'greenDial.png', x:0, y:0, clipSprite:false, name:'sEgreenDial' }
 				,	{ img: path+'sEtext3.png', x:95, y:1037, clipSprite:false, name:'sEtext3' }
 				,	{ img: path+'greenArrow.png', x:0, y:0, clipSprite:false, name:'sEgreenArrow' }
-				,	{ img: path+'sEtext4.png', x:95, y:1278, clipSprite:false, name:'sEtext4' }
+				,	{ img: path+'sEtext4.png', x:95, y:1281, clipSprite:false, name:'sEtext4' }
 				,	{ img: path+'orangeDial.png', x:0, y:0, clipSprite:false, name:'sEorangeDial' }
 	
 			];
@@ -106,7 +106,7 @@ package com.astrazeneca.screens
 		{
 			//green dot
 			var kgDialImgTwo:Image = images['sEgreenDial'];
-			kgCounterTwo = new ImageCounter(kgDialImgTwo, int(kgDialImgTwo.width/2), 68, 1, " kg", 0, -1.6, 306, 638, 712, 712);
+			kgCounterTwo = new ImageCounter(kgDialImgTwo, int(kgDialImgTwo.width/2), 68, 1, "%", 0, -1.6, 306, 638, 712, 712);
 			kgCounterTwo.y = 712;
 			addChild(kgCounterTwo);
 		}
@@ -115,7 +115,7 @@ package com.astrazeneca.screens
 		{
 			//green arrow
 			var kgDialImgThree:Image = images['sEgreenArrow'];
-			kgCounterThree = new ImageCounter(kgDialImgThree, int(kgDialImgThree.width/2), 65, 1, " kg", 0, -2.0, 638, 638, 930, 987);
+			kgCounterThree = new ImageCounter(kgDialImgThree, int(kgDialImgThree.width/2), 65, 1, "%", 0, -2.0, 638, 638, 930, 987);
 			kgCounterThree.y = 987;
 			addChild(kgCounterThree);
 		}

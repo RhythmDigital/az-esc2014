@@ -25,7 +25,7 @@ package com.astrazeneca.screens
 			imageManifest = [
 					{ img: path+'whiteBG.png', x:-1080, y:96, clipSprite:false, name:'wDwhiteBG' }
 				,	{ img: path+'ericsBox.png', x:46, y:811, clipSprite:false, name:'wDericsBox' }
-				,	{ img: path+'orangeSwish.png', x:0, y:420, clipSprite:true, name:'wDorangeSwish' }
+				,	{ img: path+'orangeSwish.png', x:0, y:426, clipSprite:true, name:'wDorangeSwish' }
 				,	{ img: path+'injection.png', x:61, y:541, clipSprite:false, name:'wDinjection' }
 				,	{ img: path+'greenCircle.png', x:490, y:732, clipSprite:false, name:'wDgreenCircle' }
 				,	{ img: path+'wDtextLayer.png', x:0, y:0, clipSprite:false, name:'wDtextLayer' }
